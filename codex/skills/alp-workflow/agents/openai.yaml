@@ -1,0 +1,4 @@
+interface:
+  display_name: "ALP Delivery Workflow"
+  short_description: "Orchestrate ALP and spec-driven work."
+  default_prompt: "Use $alp-workflow to refine this task, choose Full ALP, Spec-driven, or Mechanical documentation, implement or hand off, independently review, and wrap up through explicit phase gates."
