@@ -38,7 +38,7 @@ Map IDs where useful for clarity, but do not annotate every plan or task item ex
 
 ## 4. Initial Plan Gate
 
-Return the initial plan for one Terra-orchestrator conformance review and stop for user authorization.
+Return the initial plan for one separate Terra worker conformance review and stop for user authorization. Terra is a reviewer with no phase authority.
 
 Accept one focused correction for a material blocker: wrong intended behavior, broken oracle, boundary violation, contradictory evidence, or unapproved critical-test change. After that correction, proceed unless a concrete blocker remains. Return any remaining blocker to the user rather than entering an open-ended refinement loop.
 

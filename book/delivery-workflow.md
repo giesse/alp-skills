@@ -74,13 +74,78 @@ describe capability rather than status or a permanent model family.
 | Explore and verify | Let a cheaper or fresher worker inspect broad evidence and return a compact packet. |
 | Tangle or implement | Turn an approved Book or specification into code without reopening settled design. |
 | Review | Give a fresh reader the chance to find a mismatch between intent, code, and evidence. |
-| Escalate | Spend stronger review capacity only when risk or a weak oracle justifies it. |
+| Escalate | Recommend stronger review when risk or a weak oracle warrants it; use the Sol escalation reviewer only after explicit user authorization. |
 
-This is also why the workflow can use more than one tool. A different tool or
-model may offer cheaper implementation capacity, an independent review, or a
-separate credit pool. The handoff must still carry the governing artifact,
-boundary, and test semantics; changing tools must not turn settled intent into
-a guessing game.
+Delegation must buy a concrete benefit: cheaper substantial work, protection of
+the small root context, compression of noisy evidence, genuinely independent
+judgment, useful latency, or access to a separate external capacity. Compare
+that benefit with briefing, reconciliation, drift, and repair cost. Repository
+work still belongs with a worker because Sol does no repository work; the value
+gate decides whether to split another bounded task, which capability to use,
+and whether the native or external route is worth its handoff overhead.
+
+## Choose an implementation route
+
+Implementation commonly follows one of two routes. The route is selected
+after the governing source, scope, and oracle meaning are approved; changing
+route does not change those decisions.
+
+Strategy authority comes first. Full ALP implementation tangles the approved
+Book and stops if material design judgment is still required. Spec-driven
+implementation may exercise only the ordinary discretion left open by the
+approved specification. Mechanical work remains limited to the small,
+behaviorally unambiguous change approved in Brainstorm. Native and external
+routes must preserve those distinctions.
+
+| Route | Best fit | Travelling context |
+| --- | --- | --- |
+| Native Codex worker | Bounded internal work that benefits from a fresh, smaller context and compact return. | A narrow native packet containing the role or capability, task and file boundary, relevant paths or evidence, permissions, stop conditions, and response needs. |
+| Manual or external handoff | Work copied or handed to Antigravity or, when appropriate, Gemini Flash without access to the Codex conversation. | A complete, revisioned Execution Contract that is self-contained enough to plan, implement, and report conflicts against the approved governing source. |
+
+```mermaid
+flowchart LR
+    G[Approved governing source and oracle meaning] --> R{Implementation route}
+    R --> N[Fresh native worker packet]
+    R --> X[Revisioned external EC]
+    N --> E[Implementation evidence]
+    X --> E
+    E --> V[Fresh review]
+    V --> A[Sol and user decide acceptance]
+```
+
+The routes share the governing source, closed task and file boundary,
+independently owned test or oracle semantics when practical, conflict-stop
+behavior, implementation evidence, and root/user acceptance authority. They do
+not share one transport or envelope template. Native packet behavior belongs
+to [Native Worker Delegation](worker-dispatch.md); manual and external mechanics
+belong to [Execution Contracts and Evidence](execution-contracts-and-evidence.md).
+
+## Review once, then preserve what matters
+
+Both routes converge on the same fresh review. The reviewer receives the
+stated session goals, governing source, final diff, and independent evidence
+before any implementation walkthrough. Missing or materially ambiguous session
+goals produce a blocked review rather than an invented standard.
+
+Each finding states severity, exact evidence, the affected criterion or
+invariant, why acceptance is not yet justified, a closure condition, and
+whether it is deferrable without affecting the stated session goals: yes, no,
+or uncertain with a reason. That classification does not defer or accept the
+finding; only Sol and the user can do so.
+
+A fresh deterministic verifier may substitute for Terra only for read-only
+documentation or data work with a fully deterministic oracle and no material
+interpretation, conflict resolution, policy choice, or acceptance judgment.
+Otherwise Terra reviews. Reconciliation happens once unless a concrete blocker
+requires another correction. Wrap Up then changes TODO, wiki, indexes, or logs
+only when accepted work created a durable lesson or fulfilled follow-up; it is
+not bookkeeping performed merely to prove activity.
+
+When the best available oracle remains weak, the review labels its limitation
+and residual risk. Sol may recommend a separately user-authorized escalation
+review; weakness never triggers one automatically. Sol and the user then decide
+whether to return to an earlier phase, add an approved assurance measure, or
+accept the explicitly labelled gap.
 
 ## The four habits
 
@@ -94,10 +159,9 @@ a guessing game.
    independent evidence; then keep a lasting lesson only when it will help the
    next task.
 
-An EC contract is available when a fresh or external implementer needs a compact
-self-contained handoff. It carries the approved decisions, invariants,
-acceptance, validation, file boundary, and unresolved questions. It is a
-bridge, not a substitute for the governing Book or specification.
+An EC is the active handoff contract for the manual or external route. It is a
+bridge, not a substitute for the governing Book or specification, and native
+workers do not need to carry its external-tool envelope.
 
 ---
 

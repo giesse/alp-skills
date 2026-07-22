@@ -7,9 +7,8 @@ for related current knowledge.
 
 ALP Skills now provides the durable home that earlier skill work lacked: its
 Book records governing intent, and its wiki records accepted wrap-up knowledge.
-This foundation exists before the dispatcher correction so that the correction
-can be designed, reviewed, and retained here rather than reconstructed from a
-past session.
+This foundation records the completed two-route native-worker correction and
+keeps replaced implementation evidence clearly separate from current guidance.
 
 ## Current authority
 
@@ -23,8 +22,11 @@ promotes a specific claim.
 
 ## Deferred work
 
-The next substantial work is the dispatcher/delegation correction in a new
-session. Legacy source import and reconciliation, deterministic validation,
-and drift-aware synchronization remain tracked in the TODO. This release makes
-no change to an installed skill, role profile, source repository, or legacy
-repository.
+Native `spawn_agent` is the operative internal delegation route, while manual
+or external Antigravity/Gemini handoffs use the revisioned EC route. The deleted
+one-off native-delegation Python test is not current acceptance evidence;
+English-policy acceptance uses fresh review plus focused deterministic checks.
+Historical source material remains under `wiki/sources/` and is historical only.
+Legacy source import and reconciliation, deterministic validation, and
+drift-aware synchronization remain tracked in the TODO. Installed and external
+artifacts remain untouched.

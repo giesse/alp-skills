@@ -5,8 +5,11 @@ Part of the [ALP Skills Book](README.md). Previous: [Legacy Reconciliation and L
 ## Priority 1 — Tasks we are working on right now
 
 - [x] Establish the ALP Skills repository foundation: governing Book, canonical source-layout design, navigation, and migration boundary from the old Antigravity repository. Canonical source import remains deferred.
+- [ ] Perform the deeper manual review of `book/worker-dispatch.md` after the current good-enough acceptance, focusing on daily-use clarity and semantic accuracy.
+- [ ] Durable vs changeset documentation (or maybe ALP chapter vs EC)
 - [ ] Resolve and codify the repository knowledge lifecycle before the first GitHub publication. Define portable repository knowledge, per-clone and user-local bindings, condition-bound advisories, precedence and retirement rules, lazy local onboarding, clean-checkout behavior, and treatment of existing external-path dependencies. Use the recorded [knowledge lifecycle brainstorm](wiki/sources/knowledge-lifecycle-brainstorm-2026-07-19.md) as deferred evidence, not current policy. This is a publication blocker.
-- [ ] Reconcile and, if approved, codify delegation economics around preserving expensive root Codex context: use Luna freely for bounded exploration, multi-file discovery, command-heavy investigation, test/log output, and structured extraction; constrain the returned evidence packet rather than the exploration budget; and treat delegation as net-negative only when briefing, reconciliation, or judgment risk outweighs that benefit. Define the root's minimum reading boundary, a broad-enough Luna evidence boundary, outside-sandbox dispatcher preflight requirements for writable `~/.codex` state, and a separate diagnostic path for missing terminal worker output.
+- [ ] Reconcile and, if approved, codify delegation economics around preserving expensive root Codex context: use Luna freely for bounded exploration, multi-file discovery, command-heavy investigation, test/log output, and structured extraction; constrain the returned evidence packet rather than the exploration budget; and treat delegation as net-negative only when briefing, reconciliation, or judgment risk outweighs that benefit. Define the root's minimum reading boundary and a broad-enough Luna evidence boundary.
+- [ ] Refer to https://cursor.com/blog/agent-swarm-model-economics for additional evidence about our delegation approach
 - [x] Initialize the LLM wiki with its index, log, provenance rules, and legacy source inventory; do not promote any old material to current knowledge.
 - [ ] We need AI responses to contain the current phase. I often lose track of where we are in investigation-heavy tasks. This is a good candidate for a custom UI but that's out of the scope of this repository.
 - [ ] Keep TDD as the preferred implementation approach when a meaningful executable oracle can be prepared. Do not make TDD universal: use the approved static, manual, runtime, telemetry, rollback, or other observable oracle where an executable test would be synthetic, unsafe, or impractical.
@@ -19,8 +22,9 @@ Part of the [ALP Skills Book](README.md). Previous: [Legacy Reconciliation and L
   copying legacy model names, commands, layout rules, or project-specific
   knowledge; adoption by an existing project must include local discovery and
   reconciliation.
-- [x] Import the exact active installed-skill baseline into the canonical source tree: both Codex skills, active role profiles, dispatcher and EC-linter code with their tests, and the Antigravity companion. This baseline does not install or alter external artifacts.
+- [x] Import the exact active installed-skill baseline into the canonical source tree: both Codex skills, active role profiles, EC-linter code with its tests, and the Antigravity companion. This baseline does not install or alter external artifacts.
 - [ ] Create deterministic validation and drift-aware synchronization tooling for the canonical source tree, as described in [Canonical Sources and Installation](book/canonical-sources-and-installation.md).
+- [ ] Clean up Antigravity companion skill (eg mentions of Terra etc.)
 
 - [ ] Evaluate GitHub Spec Kit and other relevant specification-driven
   practices against ALP. Consider artifact flow, project principles, reusable

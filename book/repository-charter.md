@@ -1,7 +1,7 @@
 # Repository Charter
 
 [ALP Skills Book](../README.md) · Previous:
-[Worker Dispatch](worker-dispatch.md) · Next:
+[Native Worker Delegation](worker-dispatch.md) · Next:
 [Canonical Sources and Installation](canonical-sources-and-installation.md)
 
 ## What this repository is for
@@ -52,10 +52,10 @@ method from the Book without relying on the wiki.
 
 ## What changes here
 
-The first source-management release will import an exact baseline of the active
-workflow, authoring companion, implementation companion, capability profiles,
-deterministic dispatcher, and EC linter. Later corrections happen in the
-canonical source tree; installation stays an explicit, recoverable action.
+The canonical source tree carries the active workflow, authoring companion,
+implementation companion, capability profiles, native worker-delegation
+guidance, and deterministic helpers. Later corrections happen in that tree;
+installation stays an explicit, recoverable action.
 
 This repository does not automatically install a change, replace unrelated
 configuration, publish a remote, or archive an earlier framework. Before
@@ -74,5 +74,5 @@ that work.
 ---
 
 [ALP Skills Book](../README.md) · Previous:
-[Worker Dispatch](worker-dispatch.md) · Next:
+[Native Worker Delegation](worker-dispatch.md) · Next:
 [Canonical Sources and Installation](canonical-sources-and-installation.md)

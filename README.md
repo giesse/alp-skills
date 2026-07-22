@@ -17,10 +17,10 @@ Canonical source repository for the ALP workflow, its Codex and Antigravity skil
 
   - [Execution contracts and evidence](book/execution-contracts-and-evidence.md)
 
-- Python scripts
+- Deterministic helpers and delegation
 
   - [EC linter](book/ec-linter.md)
-  - [Worker dispatch](book/worker-dispatch.md)
+  - [Native worker delegation](book/worker-dispatch.md)
 
 - Maintenance
   - [Repository charter](book/repository-charter.md)

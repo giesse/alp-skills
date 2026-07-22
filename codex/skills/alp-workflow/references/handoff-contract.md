@@ -1,8 +1,16 @@
-# Canonical Handoff Contract
+# Manual and External Handoff Contract
 
-Create an EC only for an external or materially fresh implementation context that needs a concise, self-contained transfer artifact. The approved governing document remains the durable source of truth. The Phase 2 gate approves the document, critical-oracle semantics, implementation route, and EC revision before dispatch.
+Use this revisioned Execution Contract (EC) for a manual handoff to
+Antigravity (Gemini Flash). The approved Book or specification remains the
+source of intent. Native workers use the separate [native worker delegation](native-worker-delegation.md)
+packet, not this envelope.
 
-Copy the complete approved revision into the handoff. If contract content changes after approval, update the governing document when design changes, obtain approval, increment `Revision`, and issue a complete replacement. Never patch a dispatched revision silently.
+## EC protocol v1
+
+Each complete revision has a stable `Contract`, positive `Revision`, `EC
+protocol: v1`, `Task`, and `Governing document`. Existing material may use the
+legacy header `ALP chapter`; it remains accepted for compatibility. The body
+contains unique `D`, `I`, `A`, `V`, `O`, and optional `Q` items:
 
 ```text
 Contract: EC-1
@@ -11,69 +19,84 @@ EC protocol: v1
 Task: <short name>
 Governing document: <path and heading>
 
-D1 Decision: <settled behavior or design choice>
-I1 Invariant: <must remain true>
-I2 Test semantics: <independent owner when practical; name authorized existing-test updates and replacement-revision handling>
-A1 Acceptance: <observable definition of done>
-V1 Validation [covers A1]: <required command, check, observation, or other oracle>
+D1 Decision: <settled behavior>
+I1 Invariant: <behavior or compatibility that remains true>
+I2 Test semantics: <independent owner; named authorized updates only>
+A1 Acceptance: <observable completion criterion>
+V1 Validation [covers A1]: <command, check, observation, or other oracle>
 O1 Out of scope: <explicit non-goal>
-O2 File boundary: <expected repository files; report any additional file before editing>
+O2 File boundary: <exact repository files>
 Q1 Question: <unresolved point>
-    Owner: <orchestrator, worker, user, or external implementer>
+    Owner: <named owner>
     Evidence required: <what resolves it>
     Resolve before: <task or phase>
 ```
 
-Accept legacy `ALP chapter` in place of `Governing document` under EC protocol v1. Omit `Q` entirely when there are no unresolved questions.
+Omit the `Q` section when no unresolved question exists. Every `A` needs one
+or more `V` references. Any approved-content change requires a complete,
+incremented replacement revision; never patch a dispatched revision silently.
 
-## Deterministic mechanical lint
+## Deterministic lint before handoff
 
-Run the local Python 3.11+ standard-library linter before semantic preflight or dispatch:
+After the complete EC revision is prepared, a delegated Luna/verifier runs the
+repository-local deterministic linter before semantic preflight, approval, and
+manual handoff. From the repository root use:
 
-From the installed `alp-workflow` skill directory:
+```text
+python3 codex/skills/alp-workflow/scripts/lint_ec.py path/to/contract.md
+python3 codex/skills/alp-workflow/scripts/lint_ec.py --json path/to/contract.md
+```
+
+From the `codex/skills/alp-workflow` directory, the equivalent file and stdin
+forms are:
 
 ```text
 python3 scripts/lint_ec.py path/to/contract.md
-python3 scripts/lint_ec.py --json path/to/contract.md
 python3 scripts/lint_ec.py - < path/to/contract.md
 ```
 
-The command accepts a raw EC or exactly one matching fenced Markdown EC. `-` reads UTF-8 stdin. It performs no repository discovery, reference resolution, network access, model call, command execution, or file edit. Text output is empty on success or emits sorted `source:line:column CODE message` diagnostics. JSON output is one stable schema-version-1 object. Exit status `0` means the deterministic surface passes, `1` means EC findings exist, and `2` means input or internal failure. The check covers headers, item syntax and references, acceptance coverage, question metadata, scope boundaries, vague control terms, test semantics, and the pre-approval authorization boundary.
+The command accepts a raw EC or one fenced Markdown EC. Exit `0` means no
+structural findings, `1` means deterministic EC findings were reported, and
+`2` means input or internal failure; normal text output is empty on success and
+lists deterministic diagnostics otherwise (the `--json` form emits the stable
+machine-readable report). The check covers structure only; it cannot
+establish semantic sufficiency, oracle strength, design quality, safety, or
+phase approval. Semantic preflight is delegated to a suitable fresh worker:
+Terra when material judgment is required, or a bounded verifier only when
+deterministic eligibility permits. Sol and the user retain phase approval,
+acceptance meaning, and reconciliation of compact evidence, not repository
+semantic review or verification.
 
-This is a mechanical surface check only. It does not judge design quality, semantic sufficiency, oracle strength, materiality, production safety, or phase approval. The root orchestrator retains semantic preflight and the phase gate. The implementation is [lint_ec.py](../scripts/lint_ec.py) and its standard-library oracle is [test_lint_ec.py](../scripts/test_lint_ec.py).
+## Read-only planning and authorization
 
-## External Handoff
+Before implementation, the external implementer may inspect the repository and
+return a read-only plan. It must not edit repository files or run
+implementation validation during planning. The implementer then acknowledges
+decisions, invariants, acceptance and oracle semantics, file boundary,
+out-of-scope work, test-update limits, and blocking questions. Contradictory
+evidence, a required extra file or permission, a changed critical-test meaning,
+or a material Full ALP design gap is reported and stops the handoff.
 
-- Perform semantic preflight across the governing document, contract, and critical oracles before dispatch.
-- Mechanically lint the contract in the root thread when delegating that bounded check would cost more.
-- Give every `A` item at least one observable `V` oracle and state limitations.
-- Define the repository boundary; treat an extra required repository file as a scope conflict.
-- Treat Antigravity planning artifacts as control-plane artifacts outside that boundary.
-- Require the implementer to acknowledge decisions, invariants, acceptance/oracle semantics, boundaries, blocking questions, and test semantics and to report contradictions.
-- Do not require exhaustive contract-ID annotation on every plan or task item.
-- Bring the initial Antigravity plan to the Terra orchestrator for one conformance review.
-- Correct only material blockers: wrong behavior, broken oracle, file-boundary violation, contradictory evidence, or unapproved critical-test change.
-- After one focused correction, proceed unless a concrete blocker remains; return a remaining blocker to the user.
-- Allow named existing-test updates and non-conflicting added coverage. Require a replacement revision before weakening or altering critical semantics beyond the approved intent.
-- Require a compact evidence packet with contract revision, changed files, validation evidence, deviations, unresolved concerns, acceptance coverage, repository discoveries, durable-learning suggestions, and concrete workflow friction.
+Antigravity-native plans and task lists are control-plane artifacts outside the
+repository boundary. That exception authorizes no repository source, test, or
+generated artifact. Named existing-test updates or compatible added coverage
+are allowed only when the approved EC says so; weakening or changing critical
+semantics requires a replacement revision.
 
-## Mechanical Lint Surface
+For Antigravity, send the initial plan to one separate Terra worker for
+conformance review against the EC. Terra has no phase authority. Permit at
+most one focused correction for a concrete blocker; return any remaining
+blocker to the user rather than starting an open-ended loop. User
+authorization is required before repository implementation and approved
+validation.
 
-Check structure only:
+## Completion evidence
 
-- required `Contract`, positive `Revision`, supported `EC protocol`, `Task`, and either `Governing document` or legacy `ALP chapter`;
-- recognized, unique `D`, `I`, `A`, `V`, `O`, and optional `Q` IDs;
-- valid `V [covers ...]` references and validation coverage for every `A`;
-- complete metadata for each present `Q` and no placeholder `Q`;
-- explicit out-of-scope and repository file-boundary entries;
-- test-semantic ownership and replacement-revision handling when tests are in scope; and
-- authorization wording that permits read-only planning but forbids edits and implementation validation before approval.
-
-Leave behavioral sufficiency and oracle strength to semantic preflight.
-
-## Review Sequence
-
-1. Review the governing document or contract, diff, and independent evidence without the walkthrough.
-2. Attempt to disprove acceptance, inspect unchanged invariants, detect unsupported behavior, and identify production failure modes.
-3. Read the walkthrough and reconcile once.
-4. Request another iteration only with a contract ID or diff evidence, a non-acceptance reason, and a closure condition.
+The external implementer returns a compact packet naming contract and revision,
+changed files, exact validation/oracle evidence and limitations, deviations,
+unresolved concerns, acceptance coverage, repository discoveries, suggested
+durable learnings, concrete workflow friction, and inspected/uninspected scope.
+Successful commands alone are not acceptance; Sol and the user retain final
+acceptance authority. Preserve the approved static, manual, runtime,
+telemetry, rollback, or other observable oracle when an executable test would
+be synthetic, unsafe, or impractical.

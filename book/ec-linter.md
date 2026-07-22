@@ -2,7 +2,7 @@
 
 [ALP Skills Book](../README.md) · Previous:
 [Execution Contracts and Evidence](execution-contracts-and-evidence.md) ·
-Next: [Worker Dispatch](worker-dispatch.md)
+Next: [Native Worker Delegation](worker-dispatch.md)
 
 ## A cheap check for handoff omissions
 
@@ -57,4 +57,4 @@ completeness only.
 
 [ALP Skills Book](../README.md) · Previous:
 [Execution Contracts and Evidence](execution-contracts-and-evidence.md) ·
-Next: [Worker Dispatch](worker-dispatch.md)
+Next: [Native Worker Delegation](worker-dispatch.md)
