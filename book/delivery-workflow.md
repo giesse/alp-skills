@@ -64,10 +64,22 @@ workflow treats those resources as something to spend deliberately, not as a
 reason to make every task shallow.
 
 The root session keeps the expensive, high-judgment work: conversation with the
-user, material decisions, approval boundaries, acceptance meaning, and final
-synthesis. Bounded workers can do exploration, structured extraction,
-deterministic checks, a tangle, implementation, or a fresh review. Their names
-describe capability rather than status or a permanent model family.
+user, material decisions, approved governing-document authoring, approval
+boundaries, acceptance meaning, and final synthesis. Bounded workers can do
+exploration, structured extraction, routine documentation, deterministic
+checks, a tangle, implementation, or a fresh review. Their names describe
+capability rather than status or a permanent model family.
+
+Cost means weighted credit consumption, not raw token count. As of July 2026,
+the published GPT-5.6 token-credit rates give the relative heuristic
+Sol:Terra:Luna = approximately `5:2.5:1` across input, cached-input, and output
+tokens. Five Luna tokens may therefore cost about the same as one Sol token,
+and 2.5 Luna tokens about the same as one Terra token within the corresponding
+token category, before accounting for briefing, reconciliation, repair, tools,
+context, reasoning, retrieval, and caching. This is a dated routing aid, not a
+prediction of a session bill; the
+[official rate card](https://learn.chatgpt.com/docs/pricing#what-are-tokens-and-credits)
+must be checked when the model family or pricing changes.
 
 | Capability | Why it exists |
 | --- | --- |
@@ -76,19 +88,49 @@ describe capability rather than status or a permanent model family.
 | Review | Give a fresh reader the chance to find a mismatch between intent, code, and evidence. |
 | Escalate | Recommend stronger review when risk or a weak oracle warrants it; use the Sol escalation reviewer only after explicit user authorization. |
 
-Delegation must buy a concrete benefit: cheaper substantial work, protection of
-the small root context, compression of noisy evidence, genuinely independent
-judgment, useful latency, or access to a separate external capacity. Compare
-that benefit with briefing, reconciliation, drift, and repair cost. Repository
-work still belongs with a worker because Sol does no repository work; the value
-gate decides whether to split another bounded task, which capability to use,
-and whether the native or external route is worth its handoff overhead.
+The root declares the route before repository exploration begins. Luna is the
+default for broad or multi-file discovery, command-heavy investigation, noisy
+test or log output, structured extraction, repeatable checks, and
+implementation that needs validation or iteration. This is a bias toward the
+cheapest adequate capability, not a worker-count target.
+
+Direct root work remains appropriate when the root needs one named artifact's
+complete contents rather than a summary, when one or two known artifacts are
+reasonably small, when supplied material must be read verbatim, or when a
+genuinely small localized edit needs no test, broad follow-on inspection,
+iterative repair, or material design choice. The root may inspect the resulting
+localized diff or perform another constant-cost confirmation. If those
+conditions stop being true, it stops and delegates the remaining bounded work
+instead of allowing direct work to expand silently.
+
+Approved Full ALP Governing Documentation is a separate root responsibility,
+not a large-edit loophole in this safe harbor. Sol authors the material intent
+because delegating that judgment would undermine the Book; Luna may gather
+bounded evidence or perform mechanical documentation checks. Implementation
+and validation remain delegated according to the routes below.
+
+Delegation must still buy a concrete benefit: cheaper substantial work,
+protection of the small root context, compression of noisy evidence, genuinely
+independent judgment, useful latency, or access to a separate external
+capacity. Compare that benefit with briefing, reconciliation, drift, and repair
+cost. Native workers run sequentially by default; there is no swarm objective
+or preferred agent count. One experimental exception to the normal
+non-recursive boundary lets an explicitly authorized Terra worker use one
+fresh Luna child for bounded mechanical or noisy evidence gathering. Terra
+retains its assigned judgment and Luna cannot delegate again. Detailed routing
+and child-worker constraints belong to
+[Native Worker Delegation](worker-dispatch.md).
 
 ## Choose an implementation route
 
 Implementation commonly follows one of two routes. The route is selected
 after the governing source, scope, and oracle meaning are approved; changing
 route does not change those decisions.
+
+The route declaration precedes repository inspection or action. If a direct
+root exception later grows into discovery, testing, or iterative work, the root
+stops and selects a worker for the remaining bounded task rather than treating
+the original declaration as permanent permission.
 
 Strategy authority comes first. Full ALP implementation tangles the approved
 Book and stops if material design judgment is still required. Spec-driven

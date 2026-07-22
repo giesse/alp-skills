@@ -38,57 +38,29 @@ incremented replacement revision; never patch a dispatched revision silently.
 
 ## Deterministic lint before handoff
 
-After the complete EC revision is prepared, a delegated Luna/verifier runs the
-repository-local deterministic linter before semantic preflight, approval, and
-manual handoff. From the repository root use:
+After the complete EC revision is prepared, Sol runs the repository-local deterministic linter directly in the root context before manual handoff. From the repository root use:
 
 ```text
 python3 codex/skills/alp-workflow/scripts/lint_ec.py path/to/contract.md
 python3 codex/skills/alp-workflow/scripts/lint_ec.py --json path/to/contract.md
 ```
 
-From the `codex/skills/alp-workflow` directory, the equivalent file and stdin
-forms are:
+From the `codex/skills/alp-workflow` directory, the equivalent file and stdin forms are:
 
 ```text
 python3 scripts/lint_ec.py path/to/contract.md
 python3 scripts/lint_ec.py - < path/to/contract.md
 ```
 
-The command accepts a raw EC or one fenced Markdown EC. Exit `0` means no
-structural findings, `1` means deterministic EC findings were reported, and
-`2` means input or internal failure; normal text output is empty on success and
-lists deterministic diagnostics otherwise (the `--json` form emits the stable
-machine-readable report). The check covers structure only; it cannot
-establish semantic sufficiency, oracle strength, design quality, safety, or
-phase approval. Semantic preflight is delegated to a suitable fresh worker:
-Terra when material judgment is required, or a bounded verifier only when
-deterministic eligibility permits. Sol and the user retain phase approval,
-acceptance meaning, and reconciliation of compact evidence, not repository
-semantic review or verification.
+The command accepts a raw EC or one fenced Markdown EC. Exit `0` means no structural findings, `1` means deterministic EC findings were reported, and `2` means input or internal failure; normal text output is empty on success and lists deterministic diagnostics otherwise (the `--json` form emits the stable machine-readable report). The check covers structure only; it cannot establish semantic sufficiency, oracle strength, design quality, safety, or phase approval. Creating and mechanically checking this control artifact stays in the root context; it does not require a delegated EC semantic preflight. Sol and the user assess the plan directly against the approved EC before authorization, and fresh independent semantic review occurs post-implementation after evidence exists.
 
 ## Read-only planning and authorization
 
-Before implementation, the external implementer may inspect the repository and
-return a read-only plan. It must not edit repository files or run
-implementation validation during planning. The implementer then acknowledges
-decisions, invariants, acceptance and oracle semantics, file boundary,
-out-of-scope work, test-update limits, and blocking questions. Contradictory
-evidence, a required extra file or permission, a changed critical-test meaning,
-or a material Full ALP design gap is reported and stops the handoff.
+Before implementation, the external implementer may inspect the repository and return a read-only plan. It must not edit repository files or run implementation validation during planning. The implementer then acknowledges decisions, invariants, acceptance and oracle semantics, file boundary, out-of-scope work, test-update limits, and blocking questions. Contradictory evidence, a required extra file or permission, a changed critical-test meaning, or a material Full ALP design gap is reported and stops the handoff.
 
-Antigravity-native plans and task lists are control-plane artifacts outside the
-repository boundary. That exception authorizes no repository source, test, or
-generated artifact. Named existing-test updates or compatible added coverage
-are allowed only when the approved EC says so; weakening or changing critical
-semantics requires a replacement revision.
+Antigravity-native plans and task lists are control-plane artifacts outside the repository boundary. That exception authorizes no repository source, test, or generated artifact. Named existing-test updates or compatible added coverage are allowed only when the approved EC says so; weakening or changing critical semantics requires a replacement revision.
 
-For Antigravity, send the initial plan to one separate Terra worker for
-conformance review against the EC. Terra has no phase authority. Permit at
-most one focused correction for a concrete blocker; return any remaining
-blocker to the user rather than starting an open-ended loop. User
-authorization is required before repository implementation and approved
-validation.
+Sol and the user review the initial read-only plan directly against the EC and decide whether to authorize implementation. A separate Terra plan review is not added here: reviewing both the EC and that plan independently before a diff exists would duplicate pre-implementation judgment. Exactly one fresh independent Terra review remains required after implementation evidence and the final diff exist. Explicit user authorization is required before repository implementation and approved validation.
 
 ## Completion evidence
 

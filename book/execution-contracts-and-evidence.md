@@ -70,8 +70,10 @@ generated repository artifact, or broader implementation action.
 
 The manual route follows a visible sequence:
 
-1. A bounded worker prepares the complete EC from the approved governing
-   source. Deterministic EC lint and semantic preflight both pass before handoff.
+1. Sol prepares the complete EC from the approved governing source and runs
+   deterministic EC lint before handoff. Creating and mechanically checking
+   this bounded control artifact stays in the root context; it does not require
+   a delegated semantic preflight.
 2. The external implementer may inspect and return a read-only plan before
    implementation authorization. It must not edit files or run implementation
    validation during that planning step.
@@ -79,10 +81,11 @@ The manual route follows a visible sequence:
    acceptance and oracle semantics, file boundary, test-update limits, and any
    blocking questions. A contradiction, missing authority, extra required file,
    or changed oracle meaning is reported and stops the handoff.
-4. For Antigravity, the initial plan goes to one separate Terra worker for a
-   conformance review against the EC. At most one focused correction follows
-   unless a concrete blocker remains; the Terra worker is a reviewer and has
-   no phase authority.
+4. Sol and the user review the initial plan directly against the EC and decide
+   whether to authorize implementation. A separate Terra review is not added
+   here: the plan is already the external implementer's explicit account of
+   the contract, and reviewing both the EC and that plan independently would
+   duplicate pre-implementation judgment before a diff exists.
 5. Only after the user authorizes implementation does the external implementer
    edit the approved boundary and run the approved validation.
 
@@ -97,9 +100,11 @@ next chapter. It verifies structure; it does not decide whether a design is
 wise, an oracle is strong, or a production action is safe.
 
 That separation is intentional. Mechanical checks catch omissions cheaply and
-consistently. Semantic preflight is delegated to a suitable fresh worker; Sol
-and the user retain phase approval and acceptance judgment through compact
-reports without doing repository work themselves.
+consistently. Sol and the user assess the external plan against the approved EC
+before authorization. Independent semantic judgment is spent once useful
+implementation evidence exists: the fresh post-implementation reviewer compares
+the governing source, final diff, and evidence before Sol and the user decide
+acceptance.
 
 ## Evidence after implementation
 

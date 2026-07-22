@@ -11,6 +11,7 @@ Act only as the implementation-side companion for an explicitly supplied EC cont
 
 - Read the exact approved EC revision, its `Governing document` or legacy `ALP chapter`, `AGENTS.md`, and relevant repository guidance.
 - Require a contract ID, positive revision, and `EC protocol: v1`.
+- Require confirmation that Sol prepared the EC from the approved governing source and ran the repository-local deterministic EC linter directly before handoff; this mechanical gate does not require delegated semantic preflight.
 - Perform read-only repository inspection during planning.
 - Do not edit repository files or run implementation validation before explicit user authorization. Antigravity-native planning documents are the sole preauthorization artifact exception.
 
@@ -38,7 +39,7 @@ Map IDs where useful for clarity, but do not annotate every plan or task item ex
 
 ## 4. Initial Plan Gate
 
-Return the initial plan for one separate Terra worker conformance review and stop for user authorization. Terra is a reviewer with no phase authority.
+Return the initial plan and acknowledgment directly to Sol and the user for direct review and explicit authorization before repository implementation. No separate Terra plan review is required at this stage; fresh independent Terra review occurs post-implementation after evidence exists.
 
 Accept one focused correction for a material blocker: wrong intended behavior, broken oracle, boundary violation, contradictory evidence, or unapproved critical-test change. After that correction, proceed unless a concrete blocker remains. Return any remaining blocker to the user rather than entering an open-ended refinement loop.
 

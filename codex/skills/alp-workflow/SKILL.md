@@ -30,15 +30,11 @@ residual risk; it never causes automatic escalation.
 
 ## Delegation and authority
 
-Delegate only when the value gate predicts a concrete benefit (cheaper bounded
-work, protected root context, noisy-output compression, independent judgment,
-useful latency, or separate external capacity) that outweighs briefing,
-reconciliation, drift, and repair cost. Sol and the user retain material
-decisions, scope, phase gates, acceptance, reconciliation, and final synthesis;
-Sol performs no repository work. Native packets and manual ECs are distinct
-routes; route mechanics live in [native-worker-delegation](references/native-worker-delegation.md)
-and [handoff-contract](references/handoff-contract.md). Workers are fresh,
-narrow, non-recursive, and stop on design, scope, permission, or oracle gaps.
+Route work to optimize weighted credit consumption and protect expensive root context rather than minimizing raw token count. As of July 2026, relative GPT-5.6 credit rates give Sol:Terra:Luna = `5:2.5:1` within corresponding token categories; check the [official rate card](https://learn.chatgpt.com/docs/pricing#what-are-tokens-and-credits) and revalidate when models or pricing change. Sol and the user retain material decisions, scope, phase gates, acceptance, reconciliation, and final synthesis. Before repository exploration or action, the root states one short route declaration.
+
+Luna is the default for broad or multi-file discovery, unknown answer locations, command-heavy investigation, noisy tests or logs, large diffs or structured data, repeatable checks, and implementation needing validation or iteration. Direct Sol root work is permitted only inside the economic safe harbor: reading one named artifact in full, one or two small known artifacts, verbatim supplied material, or making a localized edit needing no tests, broad follow-on inspection, iterative repair, or material design choice, confirmed via localized diff inspection. If the safe harbor ceases to apply, the root stops and delegates the remaining bounded work.
+
+Sol retains ownership of authoring approved Full ALP governing documentation; Luna may gather bounded evidence or perform mechanical documentation checks, but cannot author material intent. Native work is sequential by default with no swarm objective or worker-count target. Workers are fresh, narrow, non-recursive, and stop on design, scope, permission, or oracle gaps, except that an authorized Terra worker may use one fresh sequential read-only Luna child for mechanical or noisy evidence gathering. Native packets and manual ECs are distinct routes; route mechanics live in [native-worker-delegation](references/native-worker-delegation.md) and [handoff-contract](references/handoff-contract.md).
 
 ## Implementation, review, and wrap up
 

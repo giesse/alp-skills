@@ -20,6 +20,22 @@ The deleted one-off `test_native_worker_delegation.py` is not an acceptance
 oracle. Current guidance uses fresh semantic review and proportional static or
 mechanical checks; the historical sentence above is retained as history.
 
+## 2026-07-22 — Delegation economics and EC review simplified
+
+Accepted the delegation policy that routes by weighted credit consumption and
+protection of expensive root context, using the July 2026 Sol:Terra:Luna
+`5:2.5:1` heuristic as a revalidation-required routing prior rather than a
+bill or savings forecast. Luna is preferred for bounded broad or noisy work;
+execution remains sequential by default. The only recursion experiment is a
+root-authorized Terra-to-exactly-one-fresh-sequential-read-only-Luna evidence
+child, with Terra retaining judgment and no retry, fallback, or further
+recursion authority; its net benefit remains an empirical daily-use question.
+The manual EC sequence is now direct Sol preparation and mechanical lint,
+direct Sol/user Antigravity-plan review, then one fresh Terra semantic review
+after implementation evidence; no delegated EC preflight or separate Terra
+plan review is used. This records accepted policy, not live reliability or
+proven savings.
+
 ## 2026-07-21 — Active operational baseline imported
 
 Imported exact copies of the active Codex ALP workflow and authoring skills,
