@@ -282,7 +282,46 @@ Wrap Up.
 15. This document may be removed later only with explicit user approval, after
     deciding where its remaining authority and necessary rules will live.
 
-## 9. Handle conflicts and exceptions openly
+## 9. Maintain portable repository memory
+
+1. A repository that adopts our workflow must maintain a tracked, repository-local LLM
+   Wiki. Its purpose is to preserve useful, non-governing knowledge for future
+   humans and agents independently of any one machine, chat, model, or coding
+   harness.
+2. `wiki/index.md` is the mandatory, compact entry point to repository memory.
+   The repository's `AGENTS.md` must point to it, and agents must consult it
+   before substantive repository work. The index may route readers to useful
+   durable documents outside `wiki/`; those documents need not be duplicated
+   merely to place them under the wiki directory.
+3. The wiki is working memory, not governing documentation. It must not
+   replace, override, or silently reinterpret the Book or an explicit user
+   decision. When wiki knowledge would change material intent, update and
+   approve the governing documentation first.
+4. The tracked wiki must remain portable with a clean clone. Machine-local,
+   user-local, per-clone, secret, or otherwise non-portable values and notes
+   must live outside it. Portable wiki pages may explain when such local
+   knowledge is needed and how to discover it, but must not assume that a
+   particular local value or artifact exists.
+5. Use `wiki/sources/` for preserved external sources and historical evidence
+   that inform the managed wiki. Sources are evidence, not automatically
+   current knowledge, governing intent, or ground truth about what the project
+   should do.
+6. Wiki synthesis must preserve enough provenance and status to distinguish
+   approved intent, current evidence, historical evidence, inference, and
+   unresolved work. Reconcile material conflicts against current governing
+   documentation, evidence, and user decisions before presenting a claim as
+   current knowledge.
+7. Keep wiki knowledge concise, searchable, interlinked, and reachable from `wiki/index.md`. Current navigation should not present superseded,
+   historical, or unresolved material as current guidance.
+8. Maintain the wiki only when doing so preserves knowledge worth retaining or
+   improves its reliability and discoverability. Do not require a page update,
+   index entry, source copy, or other bookkeeping merely to prove that a phase
+   or Wrap Up occurred.
+9. A chronological `wiki/log.md` is not required. Add one only when a concrete
+   need for a wiki activity history justifies maintaining it; do not use it as
+   a second record of governing decisions.
+
+## 10. Handle conflicts and exceptions openly
 
 1. When documents conflict, apply this order of authority:
    [GOALS](GOALS.md), then [RULES](RULES.md), then derived [AGENTS](AGENTS.md) and skills.
