@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain Repository Wiki"
+  short_description: "Preserve portable repository knowledge"
+  default_prompt: "Use $maintain-repository-wiki to create, audit, or update this repository wiki."

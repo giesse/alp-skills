@@ -1,0 +1,4 @@
+interface:
+  display_name: "Author an ALP Book"
+  short_description: "Help a human author a tangle-ready Book"
+  default_prompt: "Use $author-alp-book to help me author or improve this ALP Book."

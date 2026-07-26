@@ -74,6 +74,11 @@ longer justified.
    acceptance criteria, or expanding scope.
 8. Propose parallel delegation only when the tasks are genuinely independent,
    every result is needed, and ownership does not overlap.
+9. Discussion and Brainstorm from information already available in the
+   conversation are the root agent's work, must not be delegated, and do not
+   require approval under this section. Reading files, using tools, changing
+   artifacts, or performing other proposed work during Brainstorm still
+   requires approval.
 
 These requirements improve the information available to the user; they do not
 authorize automatic delegation or weaken the turn-by-turn approval requirement.
@@ -196,16 +201,29 @@ Wrap Up.
 3. Critical acceptance checks must be designed independently of the
    implementation agent and supplied to that agent with the governing
    documentation.
-4. The implementer may add useful tests or checks, but must not change, weaken,
+4. Before finalizing critical checks for implementation, perform a
+   proportionate coverage pass. Confirm that each approved material criterion
+   and important boundary has an observable check, or identify the remaining
+   evidence limitation explicitly. Use the simplest representation that makes
+   coverage clear; do not require a matrix, traceability document, or separate
+   artifact unless it materially helps.
+5. Prefer test-driven development (TDD) when decisive acceptance checks can be
+   executable tests. When safe and meaningful, run new critical tests before
+   implementation and confirm that they fail for the expected reason.
+   Implement until they pass, then refactor without weakening them. Do not
+   manufacture a failing baseline when the appropriate check is static or
+   manual, when existing behavior already satisfies it, or when the failure
+   would be unsafe or misleading.
+6. The implementer may add useful tests or checks, but must not change, weaken,
    or reinterpret the approved critical checks.
-5. If a critical check is wrong, insufficient, or ambiguous, stop and return
+7. If a critical check is wrong, insufficient, or ambiguous, stop and return
    to Governing Documentation.
-6. Do not invent an artificial test harness when the nature of the work does
+8. Do not invent an artificial test harness when the nature of the work does
    not support one. If no suitable test can be created in advance, an
    independent static review may itself be defined and approved as the
    critical acceptance check. Its scope and criteria must be agreed before
    implementation, and the reviewer must be independent of the implementer.
-7. An acceptance claim must not exceed its evidence. A syntax check establishes
+9. An acceptance claim must not exceed its evidence. A syntax check establishes
    syntax, a focused test establishes only the behavior it covers, and a review
    supports only its stated scope. Approval of a policy establishes that the
    decision was made, not that an implementation or workflow is proven

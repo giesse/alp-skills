@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run ALP Workflow"
+  short_description: "Guide work through explicit ALP phases"
+  default_prompt: "Use $run-alp-workflow to guide this work through the appropriate ALP phases."

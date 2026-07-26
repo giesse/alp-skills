@@ -1,4 +1,0 @@
-interface:
-  display_name: "ALP Book Authoring"
-  short_description: "Author tangle-ready Full ALP chapters."
-  default_prompt: "Use $alp-authoring to write or revise the approved Full ALP governing chapter and preflight it for a simple-model tangle."

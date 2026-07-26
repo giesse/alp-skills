@@ -1,3 +1,6 @@
 # Python bytecode generated while running the imported tool tests.
 __pycache__/
 *.py[cod]
+
+# Raw forward-test evidence is local and run-specific.
+tests/forward/evidence/
