@@ -1,119 +1,69 @@
 # Knowledge Lifecycle Brainstorm — 2026-07-19
 
-Part of the [ALP Skills Book](../../README.md). This is deferred design
-evidence, not current repository policy.
+Status: Deferred research evidence; not current policy.
 
-**Status:** Superseded or deferred — unresolved brainstorm.
+Original source: `old/wiki/sources/knowledge-lifecycle-brainstorm-2026-07-19.md`
+
+Preservation: Portable substance retained. Neighboring-checkout, per-clone,
+installed-artifact, user-local, and machine-specific path examples were
+removed or generalized; stale framing links were normalized after relocation.
+Historical claims were not silently updated.
 
 ## Problem
 
-The repository currently depends on three kinds of knowledge that are easy to
-conflate:
-
-- machine-local knowledge, such as paths to `../TG/`, `../Antigravity/`, or
-  installed tool artifacts;
-- transition knowledge that must survive several conversations but should stop
-  guiding work when a migration, workaround, source dependency, or software
-  version changes; and
-- portable repository knowledge that must remain useful to another user and AI
-  agent after cloning the repository.
-
-The Book, current wiki, source layer, and TODO already distinguish governing
-intent, reconciled knowledge, evidence, and future work. They do not yet define
-how knowledge scope and lifetime interact, how local bindings are discovered,
-or how condition-bound guidance is reviewed and retired.
-
-This must be resolved before the repository's first publication to GitHub. No
-policy or operational change was approved in this brainstorm.
+Knowledge can be confused across three scopes: machine-local bindings,
+transition knowledge that expires after a migration or workaround, and
+portable repository knowledge that should survive a fresh copy. Existing Book,
+wiki, source, and TODO distinctions did not yet define how scope and lifetime
+interact, how local bindings are discovered, or how condition-bound guidance is
+reviewed and retired. No policy or operational change was approved in this
+brainstorm.
 
 ## External patterns reviewed
 
-- [`AGENTS.md`](https://github.com/agentsmd/agents.md) is an open repository
-  format for durable agent instructions. Codex supports global, repository,
-  nested, and override guidance, but an `AGENTS.override.md` at a directory
-  takes the place of that directory's ordinary `AGENTS.md`; it is not a safe
-  default store for additive local context.
+- [AGENTS.md](https://github.com/agentsmd/agents.md) shows a repository format
+  for durable agent instructions; override files replace ordinary guidance
+  rather than safely adding local context.
 - [Git configuration scopes](https://git-scm.com/docs/git-config#SCOPES)
-  provide system, global, repository-local, and worktree-local values.
-  Repository-local `.git/config` is a strong candidate for simple per-clone
-  path bindings.
+  distinguish system, global, repository-local, and worktree-local values.
 - The [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir/)
-  distinguishes user configuration, persistent but non-portable state,
-  disposable cache data, and login-lifetime runtime data. This is relevant if
-  ALP later gains tooling that stores user-local state outside a checkout.
-- [Python PEPs](https://peps.python.org/pep-0001/),
-  [Kubernetes KEPs](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/0000-kep-process/README.md),
+  separates user configuration, persistent state, cache, and runtime data.
+- [Python PEPs](https://peps.python.org/pep-0001/), [Kubernetes KEPs](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/0000-kep-process/README.md),
   and [MADR](https://adr.github.io/madr/) use explicit lifecycle states and
-  replacement or supersession links while retaining historical decisions.
-  Their metadata conventions are useful, but adding a parallel ADR or proposal
-  hierarchy would duplicate the ALP Book's authority.
+  replacement links while retaining historical decisions.
 - [IETF document states](https://datatracker.ietf.org/doc/html/rfc6174#section-3.1)
-  distinguish active, expired, replaced, and withdrawn drafts. The useful
-  lesson is explicit freshness and replacement state; age alone should not
-  normally decide whether guidance is false.
-- [Diataxis](https://diataxis.fr/) distinguishes tutorials, how-to guides,
-  reference, and explanation. That content taxonomy is complementary but does
-  not solve knowledge scope, authority, or retirement.
+  distinguish active, expired, replaced, and withdrawn drafts.
+- [Diataxis](https://diataxis.fr/) supplies a content taxonomy but does not
+  solve scope, authority, or retirement.
 
 ## Candidate model
 
-Treat knowledge as having independent dimensions rather than placing it in one
-of three competing buckets:
+Treat reach (portable, per-clone, user-local), lifetime (durable or
+condition-bound), and authority/status (governing, current guidance, evidence,
+or working material) as independent dimensions. Candidate homes were:
 
-| Dimension | Candidate values |
-| --- | --- |
-| Reach | repository-portable, per-clone, or user-local |
-| Lifetime | durable or condition-bound |
-| Authority | governing, current guidance, evidence, or working material |
+- durable instructions in repository instruction files;
+- governing knowledge in the Book;
+- reconciled durable knowledge in the current wiki;
+- immutable or historical evidence in `wiki/sources/`;
+- simple per-clone bindings in local configuration;
+- user-local configuration/state/cache in their respective user facilities;
+- unfinished work in TODOs or issues.
 
-The candidate placement model is:
-
-| Knowledge | Candidate home |
-| --- | --- |
-| Durable repository instructions | `AGENTS.md` |
-| Governing repository knowledge | Book |
-| Reconciled durable knowledge | current wiki |
-| Immutable or historical evidence | `wiki/sources/` |
-| Portable condition-bound guidance | a tracked active-advisory convention |
-| Simple per-clone path bindings | namespaced `git config --local` keys |
-| Future user-local configuration | `$XDG_CONFIG_HOME` |
-| Future persistent non-portable state | `$XDG_STATE_HOME` |
-| Disposable derived data | `$XDG_CACHE_HOME` |
-| Unfinished work | TODO or issue, not a knowledge store |
-
-An active advisory would likely need explicit status, scope, creation and
-last-verification dates, a review trigger, an observable validity or retirement
-condition, evidence, and replacement linkage. A review date should request
-revalidation rather than silently expire otherwise-correct guidance.
-
-When a condition-bound repository advisory is retired, the candidate approach
-is to remove it from current navigation, record a material closure in the wiki
-log, preserve it under `wiki/sources/` only when it has lasting evidentiary
-value, and otherwise rely on Git history rather than accumulating an archive of
-every workaround.
+Condition-bound guidance would need explicit status, scope, verification or
+retirement trigger, evidence, and replacement linkage. Retirement removes it
+from current navigation and preserves it only when evidentiary value remains.
 
 ## Unresolved decisions
 
-- Define the minimum lifecycle vocabulary and whether active advisories need a
-  dedicated directory, page type, or index section.
-- Decide whether Git local configuration is sufficient for all current local
-  bindings and what, if anything, should hold richer local explanatory notes.
-- Define lazy onboarding: a clean checkout must work without local sources, and
-  an agent should ask for a missing binding only when the current task needs it.
-- Define precedence between remembered agent claims, current repository
-  guidance, active advisories, and freshly verified local evidence.
-- Reconcile existing references to local external paths so that another clone
-  does not require unavailable files to understand current policy.
-- Decide what metadata can be checked deterministically without creating wiki
-  bookkeeping merely to prove that work happened.
-- Preserve cross-agent portability while documenting any Codex-specific
-  behavior, especially `AGENTS.override.md` replacement semantics.
+Define lifecycle vocabulary; decide how local bindings and explanatory notes
+are represented; ensure a clean copy works without optional local sources;
+define precedence between remembered claims, current guidance, advisories, and
+fresh evidence; reconcile local-path dependencies; choose metadata checks that
+do not create bookkeeping; and preserve portability across agent tools.
 
 ## Closure condition
 
-Before the first GitHub publication, approve a governing knowledge-lifecycle
-design, update the repository instructions and wiki model within that approved
-boundary, resolve or explicitly classify existing local-path dependencies, and
-validate that a clean checkout can distinguish current portable guidance from
-local, transitional, historical, or superseded material.
-
+Before broad publication, approve a governing lifecycle design, classify local
+dependencies, and validate that a clean copy distinguishes current portable,
+transitional, historical, superseded, and unresolved material.

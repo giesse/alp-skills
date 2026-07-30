@@ -1,7 +1,11 @@
 # Spec-Driven Development Research — 2026-07-19
 
-Part of the [ALP Skills Book](../../README.md). This is research evidence for a
-future evaluation, not an adopted process or tool.
+Status: Deferred research evidence; not an adopted process or tool.
+
+Original source: `old/wiki/sources/spec-driven-development-research-2026-07-19.md`
+
+Preservation: The original substantive body and public URLs were retained; only
+obsolete location framing was replaced.
 
 ## Official source reviewed
 

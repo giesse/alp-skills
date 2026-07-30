@@ -1,23 +1,32 @@
-# ALP Skills Wiki
+# ALP Skills Repository Wiki
 
-Part of the [ALP Skills Book](../README.md). This index lists reconciled
-current knowledge only. Historical material is discoverable through the source
-inventory and must not be read as current policy without reconciliation.
+Status: Current non-governing repository memory.
+
+This wiki is a compact, portable memory aid for this repository. It records
+reconciled knowledge, evidence, history, and deferred research; governing
+documents remain the authority for policy. Historical sources are not current
+guidance unless a later reconciliation says so.
 
 ## Current knowledge
 
-- [Repository foundation](repository-foundation.md) — scope, authority, and
-  deferred work for the first repository release.
+- [Knowledge lifecycle](knowledge-lifecycle.md) — reach, lifetime, and
+  authority/status distinctions, plus the open memory-layer research item.
 
-## Source status and history
+## Sources and evidence
 
-- [Knowledge lifecycle brainstorm](sources/knowledge-lifecycle-brainstorm-2026-07-19.md)
-  — deferred research and candidate design for local, transitional, and
-  portable repository knowledge; not current policy.
+- [Source handling](sources/README.md) — provenance and reconciliation rules
+  for rare historical or external evidence ingestion.
+- [Source inventory](sources/inventory.md) — preserved and reviewed-but-not-
+  retained material, with status and intended use.
+
+## Deferred and historical material
+
+- [Knowledge-lifecycle brainstorm](sources/knowledge-lifecycle-brainstorm-2026-07-19.md)
+  — deferred research, not current policy.
 - [Spec-driven development research](sources/spec-driven-development-research-2026-07-19.md)
-  — official Spec Kit research retained for later evaluation; not adopted.
-- [Source inventory](sources/legacy-antigravity-inventory.md) — unimported
-  legacy and external evidence, with its initial status.
-- [Source handling rules](sources/README.md) — provenance labels and promotion
-  procedure.
-- [Wiki log](log.md) — dated initialization and reconciliation history.
+  — deferred Spec Kit evaluation, not an adopted process.
+- [ALP EC linter](sources/alp-ec-linter.md) — retired EC-v1 design evidence.
+- [Antigravity handoff guardrails](sources/antigravity-handoff-guardrails.md)
+  — historical input for a future handoff-design session.
+- [Repository migration history](sources/repository-migration-history.md)
+  — dated historical account and durable lessons.
