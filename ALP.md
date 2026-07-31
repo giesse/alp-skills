@@ -1,7 +1,6 @@
 # AI-Assisted Literate Programming
 
-[Table of contents](README.md) · Previous: _to be assigned_ · Next: _to be
-assigned_
+[Table of contents](README.md) · Previous: _none_ · Next: [Goals and Non-Goals](GOALS.md)
 
 AI-assisted Literate Programming (ALP) is a method in which a human authors a
 reader-first **Book** that explains what a program should do, why it should do
@@ -287,5 +286,4 @@ ordinary software without silently taking ownership of intent.
 
 ---
 
-[Table of contents](README.md) · Previous: _to be assigned_ · Next: _to be
-assigned_
+[Table of contents](README.md) · Previous: _none_ · Next: [Goals and Non-Goals](GOALS.md)

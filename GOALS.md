@@ -1,5 +1,9 @@
 # Goals and Non-Goals
 
+[Table of contents](README.md) · Previous: [AI-Assisted Literate Programming](ALP.md) · Next: [Getting Started](book/getting-started.md)
+
+> **Future reader-facing introduction (placeholder).** A dedicated authoring session should explain why these goals exist, how they shape the workflow and skills, why the non-goals matter, and how to read this concise list.
+
 This document is the constitution of this project. It governs future workflow and design decisions by listing the project's goals and, more importantly, its non-goals.
 
 1. KEEP IT SIMPLE. This should always take precedence. Complexity must be justified.
@@ -23,3 +27,7 @@ This document is the constitution of this project. It governs future workflow an
    4. Making implementation succeed at all costs when it reveals a problem in the documentation.
    5. Optimizing credit use at the expense of simplicity, clarity, or the quality of the result.
    6. Creating complicated agent swarms, elaborate agent protocols, ceremony, or paperwork that do not directly help us do the work. We want the most practical and SIMPLE solution that solves our problem.
+
+---
+
+[Table of contents](README.md) · Previous: [AI-Assisted Literate Programming](ALP.md) · Next: [Getting Started](book/getting-started.md)

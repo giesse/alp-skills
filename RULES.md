@@ -1,5 +1,7 @@
 # Workflow Rules
 
+[Table of contents](README.md) · Previous: [Installation, Updating, and Validation](book/installation-updating-and-validation.md) · Next: [Project TODO](TODO.md)
+
 This document translates the principles in [GOALS](GOALS.md) into operational rules.
 It is meant to be detailed enough to derive concise [AGENTS](AGENTS.md) instructions
 and task-specific skills, while remaining short and clear enough for effective
@@ -348,3 +350,7 @@ Wrap Up.
 3. The user may approve a justified exception without changing the permanent
    rule. If the exception reveals a recurring need, propose a durable revision
    in a later, explicitly approved documentation phase.
+
+---
+
+[Table of contents](README.md) · Previous: [Installation, Updating, and Validation](book/installation-updating-and-validation.md) · Next: [Project TODO](TODO.md)
