@@ -86,8 +86,8 @@ authorize automatic delegation or weaken the turn-by-turn approval requirement.
 The current Codex cost structure is:
 
 - Luna: 1x credit cost
-- Terra: 2.5x Luna's credit cost
-- Sol: 5x Luna's credit cost
+- Terra: 10x Luna's credit cost
+- Sol: 25x Luna's credit cost
 
 The root agent is Sol. Recommend Luna or Terra when their lower cost and
 capabilities fit the work, but let the user approve the route. Gemini uses a

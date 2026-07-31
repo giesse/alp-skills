@@ -15,7 +15,7 @@ silently.
 ## Obtain approval before work
 
 The root agent is Sol. Current relative Codex credit costs are Luna 1x, Terra
-2.5x, and Sol 5x.
+10x, and Sol 25x.
 
 At the start of each root-agent turn:
 

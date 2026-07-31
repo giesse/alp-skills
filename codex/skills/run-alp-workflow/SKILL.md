@@ -62,8 +62,8 @@ policy, alter acceptance criteria, or expand scope. Do not let a worker
 delegate again without explicit user approval. Use parallel workers only for
 independent, non-overlapping tasks whose results are all needed.
 
-The root agent is Sol. Compare current Codex costs as Luna 1x, Terra 2.5x, and
-Sol 5x. Recommend Luna or Terra when their lower cost and capabilities fit the
+The root agent is Sol. Compare current Codex costs as Luna 1x, Terra 10x, and
+Sol 25x. Recommend Luna or Terra when their lower cost and capabilities fit the
 work. Consider Gemini's separate credit pool, particularly for mechanical
 implementation. Choose for end-to-end reliability and cost, not token price
 alone.
