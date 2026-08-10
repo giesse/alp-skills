@@ -2,31 +2,46 @@
 
 [Table of contents](README.md) · Previous: [AI-Assisted Literate Programming](ALP.md) · Next: [Getting Started](book/getting-started.md)
 
-> **Future reader-facing introduction (placeholder).** A dedicated authoring session should explain why these goals exist, how they shape the workflow and skills, why the non-goals matter, and how to read this concise list.
+Every project using [AI-assisted Literate Programming](ALP.md) should have a chapter dedicated to establishing the project's goals and non-goals. Typically, this would be a root `GOALS.md` file; if the goals file is very small, it could make sense to include the goals and non-goals directly in `AGENTS.md`. I strongly suspect that any project using an AI coding agent such as Codex would benefit from the same practice, even when it does not otherwise adopt ALP.
 
-This document is the constitution of this project. It governs future workflow and design decisions by listing the project's goals and, more importantly, its non-goals.
+## Role of this chapter
 
-1. KEEP IT SIMPLE. This should always take precedence. Complexity must be justified.
-2. Minimize jargon. Jargon should not be used to obscure meaning. Better to explain and be clear than expect the reader to already know. (Explanations can be in footnotes, in an appendix, etc.; we don't need to define everything inline.)
-3. Support [AI-assisted Literate Programming](ALP.md) with modern coding harnesses, Codex in particular since that's what I'm using.
-4. Ensure clearly defined phases such as Brainstorm, Writing Documentation (which is the source of truth), Implementation, and Wrap Up.
+This chapter is the constitution of this project. It governs future workflow and design decisions; [RULES](RULES.md) translates it into operational policy and must remain consistent with it.
+
+I have found that explicit goals help AI agents stay focused on what matters. Project-wide goals keep work aligned over time, while a clear goal — and often explicit non-goals — for each session reduces the odds of straying into directions that do not matter. Non-goals are equally important because they rule out tempting approaches that might appear useful while undermining the project's real purpose. I struggled with this repository for a while until I decided to start with `GOALS.md` and work outward from it. This has been very successful, so I recommend the practice for every new ALP project, and I expect it can help existing projects as well.
+
+`GOALS.md` began primarily as guidance for AI agents, with a role similar to `AGENTS.md`, rather than as a chapter written to teach human readers. It still serves that original purpose. Including it in the Book also gives human readers useful context: what the project is trying to accomplish, which tradeoffs it prioritizes, and which approaches it deliberately excludes.
+
+## Goals
+
+1. **KEEP IT SIMPLE**. This should always take precedence. Complexity must be justified.
+
+2. **Minimize jargon**. Jargon should not be used to obscure meaning. Better to explain and be clear than expect the reader to already know. (Explanations can be in footnotes, in an appendix, etc.; we don't need to define everything inline.)
+
+3. **Support AI-assisted Literate Programming.** Apply [ALP](ALP.md) through modern coding harnesses, Codex in particular since that's what I'm using.
+
+4. **Use clearly defined phases.** The phases are Brainstorm, Governing Documentation (which is the source of truth), Implementation, and Wrap Up.
    1. Brainstorm is necessary because I rarely start with a clearly defined plan. Sometimes I have an idea that does not account for important edge cases; sometimes I do not yet know how to solve a problem; and sometimes I am not even sure what the exact problem is. During Brainstorm, the AI asks questions, acts as a sounding board, and helps me identify gaps, ambiguity, assumptions, and edge cases so that I can clarify what I mean to do. Its result may resemble a plan or detailed specification, but it does not require a separate artifact. It may exist in the thread context or simply give me enough clarity to begin writing the governing documentation.
-   2. Writing the documentation is the real work (writing the code follows from that and should be a mostly mechanical step). I think that one of the reasons for all the problems we've been having is that I should be the center of this phase. I must write the first draft, or at least a significant part of it, with AI assistance when needed. The AI can do research, give suggestions and recommendations, review and improve my writing, and handle tedious or evidence-based sections such as fixing links, summarizing research, reporting on existing code, or recording reverse-engineering results. But it must not replace me as the author of the documentation.
-   3. Before implementation begins, any critical tests that the result must pass must be defined and approved during the documentation phase. "Tests" includes automated tests and any other decisive acceptance checks appropriate to the work. They must be authored independently of the implementation agent and supplied alongside the governing documentation as input to the AI tangle. The implementer may add other tests, but must not change, weaken, or reinterpret the critical tests. If a critical test is wrong, insufficient, or ambiguous, stop implementation and return to the documentation phase.
-   4. If we did phase 1 and phase 2 correctly, the implementation step becomes mostly mechanical and any modern LLM can do it - possibly even small local models; however in practice we can assume something like GPT 5.6 Luna or Gemini 3.6 Flash. An AI tangle is not completely deterministic, and implementation may expose missing cases or mistaken assumptions. When that happens, we stop implementation and return to the documentation phase rather than letting the implementer silently invent policy.
+   2. Governing Documentation is the real work (writing the code follows from that and should be a mostly mechanical step). I think that one of the reasons for all the problems we've been having is that I should be the center of this phase. I must write the first draft, or at least a significant part of it, with AI assistance when needed. The AI can do research, give suggestions and recommendations, review and improve my writing, and handle tedious or evidence-based sections such as fixing links, summarizing research, reporting on existing code, or recording reverse-engineering results. But it must not replace me as the author of the documentation.
+   3. Before implementation begins, any critical tests that the result must pass must be defined and approved during Governing Documentation. "Tests" includes automated tests and any other decisive acceptance checks appropriate to the work. They must be authored independently of the implementation agent and supplied alongside the governing documentation as input to the AI tangle. The implementer may add other tests, but must not change, weaken, or reinterpret the critical tests. If a critical test is wrong, insufficient, or ambiguous, stop implementation and return to Governing Documentation.
+   4. If we did Brainstorm and Governing Documentation correctly, the implementation step becomes mostly mechanical and any modern LLM can do it - possibly even small local models; however in practice we can assume something like GPT 5.6 Luna or Gemini 3.6 Flash. An AI tangle is not completely deterministic, and implementation may expose missing cases or mistaken assumptions. When that happens, we stop implementation and return to Governing Documentation rather than letting the implementer silently invent policy.
    5. Wrap up is important to cross every t and dot every i; preserve knowledge such as lessons learned during the session; make sure any necessary follow-up is recorded so we don't forget about it; and so on. Knowledge worth retaining, including unresolved follow-up work, must be recorded outside the transient chat in an appropriate durable project artifact so that future sessions can find and use it. The workflow determines the appropriate location and format. But wrap up is also an opportunity to look at the session and discuss how we did. Was the workflow useful? Can we improve it? Did the AI struggle? Did we make mistakes, and how do we avoid them in the future? And so on. This step is much more important than it may appear.
    6. Moving from one phase to the next always requires user approval. A phase may be waived with explicit user approval when the normal sequence does not fit the work, such as investigation or operational work, but the waiver must be justified. Any durable implementation change must be reflected in durable documentation before the change is considered complete.
-5. FOCUS. I think another reason for our problems has been tackling too many things at once. One session - the chat thread in which the user and root agent collaborate - should be focused on one thing. Anything else that comes along should be deferred to another session. If it is blocking, preserve the context needed to resume the original work, for example in a document or TODO item. We may address the blocker in another session, or convert the current session to the blocker and resume the original work in a new session.
-6. Credit optimization: this has been the major source of complexity and problems. I don't want to give up on it yet, because it's very important, but I'm willing to drop it completely if we cannot solve this satisfactorily.
+
+5. **FOCUS**. I think another reason for our problems has been tackling too many things at once. One session - the chat thread in which the user and root agent collaborate - should be focused on one thing. Anything else that comes along should be deferred to another session. If it is blocking, preserve the context needed to resume the original work, for example in a document or TODO item. We may address the blocker in another session, or convert the current session to the blocker and resume the original work in a new session.
+
+6. **Credit optimization.** This has been the major source of complexity and problems. I don't want to give up on it yet, because it's very important, but I'm willing to drop it completely if we cannot solve this satisfactorily.
    1. We have two fixed pools of credits - ChatGPT (for Codex) and Google (for Gemini in Antigravity). We want to make use of Gemini when we can in order to save GPT 5.6 credits for what's more important. For example, Gemini Flash can take care of the implementation phase most of the time.
    2. We have access to several models in Codex, but in particular GPT 5.6 Luna, Terra and Sol. Luna is the 1x credit baseline; Sol costs 25x as many credits per token as Luna, and Terra costs 10x as many credits per token as Luna. I wish we could just use Sol for everything, but that's not practical, so the goal is to offload as much work to Luna as possible; we can offload some work to Terra as well when that makes sense.
-7. NON-GOALS:
-   1. Replacing the user as the author and decision-maker for the governing documentation.
-   2. Allowing the AI to move between phases, skip phases, or make undocumented policy decisions without user approval.
-   3. Expanding a session to absorb unrelated work instead of recording and deferring it.
-   4. Making implementation succeed at all costs when it reveals a problem in the documentation.
-   5. Optimizing credit use at the expense of simplicity, clarity, or the quality of the result.
-   6. Creating complicated agent swarms, elaborate agent protocols, ceremony, or paperwork that do not directly help us do the work. We want the most practical and SIMPLE solution that solves our problem.
+
+## Non-goals
+
+1. Replacing the user as the author and decision-maker for the governing documentation.
+2. Allowing the AI to move between phases, skip phases, or make undocumented policy decisions without user approval.
+3. Expanding a session to absorb unrelated work instead of recording and deferring it.
+4. Making implementation succeed at all costs when it reveals a problem in the documentation.
+5. Optimizing credit use at the expense of simplicity, clarity, or the quality of the result.
+6. Creating complicated agent swarms, elaborate agent protocols, ceremony, or paperwork that do not directly help us do the work. We want the most practical and SIMPLE solution that solves our problem.
 
 ---
 

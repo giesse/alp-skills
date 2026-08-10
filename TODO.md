@@ -11,7 +11,9 @@
 - [x] Update [AGENTS](AGENTS.md) from RULES, and create any Codex skill(s) based on RULES
 - [x] Create the wiki
 - [ ] Create the final Book
-  - [ ] Explain the critical role of GOALS - this was a great lesson
+  - [x] Explain the critical role of GOALS - this was a great lesson
+  - [ ] Do reviews against project goals and session goals
+  - [ ] LLMs paranoid behavior around checks and tests?
 - [ ] Import old TODO list
 - [ ] Decide which historical sources to retain in wiki/sources , delete or move reference files from old iterations
 - [ ] Create the companion Antigravity skill
