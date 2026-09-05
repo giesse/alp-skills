@@ -14,8 +14,12 @@ silently.
 
 ## Obtain approval before work
 
-The root agent is Sol. Current relative Codex credit costs are Luna 1x, Terra
-10x, and Sol 25x.
+The root agent is GPT-5.6 Sol for ordinary sessions. Use GPT-6 Astra only for
+unusually complex problem-solving or reviews when its extra capability is
+expected to justify its high cost; Astra is not the everyday root. Use these
+conservative, simplified upper-bound planning multipliers for ChatGPT models:
+Luna 1x, Terra 10x, Sol 20x, and Astra 50x. These are planning approximations,
+not exact billing ratios for every token class.
 
 At the start of each root-agent turn:
 

@@ -85,19 +85,28 @@ longer justified.
 These requirements improve the information available to the user; they do not
 authorize automatic delegation or weaken the turn-by-turn approval requirement.
 
-The current Codex cost structure is:
+Use these conservative, simplified upper-bound planning multipliers for ChatGPT
+models:
 
 - Luna: 1x credit cost
 - Terra: 10x Luna's credit cost
-- Sol: 25x Luna's credit cost
+- Sol: 20x Luna's credit cost
+- Astra: 50x Luna's credit cost
 
-The root agent is Sol. Recommend Luna or Terra when their lower cost and
-capabilities fit the work, but let the user approve the route. Gemini uses a
-separate credit pool and should be considered for suitable work, particularly
-mechanical implementation. Compare expected end-to-end cost and reliability,
-including briefing, coordination, reconciliation, review, user attention, and
-delay, rather than token price alone. Model names and costs are intentionally
-explicit for now and may be generalized later.
+These are conservative, simplified upper-bound planning multipliers based on
+the current ChatGPT credit token rates, not exact billing ratios for every token
+class. Reassess them when Sol's promotion ends or the official rates materially
+change.
+
+The root agent is GPT-5.6 Sol for ordinary sessions. Use GPT-6 Astra only for
+unusually complex problem-solving or reviews when its extra capability is
+expected to justify its high cost; Astra is not the everyday root. Recommend
+Luna or Terra when their lower cost and capabilities fit the work, but let the
+user approve the route. Gemini uses a separate credit pool and should be
+considered for suitable work, particularly mechanical implementation. Compare
+expected end-to-end value, cost, and reliability, including briefing,
+coordination, reconciliation, review, user attention, and delay, rather than
+token price alone.
 
 ## 5. Work through explicit phases
 

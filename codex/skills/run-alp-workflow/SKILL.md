@@ -62,10 +62,17 @@ policy, alter acceptance criteria, or expand scope. Do not let a worker
 delegate again without explicit user approval. Use parallel workers only for
 independent, non-overlapping tasks whose results are all needed.
 
-The root agent is Sol. Compare current Codex costs as Luna 1x, Terra 10x, and
-Sol 25x. Recommend Luna or Terra when their lower cost and capabilities fit the
-work. Consider Gemini's separate credit pool, particularly for mechanical
-implementation. Choose for end-to-end reliability and cost, not token price
+The root agent is GPT-5.6 Sol for ordinary sessions. Use GPT-6 Astra only for
+unusually complex problem-solving or reviews when its extra capability is
+expected to justify its high cost; Astra is not the everyday root. Use these
+conservative, simplified upper-bound planning multipliers for ChatGPT models:
+Luna 1x, Terra 10x, Sol 20x, and Astra 50x. These are planning approximations,
+not exact billing ratios for every token class. Recommend Luna or Terra when
+their lower cost and capabilities fit the work, but let the user approve the
+route. Gemini uses a separate credit pool and should be considered for
+suitable work, particularly mechanical implementation. Compare expected
+end-to-end value, cost, and reliability, including briefing, coordination,
+reconciliation, review, user attention, and delay, rather than token price
 alone.
 
 ## Control phase transitions
