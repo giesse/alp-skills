@@ -44,46 +44,35 @@ document. These rules must be corrected if they conflict with it.
    permanent workflow policy. Recurring decisions should be incorporated into
    the appropriate durable document with user approval.
 
-## 4. Require approval before work and delegation
+## 4. Route work and require approval for consequential decisions
 
-For the time being, use a deliberately strict approval process. It remains in
-force until the user explicitly approves a revision to these governing rules.
-This additional control is deliberate: earlier attempts at automatic
-delegation caused repeated problems, and there is not yet enough evidence to
-identify reliable automatic routes. The user decides when its cost is no
-longer justified.
-
-1. In response to a request, the root agent first explains the work it believes
-   is needed and recommends which work, if any, should be delegated. A
-   delegation recommendation must identify the proposed model, the bounded
-   task, the expected end-to-end benefit, the evidence or output to return,
-   the judgment retained by the user and root, and the conditions under which
-   the worker must stop.
-2. Before approval, the root agent must not read files, use tools, change
-   artifacts, or perform the proposed work.
-3. The user decides what the root agent should do and what should be delegated
-   to a sub-agent.
-4. Approval applies only to the work assigned for the root agent's next
-   assistant turn. An approved worker may complete its bounded assignment
-   without renewed approval. The process resets before the root begins work in
-   a later turn or makes another routing decision.
-5. A delegated agent must not delegate again unless the user explicitly
-   approves that further delegation.
-6. Delegation should be proposed only when its expected benefit outweighs the
-   cost of briefing, coordination, review, and possible drift.
-7. An approved assignment must remain within its stated goal and boundary. A
-   worker must return material ambiguity instead of deciding policy, changing
+1. The root agent is GPT-5.6 Sol for discussion, orchestration, design,
+   brainstorming, policy judgment, and synthesis. In response to a request,
+   briefly announce the work and its route before proceeding. When delegating,
+   give the worker a bounded assignment that identifies the expected result,
+   retained judgment, and stop conditions.
+2. Default repository and tool work to one GPT-5.6 Luna worker, even when the
+   work appears small. Clear, bounded Luna delegation may proceed after the
+   brief announcement without advance approval. Prefer one Luna worker when
+   practical; use additional workers only for independently worthwhile
+   assignments. Propose parallel tasks only when they are genuinely
+   independent, every result is needed, and ownership does not overlap.
+3. Sol may work directly when the user explicitly assigns the work to Sol or
+   when Sol must inspect exact authoritative material to exercise its retained
+   judgment. If Sol wants another exception to the default Luna route, it must
+   ask the user rather than rely on its own cost estimate.
+4. An explicit user request already authorizes that action and must not trigger
+   a redundant permission request. Apply the ordinary routing defaults unless
+   the user assigns the route.
+5. User approval remains mandatory for phase transitions and waivers, material
+   scope changes, policy decisions, significant risk, and other consequential
+   choices. Approval of one phase or assignment does not authorize a later
+   phase or a materially different choice.
+6. A worker must stay within its bounded assignment, must not redelegate, and
+   must return material ambiguity instead of deciding policy, changing
    acceptance criteria, or expanding scope.
-8. Propose parallel delegation only when the tasks are genuinely independent,
-   every result is needed, and ownership does not overlap.
-9. Discussion and Brainstorm from information already available in the
-   conversation are the root agent's work, must not be delegated, and do not
-   require approval under this section. Reading files, using tools, changing
-   artifacts, or performing other proposed work during Brainstorm still
-   requires approval.
-
-These requirements improve the information available to the user; they do not
-authorize automatic delegation or weaken the turn-by-turn approval requirement.
+7. Discussion and Brainstorm remain Sol's work and must not be delegated, but
+   repository and tool work arising during them follows the routing rules above.
 
 Use these conservative, simplified upper-bound planning multipliers for ChatGPT
 models:
@@ -98,11 +87,10 @@ the current ChatGPT credit token rates, not exact billing ratios for every token
 class. Reassess them when Sol's promotion ends or the official rates materially
 change.
 
-The root agent is GPT-5.6 Sol for ordinary sessions. Use GPT-6 Astra only for
-unusually complex problem-solving or reviews when its extra capability is
-expected to justify its high cost; Astra is not the everyday root. Recommend
-Luna or Terra when their lower cost and capabilities fit the work, but let the
-user approve the route. Gemini uses a separate credit pool and should be
+Use GPT-6 Astra only for unusually complex problem-solving or reviews when its
+extra capability is expected to justify its high cost; Astra is not the
+everyday root. Terra may be used very rarely when its capabilities justify its
+cost, such as for code review. Gemini uses a separate credit pool and should be
 considered for suitable work, particularly mechanical implementation. Compare
 expected end-to-end value, cost, and reliability, including briefing,
 coordination, reconciliation, review, user attention, and delay, rather than

@@ -12,43 +12,36 @@ phase transitions, exceptions, and final acceptance. Surface conflicts,
 ambiguity, missing policy, and material tradeoffs instead of resolving them
 silently.
 
-## Obtain approval before work
+## Route work and require approval for consequential decisions
 
-The root agent is GPT-5.6 Sol for ordinary sessions. Use GPT-6 Astra only for
-unusually complex problem-solving or reviews when its extra capability is
-expected to justify its high cost; Astra is not the everyday root. Use these
-conservative, simplified upper-bound planning multipliers for ChatGPT models:
-Luna 1x, Terra 10x, Sol 20x, and Astra 50x. These are planning approximations,
-not exact billing ratios for every token class.
+The root agent is GPT-5.6 Sol for discussion, orchestration, design,
+brainstorming, policy judgment, and synthesis. Briefly announce the work and
+its route before proceeding. Default repository and tool work to one GPT-5.6
+Luna worker, even when it appears small; clear, bounded Luna delegation may
+proceed after that announcement without advance approval. Prefer one Luna
+worker when practical, and use additional workers only for independently
+worthwhile assignments. Parallel tasks must be independent, non-overlapping,
+and all needed.
 
-At the start of each root-agent turn:
+Sol may work directly when the user explicitly assigns the work to Sol or when
+Sol must inspect exact authoritative material to exercise its retained
+judgment. If Sol wants another exception to the default Luna route, ask the
+user rather than relying on its own cost estimate. An explicit user request
+already authorizes that action and must not trigger redundant permission;
+ordinary routing defaults apply unless the user assigns the route.
 
-1. Respond to the request by explaining the work needed and recommending what,
-   if anything, to delegate.
-2. Do not read files, use tools, change artifacts, perform the proposed work,
-   or delegate before the user approves the route.
-3. Let the user decide what Sol should do and what a worker should do.
-4. Treat approval as authorization only for the root agent's next assistant
-   turn. Reset to this protocol on the following turn.
+User approval remains mandatory for phase transitions and waivers, material
+scope changes, policy decisions, significant risk, and other consequential
+choices. A worker must stay bounded, must not redelegate, and must return
+material ambiguity instead of deciding it.
 
-Discussion and Brainstorm are Sol's work and must not be delegated. Discuss
-from available context without separate approval, but obtain approval before
-using files or tools.
-
-A delegation recommendation must state:
-
-- the model and bounded assignment;
-- the expected end-to-end benefit after briefing, coordination, review, user
-  attention, and delay;
-- the evidence or output the worker must return;
-- the judgment retained by the user and Sol; and
-- the conditions under which the worker must stop.
-
-Do not delegate unless the expected benefit exceeds its total cost. A worker
-must stay within its assignment, return material ambiguity, and not delegate
-again unless the user explicitly approves further delegation. Propose parallel
-work only for genuinely independent, non-overlapping tasks whose results are
-all needed.
+Use these conservative, simplified upper-bound planning multipliers for
+ChatGPT models: Luna 1x, Terra 10x, Sol 20x, and Astra 50x. These are planning
+approximations, not exact billing ratios for every token class. Use GPT-6 Astra
+only for unusually complex problem-solving or reviews when its extra capability
+justifies its high cost; Astra is not the everyday root. Terra is very rare.
+Gemini uses a separate credit pool and should be considered for suitable work,
+particularly mechanical implementation.
 
 ## Keep work focused and phased
 
@@ -62,7 +55,7 @@ Do not treat approval of one phase as approval of another.
 
 ## Work from the repository's sources
 
-Once substantive repository work is approved, consult:
+Before substantive repository work, consult:
 
 - `GOALS.md` and `RULES.md`;
 - `ALP.md` when the artifact concerns ALP; and

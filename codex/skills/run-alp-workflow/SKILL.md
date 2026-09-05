@@ -31,49 +31,38 @@ Do not turn a decision for one task or session into permanent workflow policy.
 When a decision recurs, propose recording it in the appropriate governing
 document with user approval.
 
-## Obtain approval before work and delegation
+## Route work and require approval for consequential decisions
 
-At the start of each root-agent turn:
+The root agent is GPT-5.6 Sol for discussion, orchestration, design,
+brainstorming, policy judgment, and synthesis. Briefly announce the work and
+its route before proceeding. Default repository and tool work to one GPT-5.6
+Luna worker, even when it appears small; clear, bounded Luna delegation may
+proceed after that announcement without advance approval. Prefer one Luna
+worker when practical, and use additional workers only for independently
+worthwhile assignments. Parallel tasks must be independent, non-overlapping,
+and all needed.
 
-1. Explain the work believed necessary.
-2. Recommend which work, if any, to delegate.
-3. Do not read files, use tools, change artifacts, perform the proposed work,
-   or delegate before the user approves the route.
-4. Let the user assign root work and delegated work.
-5. Treat approval as applying only to the root agent's next assistant turn.
-   Reset this protocol on the following turn.
+Sol may work directly when the user explicitly assigns the work to Sol or when
+Sol must inspect exact authoritative material to exercise its retained
+judgment. If Sol wants another exception to the default Luna route, ask the
+user rather than relying on its own cost estimate. An explicit user request
+already authorizes that action and must not trigger redundant permission;
+ordinary routing defaults apply unless the user assigns the route.
 
-Keep Brainstorm and discussion with the root agent. Discuss from available
-context without work approval, but obtain approval before reading files or
-using tools.
+User approval remains mandatory for phase transitions and waivers, material
+scope changes, policy decisions, significant risk, and other consequential
+choices. A worker must stay bounded, must not redelegate, and must return
+material ambiguity instead of deciding policy, altering acceptance criteria, or
+expanding scope.
 
-For each proposed delegation, state:
-
-- the model and bounded task;
-- the expected end-to-end benefit, including briefing, coordination,
-  reconciliation, review, user attention, and delay;
-- the evidence or output to return;
-- the judgment retained by the user and root; and
-- the stop conditions.
-
-Delegate only when that benefit exceeds the total cost. Keep assignments
-bounded. Require a worker to return material ambiguity rather than decide
-policy, alter acceptance criteria, or expand scope. Do not let a worker
-delegate again without explicit user approval. Use parallel workers only for
-independent, non-overlapping tasks whose results are all needed.
-
-The root agent is GPT-5.6 Sol for ordinary sessions. Use GPT-6 Astra only for
-unusually complex problem-solving or reviews when its extra capability is
-expected to justify its high cost; Astra is not the everyday root. Use these
-conservative, simplified upper-bound planning multipliers for ChatGPT models:
-Luna 1x, Terra 10x, Sol 20x, and Astra 50x. These are planning approximations,
-not exact billing ratios for every token class. Recommend Luna or Terra when
-their lower cost and capabilities fit the work, but let the user approve the
-route. Gemini uses a separate credit pool and should be considered for
-suitable work, particularly mechanical implementation. Compare expected
-end-to-end value, cost, and reliability, including briefing, coordination,
-reconciliation, review, user attention, and delay, rather than token price
-alone.
+Use these conservative, simplified upper-bound planning multipliers for
+ChatGPT models: Luna 1x, Terra 10x, Sol 20x, and Astra 50x. These are planning
+approximations, not exact billing ratios for every token class. Use GPT-6 Astra
+only for unusually complex problem-solving or reviews when its extra capability
+justifies its high cost; Astra is not the everyday root. Terra is very rare.
+Gemini uses a separate credit pool and should be considered for suitable work,
+particularly mechanical implementation. Compare expected end-to-end value,
+cost, and reliability rather than token price alone.
 
 ## Control phase transitions
 

@@ -10,7 +10,7 @@
 - [x] Introduce LLM Wiki rules.
 - [x] Update [AGENTS](AGENTS.md) from RULES, and create any Codex skill(s) based on RULES
 - [x] Create the wiki
-- [ ] Reconcile the delegation practice now recorded in GOALS with RULES,
+- [x] Reconcile the delegation practice now recorded in GOALS with RULES,
   AGENTS, and the run-alp-workflow skill. The GPT pricing and Astra update
   intentionally did not propagate that policy.
 - [ ] Create the final Book
