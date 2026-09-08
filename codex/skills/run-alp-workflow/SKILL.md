@@ -15,8 +15,11 @@ Follow the consuming repository's instructions. Surface a conflict between
 those instructions and this skill instead of resolving it silently.
 
 Treat use of this complete workflow as adoption of its repository-memory
-requirement. Before substantive repository work, consult `wiki/index.md`. If
-it is absent, surface the gap and let the user decide how to address it rather
+requirement. For substantive repository investigation, the repository worker
+consults `wiki/index.md`, follows only task-relevant links, and returns targeted
+findings to Sol. Sol need not read the wiki, and a narrow direct read under the
+routing rules does not itself trigger wiki preflight. If the index is absent,
+the worker surfaces the gap and lets the user decide how to address it rather
 than inventing its contents.
 
 Keep one session focused on one goal. Record and defer unrelated work. If an
@@ -34,26 +37,41 @@ document with user approval.
 ## Route work and require approval for consequential decisions
 
 The root agent is GPT-5.6 Sol for discussion, orchestration, design,
-brainstorming, policy judgment, and synthesis. Briefly announce the work and
-its route before proceeding. Default repository and tool work to one GPT-5.6
-Luna worker, even when it appears small; clear, bounded Luna delegation may
-proceed after that announcement without advance approval. Prefer one Luna
-worker when practical, and use additional workers only for independently
-worthwhile assignments. Parallel tasks must be independent, non-overlapping,
-and all needed.
+brainstorming, policy judgment, and synthesis; it should normally remain
+tool-free. Briefly announce the work and its route before proceeding. Default
+repository and tool work to one GPT-5.6 Luna worker, even when it appears
+small; clear, bounded Luna delegation may proceed after that announcement
+without advance approval. Prefer one Luna worker when practical, and use
+additional workers only for independently worthwhile assignments. Parallel
+tasks must be independent, non-overlapping, and all needed.
 
-Sol may work directly when the user explicitly assigns the work to Sol or when
-Sol must inspect exact authoritative material to exercise its retained
-judgment. If Sol wants another exception to the default Luna route, ask the
-user rather than relying on its own cost estimate. An explicit user request
-already authorizes that action and must not trigger redundant permission;
-ordinary routing defaults apply unless the user assigns the route.
+For delegated evidence gathering, Luna returns a compressed packet: a targeted
+summary, source locations, only short decisive excerpts, and material conflicts
+or ambiguities. Luna must not reproduce most of a file for Sol to reread. If
+safe compression would require that, recommend a direct-read handoff instead.
+
+An explicit user assignment to Sol, including a request that directly asks Sol
+to perform a narrow, named operation, authorizes direct Sol work only on the
+named targets and operations. The user may name multiple exact files. This work
+needs no redundant permission, but the authorization does not extend to
+follow-on repository or tool work.
+
+Without further approval, Sol may directly read one identified file only when
+the file itself must be judged coherently within Sol's retained role, or Luna
+reports that safe compression would reproduce most of it. A file's authority
+alone is insufficient. This permits only the identified read operation, not
+searches, other commands, related files, or a follow-on tool loop. Further work
+returns to Luna. Sol asks the user before making any other exception to the
+default route.
 
 User approval remains mandatory for phase transitions and waivers, material
 scope changes, policy decisions, significant risk, and other consequential
 choices. A worker must stay bounded, must not redelegate, and must return
 material ambiguity instead of deciding policy, altering acceptance criteria, or
-expanding scope.
+expanding scope. Agents need not reread applicable `AGENTS.md` instructions
+already supplied by the harness. When repository work moves into a deeper
+scope, Luna checks for closer target-local `AGENTS.md` or override instructions
+and surfaces conflicts.
 
 Use these conservative, simplified upper-bound planning multipliers for
 ChatGPT models: Luna 1x, Terra 10x, Sol 20x, and Astra 50x. These are planning

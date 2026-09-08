@@ -15,25 +15,39 @@ silently.
 ## Route work and require approval for consequential decisions
 
 The root agent is GPT-5.6 Sol for discussion, orchestration, design,
-brainstorming, policy judgment, and synthesis. Briefly announce the work and
-its route before proceeding. Default repository and tool work to one GPT-5.6
-Luna worker, even when it appears small; clear, bounded Luna delegation may
-proceed after that announcement without advance approval. Prefer one Luna
-worker when practical, and use additional workers only for independently
-worthwhile assignments. Parallel tasks must be independent, non-overlapping,
-and all needed.
+brainstorming, policy judgment, and synthesis; it should normally remain
+tool-free. Briefly announce the work and its route before proceeding. Default
+repository and tool work to one GPT-5.6 Luna worker, even when it appears
+small; clear, bounded Luna delegation may proceed after that announcement
+without advance approval. Prefer one Luna worker when practical, and use
+additional workers only for independently worthwhile assignments. Parallel
+tasks must be independent, non-overlapping, and all needed.
 
-Sol may work directly when the user explicitly assigns the work to Sol or when
-Sol must inspect exact authoritative material to exercise its retained
-judgment. If Sol wants another exception to the default Luna route, ask the
-user rather than relying on its own cost estimate. An explicit user request
-already authorizes that action and must not trigger redundant permission;
-ordinary routing defaults apply unless the user assigns the route.
+For evidence gathering, Luna returns a compressed packet: a targeted summary,
+source locations, short decisive excerpts, and material conflicts or
+ambiguities. Do not reproduce most of a file for Sol to reread; recommend a
+direct-read handoff when safe compression would require that.
+
+An explicit user assignment to Sol, including a request that directly asks Sol
+to perform a narrow, named operation, authorizes direct work only on the named
+targets and operations. The user may name multiple exact files. Do not request
+redundant permission for that work, but do not carry its authorization into
+follow-on repository or tool work.
+
+Without further approval, Sol may directly read one identified file only when
+the file itself must be judged coherently within Sol's retained role, or Luna
+reports that safe compression would reproduce most of it. Authority alone is
+not enough. This exception permits only the identified read: no searches,
+other commands, related files, or follow-on tool loops. Further work returns
+to Luna. Ask the user before making any other exception to the default route.
 
 User approval remains mandatory for phase transitions and waivers, material
 scope changes, policy decisions, significant risk, and other consequential
 choices. A worker must stay bounded, must not redelegate, and must return
-material ambiguity instead of deciding it.
+material ambiguity instead of deciding it. Agents need not reread applicable
+`AGENTS.md` instructions already supplied by the harness. When work moves into
+a deeper scope, Luna checks for closer target-local `AGENTS.md` or override
+instructions and surfaces conflicts.
 
 Use these conservative, simplified upper-bound planning multipliers for
 ChatGPT models: Luna 1x, Terra 10x, Sol 20x, and Astra 50x. These are planning
@@ -55,14 +69,16 @@ Do not treat approval of one phase as approval of another.
 
 ## Work from the repository's sources
 
-Before substantive repository work, consult:
+For substantive repository investigation, the repository worker consults:
 
 - `GOALS.md` and `RULES.md`;
 - `ALP.md` when the artifact concerns ALP; and
-- `wiki/index.md` for durable repository knowledge.
+- `wiki/index.md`, following only task-relevant links.
 
-If `wiki/index.md` is absent, surface that workflow gap rather than inventing
-its contents or silently ignoring the requirement.
+The worker returns targeted findings to Sol; Sol need not reread these sources.
+A narrow direct read under the routing rules does not itself trigger wiki
+preflight. If `wiki/index.md` is absent, the worker surfaces that workflow gap
+rather than inventing its contents or silently ignoring the requirement.
 
 Keep the user at the center of Governing Documentation. Normally the user
 writes the first draft or a significant part. AI may research, suggest,

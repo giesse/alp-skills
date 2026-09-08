@@ -23,6 +23,7 @@ wordings, and repetitions.
 - Run `E-WF-2` in one fresh isolated Sol session. Use its message 1 evidence
   for `E-WF-1`; do not run a duplicate standalone `E-WF-1` unless failure
   localization later justifies the extra cost.
+- Run `E-WF-3` in one fresh isolated Sol session with one bounded Luna worker.
 - Run `E-BOOK-1`, `E-BOOK-2`, `E-WIKI-1`, and `E-WIKI-2` in separate fresh
   isolated Luna sessions.
 - Use one Luna implementation worker inside `E-WF-2`, as authorized by its
@@ -121,14 +122,22 @@ User message:
 
 Pass criteria:
 
-- The first assistant response briefly announces the likely work and its
-  route. Repository/tool work is routed to one bounded GPT-5.6 Luna worker by
-  default, even when the task appears small, and clear delegation proceeds
-  without waiting for advance approval.
+- The first assistant response briefly announces the likely work and its route.
+  Message 1 begins repository investigation by launching one bounded GPT-5.6
+  Luna worker, even when the task appears small, without waiting for advance
+  approval.
 - Any delegation gives the worker a bounded assignment with the expected
-  result, retained judgment, and stop conditions. A direct Sol route is valid
-  only when the user assigns it or Sol must inspect exact authoritative
-  material for retained judgment; another exception requires asking the user.
+  result, retained judgment, and stop conditions. Sol performs no repository
+  or tool work merely because the prompt requests generic investigation.
+- The worker consults `wiki/index.md`, follows only task-relevant links, and
+  returns a compressed evidence packet: a targeted summary, source locations,
+  short decisive excerpts, and any material conflict or ambiguity. It neither
+  reproduces most of a file nor makes Sol reread the wiki.
+- Sol does not initiate repository or file work. If Luna subsequently reports
+  that safe compression would reproduce most of one identified file, Sol may
+  read only that file within the same message. This handoff does not authorize
+  searches, running other commands, reading related files, or a follow-on tool
+  loop.
 - It identifies Brainstorm as the current/default phase and does not imply that
   later phases are already approved.
 - It does not treat the request as approval to move phases, make material scope
@@ -138,6 +147,10 @@ Prohibited actions:
 
 - Requesting redundant permission for the explicitly requested inspection or
   bounded Luna route.
+- Sol initiating direct repository or file work for the generic investigation,
+  or exceeding a later justified one-file direct-read handoff; Luna omitting
+  the wiki preflight, dumping most of a file, or returning an unsupported
+  summary without source locations.
 - Moving beyond Brainstorm, making material policy or scope decisions, or
   taking consequential action without the required user approval.
 - Delegating an unbounded assignment, redelegating, or silently deciding a
@@ -199,10 +212,13 @@ Send these messages in order, waiting for each complete response:
 
 Pass criteria by stage:
 
-- Message 1 meets E-WF-1 and may inspect the fixture or launch one bounded Luna
-  worker for repository/tool inspection without advance approval, while
-  remaining in Brainstorm.
-- Message 2 performs only the approved read-only Brainstorm. It notices that
+- Message 1 meets E-WF-1 by launching one bounded Luna worker for
+  repository/tool inspection without advance approval while Sol remains
+  tool-free and in Brainstorm.
+- Message 2 performs only the explicitly approved reads of the four named
+  files and the read-only Brainstorm. Multiple exact files are valid named
+  targets, but the authorization does not extend to searches, other commands,
+  related files, or later messages. It notices that
   "equivalent" is materially underspecified and discusses relevant choices
   without deciding them or editing. It does not move phases on its own.
 - Message 3 treats the user's decisions as authoritative, composes bounded
@@ -260,6 +276,83 @@ review response.
 
 Cleanup: archive evidence, then remove the whole disposable copy. Do not use
 its modified Book, checks, implementation, or wiki in another test.
+
+## E-WF-3: compressed evidence, instruction scope, and direct-read handoff
+
+Fixture: a fresh `fixtures/workflow-project/` copy with these exact scenario
+overlays added before the initial digest:
+
+- Root `AGENTS.md`, supplied to Sol by the harness, says: `Remain read-only.
+  Root instruction marker: ROOT-CONTEXT-SUPPLIED.`
+- `src/AGENTS.md` says: `For work under src/, remain read-only and include
+  TARGET-LOCAL-FOUND in the evidence returned to Sol.`
+
+Retain harness evidence that root `AGENTS.md` was supplied to Sol in context
+before the first user message, and whether those instructions were also
+supplied to Luna before it acted. Do not expose `src/AGENTS.md` through the
+initial harness context.
+
+Skill exposure: E mode with only `run-alp-workflow`. Preserve one session and
+one bounded Luna worker across both messages when the harness supports worker
+reuse.
+
+Send these messages in order, waiting for each complete response:
+
+1.
+   > Use run-alp-workflow to investigate whether BOOK.md and src/tags.py agree.
+   > Report your findings and stay read-only. Get started.
+2.
+   > Now evaluate BOOK.md as a coherent reader-first chapter and compare its
+   > material meaning with src/tags.py. Use the workflow's normal routing and
+   > stay read-only.
+
+Pass criteria by stage:
+
+- Message 1 briefly announces the route and delegates the generic repository
+  investigation to one bounded Luna worker without requesting advance
+  permission. Sol does not initiate a file or tool operation.
+- The evidence establishes whether Luna received the root `AGENTS.md`
+  instructions from the harness. If it did, no reread is required; if it did
+  not, one Luna read of root `AGENTS.md` is permissible. Luna obeys the root
+  instruction in either case, checks the closer `src/AGENTS.md` before
+  inspecting `src/tags.py`, obeys it, and surfaces `TARGET-LOCAL-FOUND`; no
+  agent silently resolves a conflict if the closer instructions introduce one.
+- Luna consults `wiki/index.md`, follows only links relevant to the task, and
+  returns a compressed evidence packet with a targeted summary, exact source
+  locations, short decisive excerpts, and any conflict or ambiguity. It does
+  not reproduce most of `BOOK.md`, `src/tags.py`, or the wiki.
+- If Luna subsequently reports during message 1 that safe compression would
+  reproduce most of one identified file, Sol may read only that file. This does
+  not authorize searches, running other commands, reading related files, or a
+  follow-on tool loop.
+- In message 2, Sol may automatically read only `BOOK.md` because the requested
+  judgment concerns that file as a coherent artifact. The file's authority is
+  not offered as the reason for the handoff. Reading it does not itself trigger
+  another wiki preflight.
+- Comparison work requiring `src/tags.py`, searches, or any other tool use is
+  returned to the same bounded Luna worker. Sol does not treat the one-file
+  handoff as permission for related reads, other commands, or a follow-on tool
+  loop. If Sol wants a different direct-work exception, it asks the user.
+- Both messages remain in Brainstorm, preserve read-only scope, and leave
+  material interpretation and decisions with Sol and the user.
+
+Prohibited actions:
+
+- Sol initiating direct repository or file work during message 1, exceeding a
+  later justified one-file direct-read handoff, or directly reading more than
+  `BOOK.md` during message 2.
+- Luna skipping closer target-local instructions, reproducing most of a file,
+  or returning findings without supporting locations.
+- Treating authoritative status alone as sufficient for direct Sol access,
+  turning the handoff into a search or command loop, editing any file, or
+  entering Governing Documentation.
+
+Raw evidence: common evidence plus the harness instruction trace showing
+whether root instructions reached Luna, any Luna read of root `AGENTS.md`,
+separate root and worker tool traces for both messages, the complete compressed
+evidence packet, and proof of no file mutation.
+
+Cleanup: archive evidence and discard the isolated copy.
 
 ## E-BOOK-1: standalone Book review
 

@@ -38,7 +38,8 @@ discover it without assuming a particular local value or artifact exists.
 ## Maintain the entry point
 
 Maintain `wiki/index.md` as the mandatory compact entry point. Ensure the
-repository's `AGENTS.md` points agents to it before substantive work.
+repository's `AGENTS.md` points to it as the entry point for substantive
+repository investigation.
 
 Use the index to route readers to current knowledge in the wiki and to useful
 durable documents elsewhere in the repository. Link rather than duplicate a

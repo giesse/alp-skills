@@ -47,31 +47,45 @@ document. These rules must be corrected if they conflict with it.
 ## 4. Route work and require approval for consequential decisions
 
 1. The root agent is GPT-5.6 Sol for discussion, orchestration, design,
-   brainstorming, policy judgment, and synthesis. In response to a request,
-   briefly announce the work and its route before proceeding. When delegating,
-   give the worker a bounded assignment that identifies the expected result,
-   retained judgment, and stop conditions.
+   brainstorming, policy judgment, and synthesis. This root role should normally
+   remain tool-free. In response to a request, briefly announce the work and its
+   route before proceeding. When delegating, give the worker a bounded assignment
+   that identifies the expected result, retained judgment, and stop conditions.
 2. Default repository and tool work to one GPT-5.6 Luna worker, even when the
    work appears small. Clear, bounded Luna delegation may proceed after the
    brief announcement without advance approval. Prefer one Luna worker when
    practical; use additional workers only for independently worthwhile
    assignments. Propose parallel tasks only when they are genuinely
    independent, every result is needed, and ownership does not overlap.
-3. Sol may work directly when the user explicitly assigns the work to Sol or
-   when Sol must inspect exact authoritative material to exercise its retained
-   judgment. If Sol wants another exception to the default Luna route, it must
-   ask the user rather than rely on its own cost estimate.
-4. An explicit user request already authorizes that action and must not trigger
-   a redundant permission request. Apply the ordinary routing defaults unless
-   the user assigns the route.
-5. User approval remains mandatory for phase transitions and waivers, material
+3. For delegated evidence gathering, Luna must return a compressed evidence
+   packet: a targeted summary, source locations, only the short decisive
+   excerpts needed to support it, and any material conflicts or ambiguities.
+   Luna must not reproduce most of a file for Sol to reread. If safe compression
+   would require doing so, recommend a direct-read handoff instead.
+4. An explicit user assignment to Sol, including a request that directly asks
+   Sol to perform a narrow, named operation, authorizes direct Sol work only for
+   the named targets and operations. The user may name more than one exact file.
+   This authorization must not trigger a redundant permission request, but it
+   does not authorize follow-on repository or tool work.
+5. Without further approval, Sol may directly read one identified file only
+   when the file itself must be judged as a coherent artifact within Sol's
+   retained role, or Luna reports that safe compression would reproduce most of
+   it. A file's authority alone is insufficient. This handoff authorizes only
+   the identified read operation; it does not authorize searches, running other
+   commands, reading related files, or a follow-on tool loop. Further repository
+   or tool work returns to Luna. Sol must ask the user before making any other
+   exception to the default Luna route.
+6. User approval remains mandatory for phase transitions and waivers, material
    scope changes, policy decisions, significant risk, and other consequential
    choices. Approval of one phase or assignment does not authorize a later
    phase or a materially different choice.
-6. A worker must stay within its bounded assignment, must not redelegate, and
+7. A worker must stay within its bounded assignment, must not redelegate, and
    must return material ambiguity instead of deciding policy, changing
-   acceptance criteria, or expanding scope.
-7. Discussion and Brainstorm remain Sol's work and must not be delegated, but
+   acceptance criteria, or expanding scope. Agents need not reread applicable
+   `AGENTS.md` instructions already supplied by the harness. When repository
+   work moves into a deeper scope, Luna must check for closer target-local
+   `AGENTS.md` or override instructions and surface any conflict.
+8. Discussion and Brainstorm remain Sol's work and must not be delegated, but
    repository and tool work arising during them follows the routing rules above.
 
 Use these conservative, simplified upper-bound planning multipliers for ChatGPT
@@ -306,10 +320,15 @@ Wrap Up.
    humans and agents independently of any one machine, chat, model, or coding
    harness.
 2. `wiki/index.md` is the mandatory, compact entry point to repository memory.
-   The repository's `AGENTS.md` must point to it, and agents must consult it
-   before substantive repository work. The index may route readers to useful
-   durable documents outside `wiki/`; those documents need not be duplicated
-   merely to place them under the wiki directory.
+   The repository's `AGENTS.md` must point to it. For substantive repository
+   investigation, the repository worker must consult the index, follow only
+   task-relevant links, and return targeted findings to Sol. Sol is not required
+   to read the wiki, and a narrow direct read under Section 4 does not itself
+   trigger wiki preflight. If the index is absent, the worker must surface the
+   gap rather than invent its contents or silently ignore the requirement. The
+   index may route readers to useful durable documents outside `wiki/`; those
+   documents need not be duplicated merely to place them under the wiki
+   directory.
 3. The wiki is working memory, not governing documentation. It must not
    replace, override, or silently reinterpret the Book or an explicit user
    decision. When wiki knowledge would change material intent, update and
