@@ -1,9 +1,13 @@
 ---
 name: run-alp-workflow
-description: Guide a complete AI-assisted Literate Programming session through Brainstorm, Governing Documentation, Implementation, and Wrap Up while preserving user authority, explicit phase approval, independent acceptance checks, economical delegation, and semantic alignment between the Book and implementation. Use for end-to-end ALP delivery, resuming or routing an ALP session, or phase-gated documentation intended to produce executable or operational change. Compose it with author-alp-book for detailed Book work and maintain-repository-wiki for worthwhile repository memory; use those skills alone when the full lifecycle is not wanted.
+description: Guide a complete AI-assisted Literate Programming session through Brainstorm, Governing Documentation, Implementation, and Wrap Up while preserving user authority, explicit phase approval, independent acceptance checks, and semantic alignment between the Book and implementation. Use for end-to-end ALP delivery, resuming or routing an ALP session, or phase-gated documentation intended to produce executable or operational change. Compose it with author-alp-book for detailed Book work and maintain-repository-wiki for worthwhile repository memory; use those skills alone when the full lifecycle is not wanted.
 ---
 
 # Run an ALP Workflow
+
+At the start of every invocation, load and follow `$delegate-work` as a
+required companion skill. If it is unavailable, stop and tell the user that
+the required skill is missing.
 
 Keep the process simple, focused, and controlled by the user. Treat the
 human-authored Book as the source of material intent and the implementation as
@@ -17,10 +21,10 @@ those instructions and this skill instead of resolving it silently.
 Treat use of this complete workflow as adoption of its repository-memory
 requirement. For substantive repository investigation, the repository worker
 consults `wiki/index.md`, follows only task-relevant links, and returns targeted
-findings to Sol. Sol need not read the wiki, and a narrow direct read under the
-routing rules does not itself trigger wiki preflight. If the index is absent,
-the worker surfaces the gap and lets the user decide how to address it rather
-than inventing its contents.
+findings to the root agent. The root agent need not read the wiki, and a narrow
+direct read under `$delegate-work` rules does not itself trigger wiki
+preflight. If the index is absent, the worker surfaces the gap and lets the
+user decide how to address it rather than inventing its contents.
 
 Keep one session focused on one goal. Record and defer unrelated work. If an
 unrelated blocker must be addressed elsewhere, preserve enough context to
@@ -33,66 +37,6 @@ missing policy, conflicting requirements, and material tradeoffs.
 Do not turn a decision for one task or session into permanent workflow policy.
 When a decision recurs, propose recording it in the appropriate governing
 document with user approval.
-
-## Route work and require approval for consequential decisions
-
-The root agent is GPT-6 Sol for discussion, orchestration, design,
-brainstorming, policy judgment, and synthesis; it should normally remain
-tool-free. Briefly announce the work and its route before proceeding. Default
-repository and tool work to one GPT-6 Luna worker, even when it appears
-small; clear, bounded Luna delegation may proceed after that announcement
-without advance approval. Prefer one Luna worker when practical, and use
-additional workers only for independently worthwhile assignments. Parallel
-tasks must be independent, non-overlapping, and all needed.
-
-For delegated evidence gathering, Luna returns a compressed packet: a targeted
-summary, source locations, only short decisive excerpts, and material conflicts
-or ambiguities. Luna must not reproduce most of a file for Sol to reread. If
-safe compression would require that, recommend a direct-read handoff instead.
-
-An explicit user assignment to Sol, including a request that directly asks Sol
-to perform a narrow, named operation, authorizes direct Sol work only on the
-named targets and operations. The user may name multiple exact files. This work
-needs no redundant permission, but the authorization does not extend to
-follow-on repository or tool work.
-
-Sol may directly inspect material for judgment only when the user's explicit
-assignment authorizes that named target and operation. If Sol must inspect
-material not covered by an explicit assignment, Sol must ask the user first.
-Luna may recommend a direct-read handoff when safe compression would reproduce
-most of a file, but that recommendation does not authorize Sol to inspect it.
-A file's authority alone is insufficient. An explicit assignment authorizes
-only the identified target and operation; it does not authorize searches,
-running other commands, reading related files, or a follow-on tool loop.
-Further repository or tool work returns to Luna.
-
-User approval remains mandatory for phase transitions and waivers, material
-scope changes, policy decisions, significant risk, and other consequential
-choices. A worker must stay bounded, must not redelegate, and must return
-material ambiguity instead of deciding policy, altering acceptance criteria, or
-expanding scope. Agents need not reread applicable `AGENTS.md` instructions
-already supplied by the harness. When repository work moves into a deeper
-scope, Luna checks for closer target-local `AGENTS.md` or override instructions
-and surfaces conflicts.
-
-Use these provisional, simplified planning multipliers for GPT-6 models, using
-official standard API short-context input and output prices as a proxy rather
-than published Codex credit rates:
-
-- Luna: 1x planning multiplier
-- Sol: 20x Luna's planning multiplier
-- Astra: 100x Luna's planning multiplier
-
-These are simplified planning multipliers, not exact billing ratios for every
-token class or Codex product surface. Reassess them when official rates
-materially change or published Codex credit rates become available for the
-GPT-6 models.
-
-Use GPT-6 Astra only for unusually complex problem-solving or reviews when its
-extra capability is expected to justify its high cost; Astra is not the
-everyday root. Gemini uses a separate credit pool and should be considered for
-suitable work, particularly mechanical implementation. Compare expected
-end-to-end value, cost, and reliability rather than token price alone.
 
 ## Control phase transitions
 

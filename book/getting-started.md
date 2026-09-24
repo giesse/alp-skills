@@ -10,9 +10,10 @@
 
 At present, only Codex is supported. The skills may be adaptable to other agent harnesses, but this repository does not yet provide or maintain an adaptation procedure. If you want to experiment, you can ask your agent to attempt a port to your preferred harness in a fork of this repository.
 
-If you are using Codex, ask it to install the skills from this repository. At present, this installs three skills. They can be combined, but they have different scopes:
+If you are using Codex, ask it to install the skills from this repository. At present, this installs four skills. They can be combined, but they have different scopes. `$run-alp-workflow` requires `$delegate-work`, so install both together when using the complete workflow. You can also use `$delegate-work` on its own for delegation guidance.
 
-- `$run-alp-workflow` — coordinates a complete session across four phases, with a root orchestrator and delegation when worthwhile. It pauses for your approval before each phase transition. See [Running an ALP Workflow](running-alp-workflow.md).
+- `$delegate-work` — routes discussion, repository, and tool work between the root agent and workers, with bounded assignments and user authority.
+- `$run-alp-workflow` — coordinates a complete session across four phases, with a root orchestrator and delegation when worthwhile. It requires `$delegate-work` and pauses for your approval before each phase transition. See [Running an ALP Workflow](running-alp-workflow.md).
 - `$author-alp-book` — supports bounded Book work without requiring the complete workflow. See [Authoring an ALP Book](authoring-alp-books.md).
 - `$maintain-repository-wiki` — preserves non-governing repository memory and can be used with or without ALP. See [Maintaining Repository Memory](maintaining-repository-memory.md).
 
