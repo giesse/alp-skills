@@ -14,10 +14,10 @@ silently.
 
 ## Route work and require approval for consequential decisions
 
-The root agent is GPT-5.6 Sol for discussion, orchestration, design,
+The root agent is GPT-6 Sol for discussion, orchestration, design,
 brainstorming, policy judgment, and synthesis; it should normally remain
 tool-free. Briefly announce the work and its route before proceeding. Default
-repository and tool work to one GPT-5.6 Luna worker, even when it appears
+repository and tool work to one GPT-6 Luna worker, even when it appears
 small; clear, bounded Luna delegation may proceed after that announcement
 without advance approval. Prefer one Luna worker when practical, and use
 additional workers only for independently worthwhile assignments. Parallel
@@ -34,12 +34,15 @@ targets and operations. The user may name multiple exact files. Do not request
 redundant permission for that work, but do not carry its authorization into
 follow-on repository or tool work.
 
-Without further approval, Sol may directly read one identified file only when
-the file itself must be judged coherently within Sol's retained role, or Luna
-reports that safe compression would reproduce most of it. Authority alone is
-not enough. This exception permits only the identified read: no searches,
-other commands, related files, or follow-on tool loops. Further work returns
-to Luna. Ask the user before making any other exception to the default route.
+Sol may directly inspect material for judgment only when the user's explicit
+assignment authorizes that named target and operation. If Sol must inspect
+material not covered by an explicit assignment, Sol must ask the user first.
+Luna may recommend a direct-read handoff when safe compression would reproduce
+most of a file, but that recommendation does not authorize Sol to inspect it.
+An identified file's authority alone is insufficient. An explicit assignment
+authorizes only the identified target and operation; it does not authorize
+searches, running other commands, reading related files, or a follow-on tool
+loop. Further repository or tool work returns to Luna.
 
 User approval remains mandatory for phase transitions and waivers, material
 scope changes, policy decisions, significant risk, and other consequential
@@ -49,13 +52,23 @@ material ambiguity instead of deciding it. Agents need not reread applicable
 a deeper scope, Luna checks for closer target-local `AGENTS.md` or override
 instructions and surfaces conflicts.
 
-Use these conservative, simplified upper-bound planning multipliers for
-ChatGPT models: Luna 1x, Terra 10x, Sol 20x, and Astra 50x. These are planning
-approximations, not exact billing ratios for every token class. Use GPT-6 Astra
-only for unusually complex problem-solving or reviews when its extra capability
-justifies its high cost; Astra is not the everyday root. Terra is very rare.
-Gemini uses a separate credit pool and should be considered for suitable work,
-particularly mechanical implementation.
+Use these provisional, simplified planning multipliers for GPT-6 models, using
+official standard API short-context input and output prices as a proxy rather
+than published Codex credit rates:
+
+- Luna: 1x planning multiplier
+- Sol: 20x Luna's planning multiplier
+- Astra: 100x Luna's planning multiplier
+
+These are simplified planning multipliers, not exact billing ratios for every
+token class or Codex product surface. Reassess them when official rates
+materially change or published Codex credit rates become available for the
+GPT-6 models.
+
+Use GPT-6 Astra only for unusually complex problem-solving or reviews when its
+extra capability is expected to justify its high cost; Astra is not the
+everyday root. Gemini uses a separate credit pool and should be considered for
+suitable work, particularly mechanical implementation.
 
 ## Keep work focused and phased
 
