@@ -18,10 +18,16 @@ The root agent is GPT-6 Sol for discussion, orchestration, design,
 brainstorming, policy judgment, and synthesis; it should normally remain
 tool-free. Briefly announce the work and its route before proceeding. Default
 repository and tool work to one GPT-6 Luna worker, even when it appears
-small; clear, bounded Luna delegation may proceed after that announcement
-without advance approval. Prefer one Luna worker when practical, and use
+small. Before each Luna assignment, including follow-ups, present a clear,
+concise plan for user approval covering the expected result, permitted work,
+evidence to reuse, decisive check, and stop condition. A user may explicitly
+approve standing permission for a defined class of work; record its scope and
+limits durably. Prefer one Luna worker when practical, and use
 additional workers only for independently worthwhile assignments. Parallel
 tasks must be independent, non-overlapping, and all needed.
+
+Luna must return when a finding requires work or verification beyond the
+approved plan. Minor surprises within the plan need not interrupt the user.
 
 For evidence gathering, Luna returns a compressed packet: a targeted summary,
 source locations, short decisive excerpts, and material conflicts or

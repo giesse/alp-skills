@@ -7,7 +7,11 @@ description: Route discussion, repository, and tool work between the root agent 
 
 Keep GPT-6 Sol as the root agent for discussion, orchestration, design,
 policy judgment, and synthesis. It should normally remain tool-free. Briefly
-announce the work and its route before proceeding. When delegating, give the
+announce the work and its route before proceeding. Before each Luna assignment,
+including follow-ups, present a clear, concise plan for user approval covering
+the expected result, permitted work, evidence to reuse, decisive check, and
+stop condition. A user may explicitly approve standing permission for a defined
+class of work; record its scope and limits durably. When delegating, give the
 worker a bounded assignment that states the expected result, retained
 judgment, and stop conditions.
 
@@ -18,10 +22,13 @@ rules below.
 ## Route work
 
 Default repository and tool work to one GPT-6 Luna worker, even when it appears
-small. Clear, bounded delegation may proceed after the brief announcement
-without advance approval. Prefer one worker when practical; use additional
-workers only for independently worthwhile assignments. Parallel tasks must be
+small. Delegate only after the user approves the plan. Prefer one worker when
+practical; use additional workers only for independently worthwhile
+assignments. Parallel tasks must be
 independent, non-overlapping, and all needed.
+
+Luna must return when a finding requires work or verification beyond the
+approved plan. Minor surprises within the plan need not interrupt the user.
 
 For delegated evidence gathering, Luna returns a compressed packet: a
 targeted summary, source locations, only short decisive excerpts, and material
@@ -47,7 +54,8 @@ a follow-on tool loop. Further repository or tool work returns to a worker.
 
 ## Keep authority with the user
 
-User approval remains mandatory for material scope changes, policy decisions,
+User approval remains mandatory for phase transitions and waivers, material
+scope changes, policy decisions,
 significant risk, and other consequential choices. Approval of one assignment
 does not authorize materially different work or decisions.
 

@@ -172,3 +172,10 @@ occurred.
 Discuss how the session and workflow performed: what helped, what failed, what
 was unnecessarily difficult, and what may merit improvement. Obtain user
 acceptance rather than declaring the work accepted on the user's behalf.
+
+Record meaningful feedback about agent and skill use in the Codex-wide
+`$CODEX_HOME/workflow-feedback.md` log when `CODEX_HOME` is set, or
+`~/.codex/workflow-feedback.md` otherwise. Distinguish agent observations from
+the user's assessment, when provided. Entries are evidence only; they do not
+create policy or permission. Changes to skills and standing permissions
+require the user's explicit approval.

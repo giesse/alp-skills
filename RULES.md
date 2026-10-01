@@ -49,19 +49,26 @@ document. These rules must be corrected if they conflict with it.
 1. The root agent is GPT-6 Sol for discussion, orchestration, design,
    brainstorming, policy judgment, and synthesis. This root role should normally
    remain tool-free. In response to a request, briefly announce the work and its
-   route before proceeding. When delegating, give the worker a bounded assignment
-   that identifies the expected result, retained judgment, and stop conditions.
+   route before proceeding. Before each Luna assignment, including follow-ups,
+   present a clear, concise plan for user approval. The plan identifies the
+   expected result, permitted work, evidence to reuse, decisive check, and stop
+   condition. A user may explicitly approve standing permission for a defined
+   class of work; record its scope and limits durably. When delegating, give the
+   worker a bounded assignment that identifies the expected result, retained
+   judgment, and stop conditions. Luna must return when a finding requires work
+   or verification beyond the approved plan. Minor surprises within the plan
+   need not interrupt the user.
 2. Default repository and tool work to one GPT-6 Luna worker, even when the
-   work appears small. Clear, bounded Luna delegation may proceed after the
-   brief announcement without advance approval. Prefer one Luna worker when
-   practical; use additional workers only for independently worthwhile
-   assignments. Propose parallel tasks only when they are genuinely
-   independent, every result is needed, and ownership does not overlap.
+   work appears small. Prefer one Luna worker when practical; use additional
+   workers only for independently worthwhile assignments. Propose parallel
+   tasks only when they are genuinely independent, every result is needed, and
+   ownership does not overlap.
 3. For delegated evidence gathering, Luna must return a compressed evidence
    packet: a targeted summary, source locations, only the short decisive
    excerpts needed to support it, and any material conflicts or ambiguities.
    Luna must not reproduce most of a file for Sol to reread. If safe compression
-   would require doing so, recommend a direct-read handoff instead.
+   would require doing so, recommend a direct-read handoff instead. Reuse
+   evidence identified in the approved plan.
 4. An explicit user assignment to Sol, including a request that directly asks
    Sol to perform a narrow, named operation, authorizes direct Sol work only for
    the named targets and operations. The user may name more than one exact file.
@@ -200,11 +207,16 @@ Wrap Up.
 3. Confirm that required documentation and follow-up records are complete.
 4. Discuss how the session and workflow performed: what helped, what failed,
    what was unnecessarily difficult, and what may merit improvement.
-5. Record only knowledge worth retaining. Wrap Up must not become routine
-   paperwork with no future value.
-6. Retained knowledge should be concise, searchable, linked from a likely
-   entry point, and clear about whether it is governing policy, evidence,
-   history, or unresolved follow-up.
+5. Record meaningful feedback about agent and skill use in the Codex-wide
+   `$CODEX_HOME/workflow-feedback.md` log when `CODEX_HOME` is set, or
+   `~/.codex/workflow-feedback.md` otherwise. Distinguish agent observations
+   from the user's assessment, when provided. Entries are evidence only; they
+   do not create policy or permission. Changes to skills and standing
+   permissions require the user's explicit approval.
+6. Record only knowledge worth retaining. Wrap Up must not become routine
+   paperwork with no future value. Retained knowledge should be concise,
+   searchable, linked from a likely entry point, and clear about whether it is
+   governing policy, evidence, history, or unresolved follow-up.
 
 ## 6. Define acceptance before implementation
 
