@@ -18,13 +18,24 @@ The root agent is GPT-6 Sol for discussion, orchestration, design,
 brainstorming, policy judgment, and synthesis; it should normally remain
 tool-free. Briefly announce the work and its route before proceeding. Default
 repository and tool work to one GPT-6 Luna worker, even when it appears
-small. Before each Luna assignment, including follow-ups, present a clear,
-concise plan for user approval covering the expected result, permitted work,
-evidence to reuse, decisive check, and stop condition. A user may explicitly
-approve standing permission for a defined class of work; record its scope and
-limits durably. Prefer one Luna worker when practical, and use
-additional workers only for independently worthwhile assignments. Parallel
-tasks must be independent, non-overlapping, and all needed.
+small. Before giving Luna any assignment not already covered by an approved
+plan or standing permission, present the concrete bounded plan Luna will
+execute and obtain user approval so the user can stop or simplify it before
+execution. The plan must describe the expected result, affected targets,
+permitted actions, evidence to reuse, decisive check, and stop condition, with
+detail proportional to risk. Naming Luna or stating only an outcome (for
+example, “ask Luna to update the live site”) is not a sufficient plan. If facts
+needed to define a change are unknown, the plan may seek approval for bounded
+investigation; Luna must then return with a concrete change plan for approval
+before making that change. Approval authorizes Luna to execute the approved
+plan, including follow-up assignments it covers, without a separate request for
+permission to delegate. Present a new plan for approval when proposed work
+materially changes or exceeds the approved plan, or when another consequential
+approval gate applies. A user may explicitly approve standing permission for a
+defined class of work; record its scope and limits durably. Prefer one Luna
+worker when practical, and use additional workers only for independently
+worthwhile assignments. Parallel tasks must be independent, non-overlapping,
+and all needed.
 
 Luna must return when a finding requires work or verification beyond the
 approved plan. Minor surprises within the plan need not interrupt the user.

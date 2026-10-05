@@ -7,12 +7,23 @@ description: Route discussion, repository, and tool work between the root agent 
 
 Keep GPT-6 Sol as the root agent for discussion, orchestration, design,
 policy judgment, and synthesis. It should normally remain tool-free. Briefly
-announce the work and its route before proceeding. Before each Luna assignment,
-including follow-ups, present a clear, concise plan for user approval covering
-the expected result, permitted work, evidence to reuse, decisive check, and
-stop condition. A user may explicitly approve standing permission for a defined
-class of work; record its scope and limits durably. When delegating, give the
-worker a bounded assignment that states the expected result, retained
+announce the work and its route before proceeding. Before giving Luna any
+assignment not already covered by an approved plan or standing permission,
+present the concrete bounded plan Luna will execute and obtain user approval so
+the user can stop or simplify it before execution. The
+plan must describe the expected result, affected targets, permitted actions,
+evidence to reuse, decisive check, and stop condition, with detail
+proportional to risk. Naming Luna or stating only an outcome (for example,
+“ask Luna to update the live site”) is not a sufficient plan. If facts needed
+to define a change are unknown, the plan may seek approval for bounded
+investigation; Luna must then return with a concrete change plan for approval
+before making that change. Approval authorizes Luna to execute the approved
+plan, including follow-up assignments it covers, without a separate request for
+permission to delegate. Present a new plan for approval when proposed work
+materially changes or exceeds the approved plan, or when another consequential
+approval gate applies. A user may explicitly approve standing permission for a
+defined class of work; record its scope and limits durably. When delegating,
+give the worker a bounded assignment that states the expected result, retained
 judgment, and stop conditions.
 
 Discussion and brainstorming belong to GPT-6 Sol as root agent and must not be
@@ -22,10 +33,10 @@ rules below.
 ## Route work
 
 Default repository and tool work to one GPT-6 Luna worker, even when it appears
-small. Delegate only after the user approves the plan. Prefer one worker when
-practical; use additional workers only for independently worthwhile
-assignments. Parallel tasks must be
-independent, non-overlapping, and all needed.
+small. Delegate only under an approved plan or standing permission. Prefer one
+worker when practical; use additional workers only for independently worthwhile
+assignments. Parallel tasks must be independent, non-overlapping, and all
+needed.
 
 Luna must return when a finding requires work or verification beyond the
 approved plan. Minor surprises within the plan need not interrupt the user.
@@ -55,9 +66,9 @@ a follow-on tool loop. Further repository or tool work returns to a worker.
 ## Keep authority with the user
 
 User approval remains mandatory for phase transitions and waivers, material
-scope changes, policy decisions,
-significant risk, and other consequential choices. Approval of one assignment
-does not authorize materially different work or decisions.
+scope changes, policy decisions, significant risk, and other consequential
+choices. Approval of one plan or assignment does not authorize a later phase,
+materially different work, or separate consequential choices.
 
 A worker must stay within its bounded assignment, must not redelegate, and
 must return material ambiguity instead of deciding policy, changing acceptance
