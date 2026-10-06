@@ -64,8 +64,9 @@ document. These rules must be corrected if they conflict with it.
    work materially changes or exceeds the approved plan, or when another
    consequential approval gate applies. A user may explicitly approve standing
    permission for a defined class of work; record its scope and limits durably.
-   When delegating, give the worker a bounded assignment that identifies the
-   expected result, retained judgment, and stop conditions. Luna must return
+   The worker assignment is the approved plan, with any clarification of
+   judgment Sol retains; it must not add targets, operations, or checks beyond
+   that plan. Luna must return
    when a finding requires work or verification beyond the approved plan. Minor
    surprises within the plan need not interrupt the user.
 2. Default repository and tool work to one GPT-6 Luna worker, even when the

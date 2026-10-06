@@ -15,9 +15,9 @@
   intentionally did not propagate that policy.
 - [ ] Create the final Book
   - [x] Explain the critical role of GOALS - this was a great lesson
-  - [ ] Do reviews against project goals and session goals
-  - [ ] LLMs paranoid behavior around checks and tests?
-  - [ ] AI goes into rabbit holes, spends a lot of time on details that often don't matter; perhaps enforce planning defore execution in each phase? It kind of means going back to the "approve everything before the AI does any work" but it may be necessary to save a lot of time and tokens.
+  - [x] Do reviews against project goals and session goals
+  - [x] LLMs paranoid behavior around checks and tests?
+  - [x] AI goes into rabbit holes, spends a lot of time on details that often don't matter; perhaps enforce planning defore execution in each phase? It kind of means going back to the "approve everything before the AI does any work" but it may be necessary to save a lot of time and tokens.
 - [ ] Import old TODO list
 - [ ] Decide which historical sources to retain in wiki/sources , delete or move reference files from old iterations
 - [ ] Create the companion Antigravity skill

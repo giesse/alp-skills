@@ -28,7 +28,9 @@ user decide how to address it rather than inventing its contents.
 
 Keep one session focused on one goal. Record and defer unrelated work. If an
 unrelated blocker must be addressed elsewhere, preserve enough context to
-resume the original goal.
+resume the original goal. If the blocker must take priority, you may explicitly
+convert this session to address it and resume the original goal in a new session.
+Do not silently expand the scope of a session or implementation.
 
 Let the user own the goal, scope, material decisions, governing documentation,
 phase transitions, exceptions, and final acceptance. Surface ambiguity,
@@ -97,7 +99,9 @@ Before Implementation, identify the decisive acceptance checks and obtain user
 approval for them. Use automated tests or other decisive static, manual, or
 runtime checks appropriate to the work. Keep critical-check authorship
 independent of the implementer. Do not invent an artificial harness when an
-approved independent static review is the better critical check.
+approved independent static review is the better critical check. When such a
+review is the critical check, agree its scope and criteria before implementation
+and keep the reviewer independent of the implementer.
 
 Before finalizing the checks, perform a proportionate coverage pass. Confirm
 that each approved material criterion and important boundary has an observable
@@ -135,7 +139,11 @@ Documentation. Do not force success through undocumented behavior.
 
 Verify in proportion to the claim. A syntax check proves syntax; a focused
 test proves only its covered behavior; a review supports only its stated
-scope.
+scope. Approval of a policy establishes that the decision was made; it does not
+prove that an implementation or workflow is reliable.
+
+Before work is complete, reflect any durable implementation change in durable
+documentation.
 
 Before completion, align the Book and accepted implementation on material
 behavior and decisions. Do not demand one-to-one traceability.
@@ -145,6 +153,8 @@ behavior and decisions. Do not demand one-to-one traceability.
 For non-trivial changes, consider fresh post-implementation review when it is
 likely to add evidence worth its cost. Prefer review of the concrete
 implementation and evidence over repeated review of proxy plans or contracts.
+Strong independently owned acceptance checks may reduce the value of another
+review.
 
 Let the user decide whether optional review is worthwhile. When independent
 review was approved as a critical acceptance check, treat it as mandatory and

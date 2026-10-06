@@ -29,7 +29,9 @@ needed to define a change are unknown, the plan may seek approval for bounded
 investigation; Luna must then return with a concrete change plan for approval
 before making that change. Approval authorizes Luna to execute the approved
 plan, including follow-up assignments it covers, without a separate request for
-permission to delegate. Present a new plan for approval when proposed work
+permission to delegate. The worker assignment is that approved plan, with any
+clarification of judgment Sol retains; it must not add targets, operations, or
+checks beyond the plan. Present a new plan for approval when proposed work
 materially changes or exceeds the approved plan, or when another consequential
 approval gate applies. A user may explicitly approve standing permission for a
 defined class of work; record its scope and limits durably. Prefer one Luna
