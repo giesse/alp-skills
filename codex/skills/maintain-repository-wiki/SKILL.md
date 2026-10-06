@@ -9,6 +9,9 @@ Preserve useful working knowledge independently of any machine, chat, model,
 or coding harness. Keep the wiki concise and trustworthy without turning it
 into governing documentation or compulsory paperwork.
 
+Write wiki guidance in plain language. Prefer familiar words, keep specialized
+terms when they make meaning clearer, and explain them briefly when needed.
+
 ## Respect the surrounding workflow
 
 Follow the consuming repository's instructions and governing documentation.

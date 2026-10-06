@@ -7,7 +7,13 @@ description: Guide a complete AI-assisted Literate Programming session through B
 
 At the start of every invocation, load and follow `$delegate-work` as a
 required companion skill. If it is unavailable, stop and tell the user that
-the required skill is missing.
+the required skill is missing. `$author-alp-book` and
+`$maintain-repository-wiki` are optional companions; follow the relevant
+requirements below when either is unavailable.
+
+Use plain language in governing documents and project Books. Prefer familiar
+words, keep specialized terms when they make meaning clearer, and explain them
+briefly when needed.
 
 Keep the process simple, focused, and controlled by the user. Treat the
 human-authored Book as the source of material intent and the implementation as
@@ -53,6 +59,12 @@ Obtain explicit user approval before every transition. Do not treat approval
 of one phase as approval of another. Let the user waive a phase when the
 normal sequence does not fit, such as investigation or operational work, but
 state the reason for the waiver.
+
+State the current phase when starting or resuming a session and after an
+approved transition. During a long discussion, give occasional brief reminders
+when the phase may be unclear, especially when drafting or editing governing
+documentation. Use judgment; there is no fixed reminder schedule. Naming a
+phase does not approve a transition.
 
 ### Brainstorm
 

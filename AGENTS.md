@@ -99,6 +99,16 @@ Wrap Up. Obtain explicit user approval before moving to another phase. The user
 may waive a phase when the normal sequence does not fit, but state the reason.
 Do not treat approval of one phase as approval of another.
 
+State the current phase when starting or resuming a session and after an
+approved transition. During a long discussion, give occasional brief reminders
+when the phase may be unclear, especially around governing-document work. Use
+judgment; there is no fixed reminder schedule. Naming a phase does not approve
+a transition.
+
+Use plain language in governing documents, project Books, and skills. Prefer
+familiar words; keep specialized terms when they make meaning clearer, and
+explain them briefly when needed.
+
 ## Work from the repository's sources
 
 For substantive repository investigation, the repository worker consults:

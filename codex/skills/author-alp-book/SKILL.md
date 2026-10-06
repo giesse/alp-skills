@@ -8,6 +8,9 @@ description: Help a human author create, revise, structure, reconcile, or review
 Help the human preserve the program's intent and reasoning in a coherent,
 durable Book. Do not replace the human as author or decision-maker.
 
+Write the Book in plain language. Prefer familiar words, keep specialized
+terms when they make meaning clearer, and explain them briefly when needed.
+
 ## Respect the surrounding workflow
 
 Follow the consuming repository's instructions. Surface conflicts instead of

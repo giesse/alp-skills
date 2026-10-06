@@ -15,8 +15,9 @@ document. These rules must be corrected if they conflict with it.
 1. Use the simplest process that can produce a reliable result. Every added
    phase, artifact, role, handoff, or rule must provide a concrete benefit that
    justifies its cost.
-2. Prefer plain language. Use specialized terms only when they make the rule
-   more precise, and explain them where necessary.
+2. Write instructions in plain language. Prefer familiar words. Keep
+   specialized terms when they make a rule clearer, and explain them briefly
+   where needed. Apply this to governing documents, project Books, and skills.
 3. Do not optimize model credits at the expense of simplicity, clarity, or
    result quality.
 4. Rules should guide judgment rather than replace it with ceremony. Do not
@@ -48,53 +49,54 @@ document. These rules must be corrected if they conflict with it.
 
 1. The root agent is GPT-6 Sol for discussion, orchestration, design,
    brainstorming, policy judgment, and synthesis. This root role should normally
-   remain tool-free. In response to a request, briefly announce the work and its
-   route before proceeding. Before giving Luna any assignment not already
-   covered by an approved plan or standing permission, present the concrete
-   bounded plan Luna will execute and obtain the user's approval. The
-   plan must describe the expected result, affected targets, permitted actions,
-   evidence to reuse, decisive check, and stop condition, with detail
-   proportional to risk. Naming Luna or stating only an outcome (for example,
-   “ask Luna to update the live site”) is not a sufficient plan. If facts needed
-   to define a change are unknown, the plan may seek approval for bounded
-   investigation; Luna must then return with a concrete change plan for approval
-   before making that change. Approval authorizes Luna to execute the approved
-   plan, including follow-up assignments it covers, without a separate request
-   for permission to delegate. Present a new plan for approval when proposed
-   work materially changes or exceeds the approved plan, or when another
-   consequential approval gate applies. A user may explicitly approve standing
-   permission for a defined class of work; record its scope and limits durably.
-   The worker assignment is the approved plan, with any clarification of
-   judgment Sol retains; it must not add targets, operations, or checks beyond
-   that plan. Luna must return
-   when a finding requires work or verification beyond the approved plan. Minor
-   surprises within the plan need not interrupt the user.
-2. Default repository and tool work to one GPT-6 Luna worker, even when the
-   work appears small. Prefer one Luna worker when practical; use additional
-   workers only for independently worthwhile assignments. Propose parallel
-   tasks only when they are genuinely independent, every result is needed, and
-   ownership does not overlap.
-3. For delegated evidence gathering, Luna must return a compressed evidence
-   packet: a targeted summary, source locations, only the short decisive
-   excerpts needed to support it, and any material conflicts or ambiguities.
-   Luna must not reproduce most of a file for Sol to reread. If safe compression
-   would require doing so, recommend a direct-read handoff instead. Reuse
-   evidence identified in the approved plan.
-4. An explicit user assignment to Sol, including a request that directly asks
-   Sol to perform a narrow, named operation, authorizes direct Sol work only for
-   the named targets and operations. The user may name more than one exact file.
-   This authorization must not trigger a redundant permission request, but it
-   does not authorize follow-on repository or tool work.
-5. Sol may directly inspect material for judgment without further approval only
-   when the user's explicit assignment authorizes that named target and
-   operation under item 4. If Sol must inspect material not covered by an
-   explicit assignment, Sol must ask the user first. Luna may recommend a
-   direct-read handoff when safe compression would reproduce most of a file,
-   but that recommendation does not authorize Sol to inspect it. An identified
-   file's authority alone is insufficient. An explicit assignment authorizes
-   only the identified target and operation; it does not authorize searches,
-   running other commands, reading related files, or a follow-on tool loop.
-   Further repository or tool work returns to Luna.
+   remain tool-free.
+   1. In response to a request, briefly announce the work and its
+      route before proceeding. Before giving Luna any assignment not already
+      covered by an approved plan or standing permission, present the concrete
+      bounded plan Luna will execute and obtain the user's approval.
+   2. The
+      plan must describe the expected result, affected targets, permitted actions,
+      evidence to reuse, how completion will be judged, and when to stop, with
+      detail suited to the risk. Naming Luna or stating only an outcome (for
+      example, “ask Luna to update the live site”) is not enough.
+   3. If facts needed
+      to define a change are unknown, the plan may seek approval for bounded
+      investigation; Luna must then return with a concrete change plan for
+      approval before making that change.
+   4. Approval covers the plan, including
+      follow-up assignments it covers; Sol must not ask separately for permission
+      to delegate. Luna's assignment is the approved plan, with any judgment Sol
+      retains made clear. Luna must not add targets, actions, or checks beyond
+      that plan.
+   5. Present a new plan when proposed work materially changes or
+      exceeds the approved plan, or when another required approval applies.
+   6. The
+      user may approve standing permission for a defined class of work; record
+      its scope and limits durably.
+   7. Luna must return when a finding requires work
+      or verification beyond the approved plan. Minor surprises within the plan
+      need not interrupt the user.
+2. Default repository and tool work to one GPT-6 Luna worker, even when it
+   appears small. Use additional workers only for worthwhile work that is
+   independent, does not overlap, and is needed.
+3. For evidence gathering, Luna returns short findings: a targeted summary,
+   source locations, short excerpts that support the findings, and material
+   conflicts or ambiguities. Luna must not reproduce most of a file for Sol to
+   reread. If a safe summary would require that, recommend asking Sol to read
+   it directly. Reuse evidence identified in the approved plan.
+4. A direct user assignment authorizes Sol to perform only the named operation
+   on the named target or targets. Do not ask again for permission to do that
+   work, but do not treat it as permission for follow-up repository or tool
+   work.
+5. Sol may inspect material for judgment without further approval only when the
+   user's assignment names that target and operation. If Sol needs to inspect
+   other material, ask the user first. Luna may recommend asking Sol to read a
+   file when summarizing it safely would require reproducing most of it, but
+   that recommendation does not authorize the inspection. A file's authority
+   alone is not permission to inspect it. As item 4 states, an assignment
+   authorizes only the named target and operation; it does not authorize
+   searches, other commands, related files, or follow-up tool work. Further
+   repository or tool work returns to Luna.
 6. User approval remains mandatory for phase transitions and waivers, material
    scope changes, policy decisions, significant risk, and other consequential
    choices. Approval of one phase or assignment does not authorize a later
@@ -139,6 +141,11 @@ Wrap Up.
    such as an investigation or operational task. The reason for the waiver
    must be stated clearly.
 3. An agent must not treat approval of one phase as approval of a later phase.
+4. State the current phase when starting or resuming a session and after an
+   approved transition. During a long discussion, give occasional brief
+   reminders, especially when drafting or editing could make the phase unclear.
+   Use judgment; there is no fixed reminder schedule. Naming a phase does not
+   approve a transition.
 
 ### Brainstorm
 
@@ -298,17 +305,19 @@ Wrap Up.
 4. The skills produced by this project are the primary distributable
    artifacts. They are designed for global installation and reuse across many
    repositories.
-5. Once invoked, a skill must contain all the rules and procedures needed for
-   the behavior it governs. It must not assume that a consuming repository's
-   `AGENTS.md` already mandates or explains this workflow, or that this
-   repository and its documents are available.
-6. A derived artifact that governs ALP work must carry the operational ALP
-   requirements needed within its scope. A link to [ALP](ALP.md) is useful
-   context in this repository, but is not a substitute for self-contained
-   instructions.
+5. Each skill must include the rules and steps for the behavior it governs. It
+   may rely on a named required companion for a separate part of the work. It
+   must say to load that companion and what to do if it is missing. Optional
+   companions must have instructions for proceeding without them.
+6. The skill and its required companions together must provide the instructions
+   needed for the combined workflow. They must not depend on this repository's
+   `AGENTS.md`, `GOALS.md`, `RULES.md`, or Book being available in a consuming
+   project.
 7. A consuming repository's `AGENTS.md` may help invoke a skill, reinforce its
    essential rules, or adapt it to local requirements. The skill must remain
-   usable without that optional integration.
+   usable without that optional help. Derived artifacts governing ALP work
+   must carry the ALP requirements relevant to their scope; linking to this
+   repository's [ALP](ALP.md) cannot substitute for those instructions.
 8. Self-contained execution does not guarantee that a skill will be invoked.
    Activation may come from the user naming the skill, the harness matching
    its description, or an applicable global or repository instruction.

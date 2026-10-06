@@ -5,26 +5,26 @@ description: Route discussion, repository, and tool work between the root agent 
 
 # Delegate Work
 
+Use plain language. Prefer familiar words, keep specialized terms when they
+make a rule clearer, and explain them briefly when needed.
+
 Keep GPT-6 Sol as the root agent for discussion, orchestration, design,
 policy judgment, and synthesis. It should normally remain tool-free. Briefly
-announce the work and its route before proceeding. Before giving Luna any
-assignment not already covered by an approved plan or standing permission,
-present the concrete bounded plan Luna will execute and obtain user approval so
-the user can stop or simplify it before execution. The
-plan must describe the expected result, affected targets, permitted actions,
-evidence to reuse, decisive check, and stop condition, with detail
-proportional to risk. Naming Luna or stating only an outcome (for example,
-“ask Luna to update the live site”) is not a sufficient plan. If facts needed
-to define a change are unknown, the plan may seek approval for bounded
-investigation; Luna must then return with a concrete change plan for approval
-before making that change. Approval authorizes Luna to execute the approved
-plan, including follow-up assignments it covers, without a separate request for
-permission to delegate. The worker assignment is that approved plan, with any
-clarification of judgment Sol retains; it must not add targets, operations, or
-checks beyond the plan. Present a new plan for approval when proposed work
-materially changes or exceeds the approved plan, or when another consequential
-approval gate applies. A user may explicitly approve standing permission for a
-defined class of work; record its scope and limits durably.
+announce the work and its route before proceeding. Before giving Luna work not
+covered by an approved plan or standing permission, present the user with a
+concrete plan and get approval. The plan states the expected result, targets,
+permitted actions, evidence to reuse, how completion will be judged, and when
+to stop, with detail suited to the risk. Naming Luna or stating only an outcome
+(for example, “ask Luna to update the live site”) is not enough. If facts
+needed to define a change are unknown, the plan may cover bounded
+investigation. Luna must then return with a concrete change plan for approval
+before making that change. Approval covers the plan, including follow-up
+assignments it covers; Sol must not ask separately for permission to delegate.
+Luna's assignment is the approved plan, with any judgment Sol retains made
+clear. Luna must not add targets, actions, or checks beyond that plan. Present
+a new plan when proposed work materially changes or exceeds the approved plan,
+or when another required approval applies. The user may approve standing
+permission for a defined class of work; record its scope and limits durably.
 
 Discussion and brainstorming belong to GPT-6 Sol as root agent and must not be
 delegated. Repository and tool work arising during them follows the routing
@@ -41,27 +41,25 @@ needed.
 Luna must return when a finding requires work or verification beyond the
 approved plan. Minor surprises within the plan need not interrupt the user.
 
-For delegated evidence gathering, Luna returns a compressed packet: a
-targeted summary, source locations, only short decisive excerpts, and material
-conflicts or ambiguities. Luna must not reproduce most of a file for the
-root agent to reread. If safe compression would require that, recommend a
-direct-read handoff instead.
+For evidence gathering, Luna returns short findings: a targeted summary,
+source locations, short excerpts that support the findings, and material
+conflicts or ambiguities. Luna must not reproduce most of a file for Sol to
+reread. If a safe summary would require that, recommend asking Sol to read it
+directly. Reuse evidence identified in the approved plan.
 
-An explicit user assignment to the root agent, including a request that
-directly asks it to perform a narrow, named operation, authorizes direct work
-only on the named targets and operations. The user may name multiple exact
-files. This work needs no redundant permission, but the authorization does not
-extend to follow-on repository or tool work.
+An explicit user assignment authorizes the root agent to perform only the
+named operation on the named target or targets. Do not ask again for permission
+to do that work, but do not treat it as permission for follow-up repository or
+tool work.
 
-The root agent may directly inspect material for judgment only when the user's
-explicit assignment authorizes that named target and operation. If it must
-inspect material not covered by an explicit assignment, it must ask the user
-first. Luna may recommend a direct-read handoff when safe compression
-would reproduce most of a file, but that recommendation does not authorize the
-root agent to inspect it. A file's authority alone is insufficient. An
-explicit assignment authorizes only the identified target and operation; it
-does not authorize searches, running other commands, reading related files, or
-a follow-on tool loop. Further repository or tool work returns to a worker.
+The root agent may inspect material for judgment without further approval only
+when the user's assignment names that target and operation. If it needs to
+inspect other material, it must ask the user first. Luna may recommend asking
+the root agent to read a file when summarizing it safely would require
+reproducing most of it, but that recommendation does not authorize inspection.
+A file's authority alone is not permission to inspect it. As above, an
+assignment does not authorize searches, other commands, related files, or
+follow-up tool work. Further repository or tool work returns to a worker.
 
 ## Keep authority with the user
 
