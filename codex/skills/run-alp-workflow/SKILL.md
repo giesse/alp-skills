@@ -17,7 +17,9 @@ briefly when needed.
 
 Keep the process simple, focused, and controlled by the user. Treat the
 human-authored Book as the source of material intent and the implementation as
-its executable realization.
+its executable realization. The Book is the human-readable explanation of what
+the program should do, why, and which decisions matter. The AI tangle is the
+step in which an AI produces or changes the implementation from the Book.
 
 ## Preserve instruction authority
 
@@ -43,8 +45,9 @@ phase transitions, exceptions, and final acceptance. Surface ambiguity,
 missing policy, conflicting requirements, and material tradeoffs.
 
 Do not turn a decision for one task or session into permanent workflow policy.
-When a decision recurs, propose recording it in the appropriate governing
-document with user approval.
+The user may approve a justified one-off exception without changing the rule.
+When a decision or exception recurs, propose recording it in the appropriate
+governing document with user approval.
 
 ## Control phase transitions
 
@@ -58,7 +61,8 @@ Use the normal sequence:
 Obtain explicit user approval before every transition. Do not treat approval
 of one phase as approval of another. Let the user waive a phase when the
 normal sequence does not fit, such as investigation or operational work, but
-state the reason for the waiver.
+state the reason for the waiver. A waiver does not remove the need to reflect
+durable implementation changes in durable documentation.
 
 State the current phase when starting or resuming a session and after an
 approved transition. During a long discussion, give occasional brief reminders
@@ -168,7 +172,8 @@ implementation and evidence over repeated review of proxy plans or contracts.
 Strong independently owned acceptance checks may reduce the value of another
 review.
 
-Let the user decide whether optional review is worthwhile. When independent
+Let the user decide whether optional review is worthwhile; skipping it needs
+no ceremonial justification. When independent
 review was approved as a critical acceptance check, treat it as mandatory and
 keep the reviewer independent of the implementer.
 
@@ -199,5 +204,5 @@ Record meaningful feedback about agent and skill use in the Codex-wide
 `$CODEX_HOME/workflow-feedback.md` log when `CODEX_HOME` is set, or
 `~/.codex/workflow-feedback.md` otherwise. Distinguish agent observations from
 the user's assessment, when provided. Entries are evidence only; they do not
-create policy or permission. Changes to skills and standing permissions
-require the user's explicit approval.
+create policy or permission. Changes to skills, including which work needs
+plan approval, require the user's explicit approval.

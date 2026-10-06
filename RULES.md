@@ -50,32 +50,29 @@ document. These rules must be corrected if they conflict with it.
 1. The root agent is GPT-6 Sol for discussion, orchestration, design,
    brainstorming, policy judgment, and synthesis. This root role should normally
    remain tool-free.
-   1. In response to a request, briefly announce the work and its
-      route before proceeding. Before giving Luna any assignment not already
-      covered by an approved plan or standing permission, present the concrete
-      bounded plan Luna will execute and obtain the user's approval.
-   2. The
-      plan must describe the expected result, affected targets, permitted actions,
-      evidence to reuse, how completion will be judged, and when to stop, with
-      detail suited to the risk. Naming Luna or stating only an outcome (for
-      example, “ask Luna to update the live site”) is not enough.
-   3. If facts needed
-      to define a change are unknown, the plan may seek approval for bounded
-      investigation; Luna must then return with a concrete change plan for
-      approval before making that change.
-   4. Approval covers the plan, including
-      follow-up assignments it covers; Sol must not ask separately for permission
-      to delegate. Luna's assignment is the approved plan, with any judgment Sol
-      retains made clear. Luna must not add targets, actions, or checks beyond
-      that plan.
-   5. Present a new plan when proposed work materially changes or
-      exceeds the approved plan, or when another required approval applies.
-   6. The
-      user may approve standing permission for a defined class of work; record
-      its scope and limits durably.
-   7. Luna must return when a finding requires work
-      or verification beyond the approved plan. Minor surprises within the plan
-      need not interrupt the user.
+   1. In response to a request, briefly announce the work and its route before
+      proceeding. Before giving Luna any assignment not already covered by an
+      approved plan or exempted by this policy, present the concrete bounded
+      plan Luna will execute and obtain the user's approval.
+   2. The plan must describe the expected result, affected targets, permitted
+      actions, evidence to reuse, how completion will be judged, and when to
+      stop, with detail suited to the risk. Naming Luna or stating only an
+      outcome (for example, “ask Luna to update the live site”) is not enough.
+   3. If facts needed to define a change are unknown, the plan may seek
+      approval for bounded investigation; Luna must then return with a concrete
+      change plan for approval before making that change.
+   4. Approving a plan also authorizes the follow-up assignments it includes;
+      Sol must not ask separately for permission to delegate. Luna's assignment
+      is the approved plan, with any judgment Sol retains made clear. Luna must
+      not add targets, actions, or checks beyond that plan.
+   5. If a finding requires work or verification beyond the approved plan,
+      Luna returns. Sol presents a new plan when proposed work materially
+      changes or exceeds the approved plan, or when another required approval
+      applies. Minor surprises within the plan need not interrupt the user.
+   6. This policy defines which work, if any, does not need plan approval.
+      Change it only deliberately, with user approval, usually based on
+      recorded Wrap Up feedback. A consuming repository's `AGENTS.md` may
+      adapt it locally, and the user may approve a one-off exception.
 2. Default repository and tool work to one GPT-6 Luna worker, even when it
    appears small. Use additional workers only for worthwhile work that is
    independent, does not overlap, and is needed.
@@ -86,21 +83,17 @@ document. These rules must be corrected if they conflict with it.
    it directly. Reuse evidence identified in the approved plan.
 4. A direct user assignment authorizes Sol to perform only the named operation
    on the named target or targets. Do not ask again for permission to do that
-   work, but do not treat it as permission for follow-up repository or tool
-   work.
+   work. It does not authorize searches, other commands, related files, or
+   follow-up tool work; that work returns to Luna.
 5. Sol may inspect material for judgment without further approval only when the
    user's assignment names that target and operation. If Sol needs to inspect
    other material, ask the user first. Luna may recommend asking Sol to read a
    file when summarizing it safely would require reproducing most of it, but
    that recommendation does not authorize the inspection. A file's authority
-   alone is not permission to inspect it. As item 4 states, an assignment
-   authorizes only the named target and operation; it does not authorize
-   searches, other commands, related files, or follow-up tool work. Further
-   repository or tool work returns to Luna.
+   alone is not permission to inspect it.
 6. User approval remains mandatory for phase transitions and waivers, material
    scope changes, policy decisions, significant risk, and other consequential
-   choices. Approval of one phase or assignment does not authorize a later
-   phase or a materially different choice.
+   choices.
 7. A worker must stay within its bounded assignment, must not redelegate, and
    must return material ambiguity instead of deciding policy, changing
    acceptance criteria, or expanding scope. Agents need not reread applicable
@@ -110,18 +103,8 @@ document. These rules must be corrected if they conflict with it.
 8. Discussion and Brainstorm remain Sol's work and must not be delegated, but
    repository and tool work arising during them follows the routing rules above.
 
-Use these provisional, simplified planning multipliers for GPT-6 models, using
-official standard API short-context input and output prices as a proxy rather
-than published Codex credit rates:
-
-- Luna: 1x planning multiplier
-- Sol: 20x Luna's planning multiplier
-- Astra: 100x Luna's planning multiplier
-
-These are simplified planning multipliers, not exact billing ratios for every
-token class or Codex product surface. Reassess them when official rates
-materially change or published Codex credit rates become available for the
-GPT-6 models.
+Rough relative cost, based on official API prices rather than Codex credit
+rates (revisit when those are published): Luna 1x, Sol 20x, Astra 100x.
 
 Use GPT-6 Astra only for unusually complex problem-solving or reviews when its
 extra capability is expected to justify its high cost; Astra is not the
@@ -139,7 +122,8 @@ Wrap Up.
 1. Moving from one phase to the next always requires explicit user approval.
 2. The user may waive a phase when the normal sequence does not fit the work,
    such as an investigation or operational task. The reason for the waiver
-   must be stated clearly.
+   must be stated clearly. Waiving a phase does not waive the requirement that
+   durable implementation changes be reflected in durable documentation.
 3. An agent must not treat approval of one phase as approval of a later phase.
 4. State the current phase when starting or resuming a session and after an
    approved transition. During a long discussion, give occasional brief
@@ -229,8 +213,8 @@ Wrap Up.
    `$CODEX_HOME/workflow-feedback.md` log when `CODEX_HOME` is set, or
    `~/.codex/workflow-feedback.md` otherwise. Distinguish agent observations
    from the user's assessment, when provided. Entries are evidence only; they
-   do not create policy or permission. Changes to skills and standing
-   permissions require the user's explicit approval.
+   do not create policy or permission. Changes to skills, including which work
+   needs plan approval, require the user's explicit approval.
 6. Record only knowledge worth retaining. Wrap Up must not become routine
    paperwork with no future value. Retained knowledge should be concise,
    searchable, linked from a likely entry point, and clear about whether it is

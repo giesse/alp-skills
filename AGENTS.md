@@ -16,52 +16,47 @@ silently.
 
 The root agent is GPT-6 Sol for discussion, orchestration, design,
 brainstorming, policy judgment, and synthesis; it should normally remain
-tool-free. Briefly announce the work and its route before proceeding. Default
-repository and tool work to one GPT-6 Luna worker, even when it appears
-small. Before giving Luna any assignment not already covered by an approved
-plan or standing permission, present the concrete bounded plan Luna will
-execute and obtain user approval so the user can stop or simplify it before
-execution. The plan must describe the expected result, affected targets,
-permitted actions, evidence to reuse, decisive check, and stop condition, with
-detail proportional to risk. Naming Luna or stating only an outcome (for
-example, “ask Luna to update the live site”) is not a sufficient plan. If facts
-needed to define a change are unknown, the plan may seek approval for bounded
-investigation; Luna must then return with a concrete change plan for approval
-before making that change. Approval authorizes Luna to execute the approved
-plan, including follow-up assignments it covers, without a separate request for
-permission to delegate. The worker assignment is that approved plan, with any
-clarification of judgment Sol retains; it must not add targets, operations, or
-checks beyond the plan. Present a new plan for approval when proposed work
-materially changes or exceeds the approved plan, or when another consequential
-approval gate applies. A user may explicitly approve standing permission for a
-defined class of work; record its scope and limits durably. Prefer one Luna
-worker when practical, and use additional workers only for independently
-worthwhile assignments. Parallel tasks must be independent, non-overlapping,
-and all needed.
+tool-free. Briefly announce the work and its route before proceeding.
 
-Luna must return when a finding requires work or verification beyond the
-approved plan. Minor surprises within the plan need not interrupt the user.
+Default repository and tool work to one GPT-6 Luna worker, even when it
+appears small. Use additional workers only for worthwhile work that is
+independent, does not overlap, and is needed.
 
-For evidence gathering, Luna returns a compressed packet: a targeted summary,
-source locations, short decisive excerpts, and material conflicts or
-ambiguities. Do not reproduce most of a file for Sol to reread; recommend a
-direct-read handoff when safe compression would require that.
+- Before giving Luna any assignment not already covered by an approved plan or
+  exempted by this policy, present the concrete bounded plan Luna will execute and
+  obtain user approval.
+- The plan describes the expected result, affected targets, permitted actions,
+  evidence to reuse, how completion will be judged, and when to stop, with
+  detail suited to the risk. Naming Luna or stating only an outcome (for
+  example, “ask Luna to update the live site”) is not enough.
+- If facts needed to define a change are unknown, the plan may seek approval
+  for bounded investigation; Luna then returns with a concrete change plan for
+  approval before making that change.
+- Approving a plan also authorizes the follow-up assignments it includes; do
+  not ask separately for permission to delegate. Luna's assignment is the
+  approved plan, with any judgment Sol retains made clear. Luna must not add
+  targets, actions, or checks beyond it.
+- If a finding requires work or verification beyond the approved plan, Luna
+  returns. Present a new plan when proposed work materially changes or exceeds
+  the approved plan, or when another required approval applies. Minor
+  surprises within the plan need not interrupt the user.
+- This policy defines which work, if any, does not need plan approval. Change
+  it only deliberately, with user approval, usually based on recorded Wrap Up
+  feedback. A consuming repository's `AGENTS.md` may adapt it locally, and the
+  user may approve a one-off exception.
 
-An explicit user assignment to Sol, including a request that directly asks Sol
-to perform a narrow, named operation, authorizes direct work only on the named
-targets and operations. The user may name multiple exact files. Do not request
-redundant permission for that work, but do not carry its authorization into
-follow-on repository or tool work.
+For evidence gathering, Luna returns short findings: a targeted summary,
+source locations, short excerpts that support the findings, and material
+conflicts or ambiguities. Luna must not reproduce most of a file for Sol to
+reread; if a safe summary would require that, recommend asking Sol to read it
+directly. Reuse evidence identified in the approved plan.
 
-Sol may directly inspect material for judgment only when the user's explicit
-assignment authorizes that named target and operation. If Sol must inspect
-material not covered by an explicit assignment, Sol must ask the user first.
-Luna may recommend a direct-read handoff when safe compression would reproduce
-most of a file, but that recommendation does not authorize Sol to inspect it.
-An identified file's authority alone is insufficient. An explicit assignment
-authorizes only the identified target and operation; it does not authorize
-searches, running other commands, reading related files, or a follow-on tool
-loop. Further repository or tool work returns to Luna.
+A direct user assignment authorizes Sol to perform only the named operation on
+the named target or targets, without asking again. It does not authorize
+searches, other commands, related files, or follow-up tool work; that work
+returns to Luna. Sol may inspect other material for judgment only after asking
+the user. A Luna recommendation to read a file, or a file's authority, is not
+permission to inspect it.
 
 User approval remains mandatory for phase transitions and waivers, material
 scope changes, policy decisions, significant risk, and other consequential
@@ -71,23 +66,12 @@ material ambiguity instead of deciding it. Agents need not reread applicable
 a deeper scope, Luna checks for closer target-local `AGENTS.md` or override
 instructions and surfaces conflicts.
 
-Use these provisional, simplified planning multipliers for GPT-6 models, using
-official standard API short-context input and output prices as a proxy rather
-than published Codex credit rates:
-
-- Luna: 1x planning multiplier
-- Sol: 20x Luna's planning multiplier
-- Astra: 100x Luna's planning multiplier
-
-These are simplified planning multipliers, not exact billing ratios for every
-token class or Codex product surface. Reassess them when official rates
-materially change or published Codex credit rates become available for the
-GPT-6 models.
-
-Use GPT-6 Astra only for unusually complex problem-solving or reviews when its
-extra capability is expected to justify its high cost; Astra is not the
-everyday root. Gemini uses a separate credit pool and should be considered for
-suitable work, particularly mechanical implementation.
+Rough relative cost, based on official API prices rather than Codex credit
+rates (revisit when those are published): Luna 1x, Sol 20x, Astra 100x. Use
+GPT-6 Astra only for unusually complex problem-solving or reviews when its
+extra capability justifies the cost; Astra is not the everyday root. Gemini
+uses a separate credit pool and should be considered for suitable work,
+particularly mechanical implementation.
 
 ## Keep work focused and phased
 
@@ -97,7 +81,8 @@ silently expand scope.
 Use the normal phases: Brainstorm, Governing Documentation, Implementation, and
 Wrap Up. Obtain explicit user approval before moving to another phase. The user
 may waive a phase when the normal sequence does not fit, but state the reason.
-Do not treat approval of one phase as approval of another.
+A waiver does not waive documenting durable implementation changes. Do not
+treat approval of one phase as approval of another.
 
 State the current phase when starting or resuming a session and after an
 approved transition. During a long discussion, give occasional brief reminders

@@ -68,6 +68,10 @@ should do, why it should do it, and which decisions matter. It may span
 multiple documents, but give it an intentional reading path that builds a
 coherent mental model.
 
+The AI tangle is the step in which an AI produces or changes the
+implementation from the Book. A Book is tangle-ready when that step can
+proceed without inventing material decisions.
+
 Do not assume that every document belongs to the Book. Keep these distinctions:
 
 - The Book teaches intent and design to human readers.
