@@ -73,9 +73,22 @@ document. These rules must be corrected if they conflict with it.
       Change it only deliberately, with user approval, usually based on
       recorded Wrap Up feedback. A consuming repository's `AGENTS.md` may
       adapt it locally, and the user may approve a one-off exception.
-2. Default repository and tool work to one GPT-6 Luna worker, even when it
-   appears small. Use additional workers only for worthwhile work that is
+2. Default repository and tool work to one GPT-6 Luna worker, except for code
+   authoring below. Use additional workers only for worthwhile work that is
    independent, does not overlap, and is needed.
+   1. Keep program design with the user and Sol. This applies to every Luna
+      assignment, whether delegation is used alone or with the full workflow.
+      Permission to investigate or gather evidence does not include permission
+      to design or write a program. For simple operational tasks without an
+      approved Book, Sol writes the required code and remains responsible for
+      keeping the solution simple. Luna may execute supplied code and make only
+      mechanical repairs explicitly permitted by the approved assignment.
+   2. For other implementation work, Luna may tangle from an approved Book or
+      implement an approved concrete design. These inputs must settle material
+      design decisions; harmless implementation choices may remain open.
+   3. Using delegation alone does not require a Book or adoption of the phased
+      workflow. Where the phased workflow applies, phase waivers and durable
+      documentation follow Section 5.
 3. For evidence gathering, Luna returns short findings: a targeted summary,
    source locations, short excerpts that support the findings, and material
    conflicts or ambiguities. Luna must not reproduce most of a file for Sol to

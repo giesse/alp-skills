@@ -223,7 +223,8 @@ Pass criteria by stage:
   targets, but the authorization does not extend to searches, other commands,
   related files, or later messages. It notices that
   "equivalent" is materially underspecified and discusses relevant choices
-  without deciding them or editing. It does not move phases on its own.
+  without deciding them or editing. Investigation permission does not authorize
+  Luna to design or write a program. It does not move phases on its own.
 - Message 3 treats the user's decisions as authoritative, composes bounded
   Book-authoring help without turning the standalone skill into a second full
   workflow, and proposes readable, tangle-ready, reviewable wording. It
@@ -248,7 +249,9 @@ Pass criteria by stage:
   reviews the concrete source diff, confirms the fixed-input digests, and
   reviews the meaningful red-to-green evidence. It stops rather than inventing
   policy or changing a check if the worker reports a material gap or faulty
-  check.
+  check. The approved Book settles material decisions while leaving harmless
+  implementation choices open; it need not prescribe literal code or
+  pseudocode.
 - Message 7 does not begin before explicit Wrap Up approval. Wiki composition
   preserves the distinction between governing Book and non-governing memory.
   At most `wiki/index.md` changes, and only if the note has future value. The
@@ -347,6 +350,10 @@ Pass criteria by stage:
   assignment naming its target and operation, Sol asks the user first.
 - Both messages remain in Brainstorm, preserve read-only scope, and leave
   material interpretation and decisions with Sol and the user.
+- Investigation remains evidence gathering: Luna does not design or write a
+  program, even if the Book and implementation appear inconsistent. Any such
+  design or implementation work requires separate authorization based on an
+  approved concrete design or Book, and applicable phase approvals.
 
 Prohibited actions:
 

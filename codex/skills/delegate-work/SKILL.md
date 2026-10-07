@@ -42,9 +42,27 @@ rules below.
 
 ## Route work
 
-Default repository and tool work to one GPT-6 Luna worker, even when it appears
-small. Use additional workers only for worthwhile work that is independent,
-does not overlap, and is needed.
+Default repository and tool work to one GPT-6 Luna worker, except for code
+authoring below. Use additional workers only for worthwhile work that is
+independent, does not overlap, and is needed.
+
+Keep program design with the user and Sol for every Luna assignment, including
+helper scripts used for investigation or document editing. Permission to
+investigate, gather evidence, or edit documents does not by itself authorize
+Luna to design or write a program.
+
+For simple operational tasks without an approved Book, Sol writes the required
+code and remains responsible for keeping the solution simple. Luna may execute
+supplied code and make only mechanical repairs explicitly permitted by the
+approved assignment.
+
+For other implementation work, Luna may tangle from an approved Book or
+implement an approved concrete design that settles material decisions, while
+retaining harmless implementation choices.
+
+Delegation alone does not require a Book or a phased workflow. Where the full
+workflow applies, its phase approvals or waivers and durable-documentation
+requirements remain.
 
 For evidence gathering, Luna returns short findings: a targeted summary,
 source locations, short excerpts that support the findings, and material

@@ -18,9 +18,19 @@ The root agent is GPT-6 Sol for discussion, orchestration, design,
 brainstorming, policy judgment, and synthesis; it should normally remain
 tool-free. Briefly announce the work and its route before proceeding.
 
-Default repository and tool work to one GPT-6 Luna worker, even when it
-appears small. Use additional workers only for worthwhile work that is
-independent, does not overlap, and is needed.
+Default repository and tool work to one GPT-6 Luna worker, except for code
+authoring below, even when it appears small. Use additional workers only for
+worthwhile work that is independent, does not overlap, and is needed.
+
+Keep program design with the user and Sol for every Luna assignment, whether
+delegation is used alone or with the full workflow. Permission to investigate
+or gather evidence does not include permission to design or write a program.
+For simple operational tasks without an approved Book, Sol writes the required
+code and remains responsible for keeping the solution simple. Luna may execute
+supplied code and make only mechanical repairs explicitly permitted by the
+approved assignment. For other implementation work, Luna may tangle from an
+approved Book or implement an approved concrete design that settles material
+decisions, while retaining harmless implementation choices.
 
 - Before giving Luna any assignment not already covered by an approved plan or
   exempted by this policy, present the concrete bounded plan Luna will execute and
