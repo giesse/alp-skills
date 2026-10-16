@@ -1,6 +1,18 @@
 # ALP Skills Book
 
-Status: The Book is unfinished; several chapters are stubs awaiting dedicated authoring sessions, including this file. We need a brief introduction here, and a Quickstart section.
+This repository provides skills that help coding agents support AI-Assisted
+Literate Programming (ALP): authoring program Books, guiding development
+sessions, and maintaining repository knowledge.
+
+This Book explains the approach, the goals behind these skills, and how to use
+them.
+
+**Start with [AI-Assisted Literate Programming](ALP.md)**, the first chapter. It
+introduces ALP and the role of the human author, the Book, and the AI. Follow the
+chapters in order, or use the table of contents to revisit a topic.
+
+Status: The main chapters are drafted. The Quick start and installation
+guidance are deferred until GitHub publication.
 
 ## Quick start
 

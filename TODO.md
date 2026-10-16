@@ -13,7 +13,7 @@
 - [x] Reconcile the delegation practice now recorded in GOALS with RULES,
   AGENTS, and the run-alp-workflow skill. The GPT pricing and Astra update
   intentionally did not propagate that policy.
-- [ ] Create the final Book
+- [x] Create the final Book
   - [x] Explain the critical role of GOALS - this was a great lesson
   - [x] Do reviews against project goals and session goals
   - [x] LLMs paranoid behavior around checks and tests?

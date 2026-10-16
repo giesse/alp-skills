@@ -27,11 +27,39 @@ Once you have `GOALS.md`, I suggest asking the AI to help you craft an `AGENTS.m
 
 From then on, how you proceed depends on your project. You can write one chapter at a time with `$author-alp-book`. If you are starting from a vaguer goal, use `$run-alp-workflow` to refine it in Brainstorm and, when you choose to continue, guide the work through the remaining phases. The details depend greatly on the project's goals, its programming language or languages, and its other constraints.
 
-## How to start using ALP in an existing repository / project
+## How to start using ALP in an existing project
 
-> [!note]
->
-> This section is a stub
+Adopting ALP in an existing project depends on both the project and the
+developer. Start by making the project's goals explicit, just as you would for
+a new project.
+
+A useful scope for the first part of the Book is a reasonably self-contained
+module or subsystem. Write a coherent set of chapters that explains its
+purpose, behavior, important decisions, and constraints. Existing code and
+tests provide evidence about the system, but you still need to decide which
+behavior is intended and which decisions should govern future work.
+
+The aim is a Book complete enough that, in principle, an AI could recreate the
+module while preserving its intended behavior and material decisions. This
+does not mean that you should regenerate working code: doing so could introduce
+regressions and other problems. It is a way to judge whether the Book explains
+the program sufficiently to guide implementation.
+
+This requires an initial investment. If you only need to fix a bug, writing
+chapters for the surrounding module may be much more work than the fix itself.
+I have written chapters that describe only a fix, but in my experience the
+value of ALP is minimal in that case. A collection of such chapters can become
+scattered notes without ever becoming a coherent, tangle-ready Book.
+
+When you are not ready to write the Book, preserve what you learn in the
+repository wiki and defer the chapters until you can give the module or
+subsystem proper treatment. Record the problem, the reasoning behind the fix,
+and anything future work will need to know.
+
+Practical compromises will be necessary. Preserve useful knowledge throughout,
+but do not force it into a premature Book that you will have to scrap and
+rewrite. The wiki can hold that knowledge until you are ready to develop the
+human-readable explanation.
 
 ## How to use the workflow for spec-driven development or some other approach other than ALP
 
