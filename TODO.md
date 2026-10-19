@@ -18,11 +18,14 @@
   - [x] Do reviews against project goals and session goals
   - [x] LLMs paranoid behavior around checks and tests?
   - [x] AI goes into rabbit holes, spends a lot of time on details that often don't matter; perhaps enforce planning defore execution in each phase? It kind of means going back to the "approve everything before the AI does any work" but it may be necessary to save a lot of time and tokens.
-- [ ] Import old TODO list
-- [ ] Decide which historical sources to retain in wiki/sources , delete or move reference files from old iterations
-- [ ] Create the companion Antigravity skill
-- [ ] Codify the Codex-to-Antigravity handoff before or as part of creating the
-  companion Antigravity skill.
+- [x] Review and reconcile the old TODO list with the current backlog.
+- [ ] Review the remaining historical sources. Preserve useful knowledge and
+  rationale in appropriate documentation or archived sources, including why
+  ideas were superseded or abandoned. Decide which originals to retain, then
+  remove obsolete legacy directories and reference files after preserving
+  what is worth keeping.
+- [ ] Publish to GitHub
+- [ ] Finalize installation instructions
 - [ ] Revisit the knowledge lifecycle and possible mechanical wiki validation
   after gaining real maintenance experience. Decide whether the lightweight
   Markdown metadata should evolve into YAML frontmatter; refine reach and
@@ -37,3 +40,8 @@
   compatibility with specification-driven development.
 - [ ] Study the Codex memory system before considering another repository
   memory-layer design.
+- [ ] Deferred, low priority: consider improving the prompt-based Antigravity
+  implementation handoff, possibly with a companion skill, if practical use
+  reveals a concrete limitation.
+- [ ] Deferred, low priority: consider an Antigravity version of the general
+  skills, separately from the implementation handoff.
