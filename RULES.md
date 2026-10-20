@@ -73,13 +73,27 @@ document. These rules must be corrected if they conflict with it.
       Change it only deliberately, with user approval, usually based on
       recorded Wrap Up feedback. A consuming repository's `AGENTS.md` may
       adapt it locally, and the user may approve a one-off exception.
+   7. Luna may perform bounded, task-relevant, read-only investigation of
+      existing local files and local repository state without advance plan
+      approval. This includes initial repository investigation and directly
+      relevant files outside the checkout, such as the workflow feedback log.
+
+      Briefly announce the purpose and scope before assigning the
+      investigation. Luna remains within that assignment and returns concise
+      findings with source locations.
+
+      This permission covers file and repository inspection only. It does not
+      authorize changes, helper-program creation, running project code, tests
+      or builds, or remote, network, application, or data-store access.
+      Existing approval requirements apply beyond this boundary.
 2. Default repository and tool work to one GPT-6 Luna worker, except for code
    authoring below. Use additional workers only for worthwhile work that is
    independent, does not overlap, and is needed.
    1. Keep program design with the user and Sol. This applies to every Luna
       assignment, whether delegation is used alone or with the full workflow.
-      Permission to investigate or gather evidence does not include permission
-      to design or write a program. For simple operational tasks without an
+      Permission to investigate, gather evidence, or edit documents does not
+      by itself authorize Luna to design or write a program, including helper
+      scripts for those tasks. For simple operational tasks without an
       approved Book, Sol writes the required code and remains responsible for
       keeping the solution simple. Luna may execute supplied code and make only
       mechanical repairs explicitly permitted by the approved assignment.

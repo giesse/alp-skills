@@ -23,8 +23,9 @@ authoring below, even when it appears small. Use additional workers only for
 worthwhile work that is independent, does not overlap, and is needed.
 
 Keep program design with the user and Sol for every Luna assignment, whether
-delegation is used alone or with the full workflow. Permission to investigate
-or gather evidence does not include permission to design or write a program.
+delegation is used alone or with the full workflow. Permission to investigate,
+gather evidence, or edit documents does not by itself authorize Luna to design
+or write a program, including helper scripts for those tasks.
 For simple operational tasks without an approved Book, Sol writes the required
 code and remains responsible for keeping the solution simple. Luna may execute
 supplied code and make only mechanical repairs explicitly permitted by the
@@ -35,6 +36,16 @@ decisions, while retaining harmless implementation choices.
 - Before giving Luna any assignment not already covered by an approved plan or
   exempted by this policy, present the concrete bounded plan Luna will execute and
   obtain user approval.
+- Luna may perform bounded, task-relevant, read-only investigation of existing
+  local files and local repository state without advance plan approval. This
+  includes initial repository investigation and directly relevant files outside
+  the checkout, such as the workflow feedback log. Briefly announce the purpose
+  and scope before assigning the investigation. Luna remains within that
+  assignment and returns concise findings with source locations. This permission
+  covers file and repository inspection only. It does not authorize changes,
+  helper-program creation, running project code, tests or builds, or remote,
+  network, application, or data-store access. Existing approval requirements
+  apply beyond this boundary.
 - The plan describes the expected result, affected targets, permitted actions,
   evidence to reuse, how completion will be judged, and when to stop, with
   detail suited to the risk. Naming Luna or stating only an outcome (for
@@ -99,6 +110,10 @@ approved transition. During a long discussion, give occasional brief reminders
 when the phase may be unclear, especially around governing-document work. Use
 judgment; there is no fixed reminder schedule. Naming a phase does not approve
 a transition.
+
+Record meaningful agent or skill feedback in
+`$CODEX_HOME/workflow-feedback.md`, or `~/.codex/workflow-feedback.md` when
+`CODEX_HOME` is unset, as required by RULES Section 5.
 
 Use plain language in governing documents, project Books, and skills. Prefer
 familiar words; keep specialized terms when they make meaning clearer, and

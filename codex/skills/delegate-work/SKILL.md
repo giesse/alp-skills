@@ -16,6 +16,22 @@ Discussion and brainstorming belong to GPT-6 Sol as root agent and must not be
 delegated. Repository and tool work arising during them follows the routing
 rules below.
 
+## Read-only investigation without advance approval
+
+Luna may perform bounded, task-relevant, read-only investigation of existing
+local files and local repository state without advance plan approval. This
+includes initial repository investigation and directly relevant files outside
+the checkout, such as the workflow feedback log.
+
+Briefly announce the purpose and scope before assigning the investigation.
+Luna remains within that assignment and returns concise findings with source
+locations.
+
+This permission covers file and repository inspection only. It does not
+authorize changes, helper-program creation, running project code, tests or
+builds, or remote, network, application, or data-store access. Existing
+approval requirements apply beyond this boundary.
+
 ## Plan before delegating
 
 - Before giving Luna work not covered by an approved plan or exempted by this
@@ -49,7 +65,7 @@ independent, does not overlap, and is needed.
 Keep program design with the user and Sol for every Luna assignment, including
 helper scripts used for investigation or document editing. Permission to
 investigate, gather evidence, or edit documents does not by itself authorize
-Luna to design or write a program.
+Luna to design or write a program, including helper scripts for those tasks.
 
 For simple operational tasks without an approved Book, Sol writes the required
 code and remains responsible for keeping the solution simple. Luna may execute

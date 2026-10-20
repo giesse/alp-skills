@@ -4,3 +4,5 @@ __pycache__/
 
 # Raw forward-test evidence is local and run-specific.
 tests/forward/evidence/
+# temporarily ignore this
+site/
