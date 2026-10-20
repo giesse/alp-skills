@@ -24,6 +24,7 @@
   ideas were superseded or abandoned. Decide which originals to retain, then
   remove obsolete legacy directories and reference files after preserving
   what is worth keeping.
+- [ ] Decide what to do with LESSONS.
 - [ ] Publish to GitHub
 - [ ] Finalize installation instructions
 - [ ] Revisit the knowledge lifecycle and possible mechanical wiki validation
