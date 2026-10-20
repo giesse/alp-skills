@@ -35,5 +35,8 @@ any standalone repository decision.
 - Do not infer a repository identity, host, packaging mechanism, or current
   runtime behavior from a historical migration proposal.
 
-The legacy directories remain historical evidence and require broader audit
-before any deletion decision.
+Review status — 2026-10-20: the legacy sources were reviewed, and local legacy
+directories were removed after selected rationale was preserved. The original
+paths above are provenance labels; those files are not retained locally. The
+two exact EC-v1 linter files are retained separately as retired references in
+the adjacent `retired-ec-linter/` directory.

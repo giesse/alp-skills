@@ -2,7 +2,7 @@
 
 Status: Historical input; not adopted current policy.
 
-Original source: `OldAntigravityALP/wiki/alp-guardrails-and-ownership.md`
+Original source: [Antigravity handoff guardrails](https://github.com/giesse/antigravity-alp/blob/eaa968e599f0138614046e964f78888d726277dd/wiki/alp-guardrails-and-ownership.md)
 
 Preservation: Portable guardrail lessons retained for a future handoff-design
 session. Stale wiki framing and cross-links were normalized; examples naming

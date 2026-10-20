@@ -1,10 +1,11 @@
 # ALP EC Linter
 
-Status: Retired historical EC-v1 design evidence; EC is not current policy by virtue of this page.
+Status: Retired EC-v1 design and source evidence; not current policy or an active linter.
 
-Original source: `OldCodexALPDocuments/ALP EC Linter.md`
+Design source: `OldCodexALPDocuments/ALP EC Linter.md` (reviewed; its substantive
+body is preserved here, but the original document is not retained locally).
 
-Preservation: The complete original substantive body was retained; only obsolete cross-reference syntax was normalized.
+The exact retired source files are retained as references: [`lint_ec.py`](retired-ec-linter/lint_ec.py) and [`test_lint_ec.py`](retired-ec-linter/test_lint_ec.py). They were copied byte-for-byte from `old/codex/skills/alp-workflow/scripts/`; they were not executed during cleanup.
 
 ## Purpose and Boundary
 
