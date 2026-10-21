@@ -34,7 +34,7 @@
   and existing source notes.
 - [x] Retire the superseded local lesson compilation after independent review
   of its wiki replacement.
-- [ ] Publish to GitHub
+- [x] Publish to GitHub
 - [ ] After this repository is published, update the README at
   [giesse/antigravity-alp](https://github.com/giesse/antigravity-alp) to mark
   that repository obsolete and point readers to this repository's published
