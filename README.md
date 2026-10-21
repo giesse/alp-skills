@@ -4,6 +4,8 @@ This repository provides skills that help coding agents support AI-Assisted
 Literate Programming (ALP): authoring program Books, guiding development
 sessions, and maintaining repository knowledge.
 
+This repository is licensed under the [MIT License](LICENSE).
+
 This Book explains the approach, the goals behind these skills, and how to use
 them.
 
