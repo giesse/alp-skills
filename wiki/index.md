@@ -32,3 +32,5 @@ guidance unless a later reconciliation says so.
   — historical evidence and the 2026-10-20 decision to retire the one-run suite.
 - [Repository migration history](sources/repository-migration-history.md)
   — dated historical account and durable lessons.
+- [Workflow lessons from earlier ALP work](sources/workflow-lessons.md)
+  — qualified historical rationale and observations, not current guidance.

@@ -24,7 +24,10 @@ they are provenance labels, not current authority.
   is intentionally compact, and logs/foundation claims require reconciliation.
 - `OldCodexALPDocuments/ALP Workflow Redesign.md` was reviewed but not
   imported: it is governing-design history, not portable current wiki memory;
-  only the migration lessons needed here were synthesized.
+  the migration note records the 2026 review disposition. A later workflow
+  lesson reconciliation preserved selected historical rationale in
+  [Workflow lessons from earlier ALP work](workflow-lessons.md), without
+  treating the redesign as current guidance.
 - `OldAntigravityALP/wiki/llm-memory-pattern.md` was reviewed but not retained:
   it asserts adoption of a memory architecture that is not approved here.
 
@@ -38,7 +41,9 @@ contents.
 
 - `old/` (39 files): its Book, skills, agents, and wiki mostly describe retired
   workflows or ideas now covered by `GOALS.md`, `RULES.md`, `ALP.md`, current
-  skills, and `LESSONS.md`. The two research pages above are already preserved.
+  skills, and the historical synthesis in
+  [Workflow lessons from earlier ALP work](workflow-lessons.md). The two
+  research pages above are already preserved.
   The exact EC-v1 linter and test originals are retained at
   [`lint_ec.py`](retired-ec-linter/lint_ec.py) and
   [`test_lint_ec.py`](retired-ec-linter/test_lint_ec.py); byte-for-byte copies
@@ -47,13 +52,15 @@ contents.
 - `OldCodexALPDocuments/` (8 files): workflow redesign and role/dispatch
   documents are dated design history, not current guidance. Migration lessons
   and EC-linter design are preserved above; the remaining authoring and
-  workflow rationale is substantially covered by current skills and
-  `LESSONS.md`.
+  workflow rationale is summarized in
+  [Workflow lessons from earlier ALP work](workflow-lessons.md), with current
+  operational policy kept in the governing documents and skills.
 - `OldAntigravityALP/` (46 files, including placeholders): guardrail and
   scaffold rationale is preserved in
-  [the handoff guardrails source](antigravity-handoff-guardrails.md) and
-  `LESSONS.md`. The 2026-04-30 observation about role-specific model
-  initialization is recorded as a dated, unverified anecdote in `LESSONS.md`.
+  [the handoff guardrails source](antigravity-handoff-guardrails.md) and the
+  historical workflow synthesis. The 2026-04-30 role-initialization account is
+  retained there as a dated, unverified observation without comparative
+  evidence or a recommendation to change current handoff practice.
   The model/pricing/research surveys contain dated, unverified claims and
   speculative designs; they were not adopted as current knowledge. The user
   confirmed that the entire `OldAntigravityALP/` Git subrepository is on GitHub
@@ -63,13 +70,16 @@ contents.
   but only placeholders are present in the local media directories.
 
 The three legacy directories (`old/`, `OldCodexALPDocuments/`, and
-`OldAntigravityALP/`) have been removed locally after their live references
-were updated in `TODO.md`, `LESSONS.md`, this inventory, and the three source
-notes `alp-ec-linter.md`, `antigravity-handoff-guardrails.md`, and
-`repository-migration-history.md`. Remaining mentions of removed originals are
-plainly labeled provenance, not local links. The Antigravity sources are linked
-to commit `eaa968e599f0138614046e964f78888d726277dd` in the user-identified
-GitHub repository; remote availability was not independently verified.
+`OldAntigravityALP/`) were removed locally after their live references were
+updated in `TODO.md`, this inventory, and the three source notes
+`alp-ec-linter.md`, `antigravity-handoff-guardrails.md`, and
+`repository-migration-history.md`. The workflow synthesis was added later, on
+2026-10-21, to preserve selected rationale and evidence-status distinctions
+from the earlier lesson compilation; it was not part of the 2026-10-20 cleanup.
+Remaining mentions of removed originals are plainly labeled provenance, not
+local links. The Antigravity sources are linked to commit
+`eaa968e599f0138614046e964f78888d726277dd` in the user-identified GitHub
+repository; remote availability was not independently verified.
 
 No historical code or tests were run and no external claims were verified.
 The legacy directories were untracked by the parent repository, so their

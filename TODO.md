@@ -4,9 +4,11 @@
 
 - [x] Brainstorm on [GOALS](GOALS.md) and refine it
 - [x] Create [RULES](RULES.md) based on our goals
-- [x] Extract lessons from the historical documents and past conversations, Codex memory etc. and create [LESSONS](LESSONS.md).
+- [x] Extract historical lessons and reconcile current policy into GOALS, RULES,
+  ALP, and the skills; preserve useful historical rationale in the
+  [repository wiki](wiki/index.md).
 - [x] Define AI-assisted Literate Programming in detail
-- [x] Refine RULES based on LESSONS.
+- [x] Refine RULES based on the historical lesson findings.
 - [x] Introduce LLM Wiki rules.
 - [x] Update [AGENTS](AGENTS.md) from RULES, and create any Codex skill(s) based on RULES
 - [x] Create the wiki
@@ -20,18 +22,26 @@
   - [x] AI goes into rabbit holes, spends a lot of time on details that often don't matter; perhaps enforce planning defore execution in each phase? It kind of means going back to the "approve everything before the AI does any work" but it may be necessary to save a lot of time and tokens.
 - [x] Review and reconcile the old TODO list with the current backlog.
 - [x] Review the historical sources in `old/`, `OldCodexALPDocuments/`, and
-  `OldAntigravityALP/`; record preserved rationale and the review disposition
-  in [LESSONS](LESSONS.md) and the [source inventory](wiki/sources/inventory.md).
+  `OldAntigravityALP/`; record preserved rationale and review disposition in
+  the [source inventory](wiki/sources/inventory.md) and
+  [historical workflow lessons](wiki/sources/workflow-lessons.md).
 - [x] Archive the exact retired EC-v1 linter and test files, update historical
   references, and remove the local `old/`, `OldCodexALPDocuments/`, and
   `OldAntigravityALP/` directories. See the [source inventory](wiki/sources/inventory.md).
-- [ ] Decide what to do with LESSONS.
+- [x] Reconcile the historical lesson record: current policy remains in
+  governing documents, while useful historical rationale and evidence limits
+  are preserved in the [workflow lessons page](wiki/sources/workflow-lessons.md)
+  and existing source notes.
+- [x] Retire the superseded local lesson compilation after independent review
+  of its wiki replacement.
 - [ ] Publish to GitHub
 - [ ] After this repository is published, update the README at
   [giesse/antigravity-alp](https://github.com/giesse/antigravity-alp) to mark
   that repository obsolete and point readers to this repository's published
   URL. This is a manual follow-up.
 - [ ] Finalize installation instructions
+- [ ] After GitHub publication, revisit the site experiment: decide whether to
+  use it, finalize its repository links, and regenerate it if proceeding.
 - [ ] Revisit the knowledge lifecycle and possible mechanical wiki validation
   after gaining real maintenance experience. Decide whether the lightweight
   Markdown metadata should evolve into YAML frontmatter; refine reach and
