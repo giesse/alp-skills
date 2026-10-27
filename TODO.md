@@ -59,5 +59,13 @@
 - [ ] Deferred, low priority: consider improving the prompt-based Antigravity
   implementation handoff, possibly with a companion skill, if practical use
   reveals a concrete limitation.
-- [ ] Deferred, low priority: consider an Antigravity version of the general
-  skills, separately from the implementation handoff.
+- [x] Create an initial Antigravity version of the general skills under
+  `antigravity/skills/` for testing (Gemini 4 Argon root, Gemini 3.8 Flash
+  worker, `~/.gemini/config/workflow-feedback.md` feedback log).
+- [ ] After real-world testing of the Antigravity skills, revisit:
+  - updating governing and Book documentation (`GOALS.md`, `RULES.md`,
+    `AGENTS.md`, `book/canonical-sources-and-derived-artifacts.md`) to reflect
+    the Antigravity skills;
+  - whether custom subagents are worthwhile beyond `research` and `self`; and
+  - how "quick, targeted lookups" should be routed between Argon and Flash so a
+    worker is not asked to read a single file and report it back verbatim.

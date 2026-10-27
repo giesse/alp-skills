@@ -1,0 +1,207 @@
+---
+name: run-alp-workflow
+description: Guide a complete AI-assisted Literate Programming session through Brainstorm, Governing Documentation, Implementation, and Wrap Up while preserving user authority, explicit phase approval, independent acceptance checks, and semantic alignment between the Book and implementation. Use for end-to-end ALP delivery, resuming or routing an ALP session, or phase-gated documentation intended to produce executable or operational change. Compose it with author-alp-book for detailed Book work and maintain-repository-wiki for worthwhile repository memory; use those skills alone when the full lifecycle is not wanted.
+---
+
+# Run an ALP Workflow
+
+At the start of every invocation, read and follow `delegate-work`'s `SKILL.md`
+as a required companion skill. If it is unavailable, stop and tell the user that
+the required skill is missing. `author-alp-book` and
+`maintain-repository-wiki` are optional companions; follow the relevant
+requirements below when either is unavailable.
+
+Use plain language in governing documents and project Books. Prefer familiar
+words, keep specialized terms when they make meaning clearer, and explain them
+briefly when needed.
+
+Keep the process simple, focused, and controlled by the user. Treat the
+human-authored Book as the source of material intent and the implementation as
+its executable realization. The Book is the human-readable explanation of what
+the program should do, why, and which decisions matter. The AI tangle is the
+step in which an AI produces or changes the implementation from the Book.
+
+## Preserve instruction authority
+
+Follow the consuming repository's instructions. Surface a conflict between
+those instructions and this skill instead of resolving it silently.
+
+Treat use of this complete workflow as adoption of its repository-memory
+requirement. For substantive repository investigation, the repository worker
+consults `wiki/index.md`, follows only task-relevant links, and returns targeted
+findings to the root agent. The root agent need not read the wiki, and a narrow
+direct read under `delegate-work` rules does not itself trigger wiki
+preflight. If the index is absent, the worker surfaces the gap and lets the
+user decide how to address it rather than inventing its contents.
+
+Keep one session focused on one goal. Record and defer unrelated work. If an
+unrelated blocker must be addressed elsewhere, preserve enough context to
+resume the original goal. If the blocker must take priority, you may explicitly
+convert this session to address it and resume the original goal in a new session.
+Do not silently expand the scope of a session or implementation.
+
+Let the user own the goal, scope, material decisions, governing documentation,
+phase transitions, exceptions, and final acceptance. Surface ambiguity,
+missing policy, conflicting requirements, and material tradeoffs.
+
+Do not turn a decision for one task or session into permanent workflow policy.
+The user may approve a justified one-off exception without changing the rule.
+When a decision or exception recurs, propose recording it in the appropriate
+governing document with user approval.
+
+## Control phase transitions
+
+Use the normal sequence:
+
+1. Brainstorm
+2. Governing Documentation
+3. Implementation
+4. Wrap Up
+
+Obtain explicit user approval before every transition. Do not treat approval
+of one phase as approval of another. Let the user waive a phase when the
+normal sequence does not fit, such as investigation or operational work, but
+state the reason for the waiver. A waiver does not remove the need to reflect
+durable implementation changes in durable documentation.
+
+State the current phase when starting or resuming a session and after an
+approved transition. During a long discussion, give occasional brief reminders
+when the phase may be unclear, especially when drafting or editing governing
+documentation. Use judgment; there is no fixed reminder schedule. Naming a
+phase does not approve a transition.
+
+### Brainstorm
+
+Clarify the problem, intent, scope, assumptions, gaps, edge cases, risks, and
+possible approaches. Ask useful questions and act as a sounding board.
+
+Do not require a separate artifact. Keep exploratory ideas distinct from
+approved decisions. Do not drift into documentation work or implementation.
+
+### Governing Documentation
+
+Treat writing and approving the governing documentation as the central work.
+Keep the user as author and decision-maker. Normally require the user to write
+the first draft or a significant part.
+
+When `author-alp-book` is available, use it for detailed Book work within the
+approved Governing Documentation phase. Its use does not authorize a phase
+transition. If it is unavailable, apply the self-contained requirements below.
+
+Assist by researching, suggesting, reviewing, editing, clarifying, and
+preparing evidence-based material. Draft most of a derivative governing
+document only when approved user-authored sources already establish the
+policy, the user explicitly authorizes drafting, and the user reviews the
+result. Do not invent intent.
+
+When ALP applies, require the Book to:
+
+- teach a reader the intended mental model;
+- state material intent, rationale, constraints, compatibility commitments,
+  and dangerous boundaries;
+- remove ambiguity where different interpretations would materially matter;
+  and
+- remain readable, tangle-ready, and reviewable.
+
+In an existing system, treat code, tests, runtime observations, comments, and
+old documents as evidence rather than automatic intent. Distinguish intended,
+compatibility-constrained, incidental, contradictory, and unresolved
+behavior. Return unresolved material questions to the user.
+
+Use the least precise representation that removes material ambiguity. Leave
+ordinary low-level implementation choices open.
+
+Before Implementation, identify the decisive acceptance checks and obtain user
+approval for them. Use automated tests or other decisive static, manual, or
+runtime checks appropriate to the work. Keep critical-check authorship
+independent of the implementer. Do not invent an artificial harness when an
+approved independent static review is the better critical check. When such a
+review is the critical check, agree its scope and criteria before implementation
+and keep the reviewer independent of the implementer.
+
+Before finalizing the checks, perform a proportionate coverage pass. Confirm
+that each approved material criterion and important boundary has an observable
+check, or state the remaining evidence limitation. Use the simplest
+representation that makes coverage clear; do not require a matrix,
+traceability document, or separate artifact unless it materially helps.
+
+Prefer test-first implementation when the decisive checks can be executable
+tests. When safe and meaningful, run new critical tests before implementation
+and confirm that they fail for the expected reason. Do not manufacture a red
+baseline for static or manual checks, already-satisfied behavior, or unsafe or
+misleading failures.
+
+### Implementation
+
+Give the implementer the approved governing documentation and critical
+acceptance checks. Prefer an economical model capable of performing the work
+reliably.
+
+Allow ordinary low-level choices left open by the documentation. Do not allow
+the implementer to invent policy or change, weaken, or reinterpret critical
+checks. Let the implementer add useful supplementary checks when they do not
+alter the approved acceptance contract.
+
+Implement until the approved checks pass, then refactor while keeping them
+passing. Do not weaken the checks to obtain green results.
+
+Treat scripts, migrations, configuration, infrastructure, and generated or
+operational artifacts as implementation when they alter executable or
+operational behavior.
+
+If implementation reveals a missing case, mistaken assumption, material
+ambiguity, or incorrect critical check, stop and return to Governing
+Documentation. Do not force success through undocumented behavior.
+
+Verify in proportion to the claim. A syntax check proves syntax; a focused
+test proves only its covered behavior; a review supports only its stated
+scope. Approval of a policy establishes that the decision was made; it does not
+prove that an implementation or workflow is reliable.
+
+Before work is complete, reflect any durable implementation change in durable
+documentation.
+
+Before completion, align the Book and accepted implementation on material
+behavior and decisions. Do not demand one-to-one traceability.
+
+### Independent review
+
+For non-trivial changes, consider fresh post-implementation review when it is
+likely to add evidence worth its cost. Prefer review of the concrete
+implementation and evidence over repeated review of proxy plans or contracts.
+Strong independently owned acceptance checks may reduce the value of another
+review.
+
+Let the user decide whether optional review is worthwhile; skipping it needs
+no ceremonial justification. When independent
+review was approved as a critical acceptance check, treat it as mandatory and
+keep the reviewer independent of the implementer.
+
+Do not let review change policy, scope, or acceptance criteria.
+
+### Wrap Up
+
+Confirm that the documentation and accepted implementation remain aligned.
+Record decisions, lessons, unresolved follow-up, and other knowledge worth
+retaining in an appropriate durable artifact.
+
+When `maintain-repository-wiki` is available, use it for worthwhile portable,
+non-governing repository knowledge. Its use is conditional: do not update the
+wiki merely to prove that Wrap Up occurred. If the skill is unavailable,
+preserve the same distinction between repository memory and governing
+documentation.
+
+Keep retained knowledge concise, searchable, reachable from a likely entry
+point, and explicit about whether it is policy, evidence, history, inference,
+or unresolved work. Do not create paperwork merely to prove that Wrap Up
+occurred.
+
+Discuss how the session and workflow performed: what helped, what failed, what
+was unnecessarily difficult, and what may merit improvement. Obtain user
+acceptance rather than declaring the work accepted on the user's behalf.
+
+Record meaningful feedback about agent and skill use in the Antigravity-wide
+`~/.gemini/config/workflow-feedback.md` log. Distinguish agent observations from
+the user's assessment, when provided. Entries are evidence only; they do not
+create policy or permission. Changes to skills, including which work needs
+plan approval, require the user's explicit approval.
