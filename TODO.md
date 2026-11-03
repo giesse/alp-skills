@@ -35,11 +35,11 @@
 - [x] Retire the superseded local lesson compilation after independent review
   of its wiki replacement.
 - [x] Publish to GitHub
-- [ ] After this repository is published, update the README at
+- [x] After this repository is published, update the README at
   [giesse/antigravity-alp](https://github.com/giesse/antigravity-alp) to mark
   that repository obsolete and point readers to this repository's published
   URL. This is a manual follow-up.
-- [ ] Finalize installation instructions
+- [x] Finalize installation instructions in the [README quick start](README.md#quick-start) and [installation guide](book/installation-updating-and-validation.md).
 - [ ] After GitHub publication, revisit the site experiment: decide whether to
   use it, finalize its repository links, and regenerate it if proceeding.
 - [ ] Revisit the knowledge lifecycle and possible mechanical wiki validation

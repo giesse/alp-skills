@@ -4,18 +4,14 @@
 
 ## How to use the skills in this repository
 
-> [!WARNING]
->
-> This section describes the repository's current experimental use. Installation, compatibility, and the set of available skills may change before publication.
+At present, both Codex and Antigravity are supported. The skills may be adaptable to other agent harnesses, but this repository does not yet provide or maintain an adaptation procedure. If you want to experiment, you can ask your agent to attempt a port to your preferred harness in a fork of this repository.
 
-At present, only Codex is supported. The skills may be adaptable to other agent harnesses, but this repository does not yet provide or maintain an adaptation procedure. If you want to experiment, you can ask your agent to attempt a port to your preferred harness in a fork of this repository.
+To use the four skills in Codex or Antigravity, follow the [quick start](../README.md#quick-start) and [installation, updating, and validation guide](installation-updating-and-validation.md). In Codex, invoke skills with `$` (for example, `$run-alp-workflow`); in Antigravity, invoke them with `/` (for example, `/run-alp-workflow`). `run-alp-workflow` requires `delegate-work`, so install both together when using the complete workflow. You can also use `delegate-work` on its own for delegation guidance.
 
-If you are using Codex, ask it to install the skills from this repository. At present, this installs four skills. They can be combined, but they have different scopes. `$run-alp-workflow` requires `$delegate-work`, so install both together when using the complete workflow. You can also use `$delegate-work` on its own for delegation guidance.
-
-- `$delegate-work` — routes discussion, repository, and tool work between the root agent and workers, with bounded assignments and user authority.
-- `$run-alp-workflow` — coordinates a complete session across four phases, with a root orchestrator and delegation when worthwhile. It requires `$delegate-work` and pauses for your approval before each phase transition. See [Running an ALP Workflow](running-alp-workflow.md).
-- `$author-alp-book` — supports bounded Book work without requiring the complete workflow. See [Authoring an ALP Book](authoring-alp-books.md).
-- `$maintain-repository-wiki` — preserves non-governing repository memory and can be used with or without ALP. See [Maintaining Repository Memory](maintaining-repository-memory.md).
+- `delegate-work` — routes discussion, repository, and tool work between the root agent and workers, with bounded assignments and user authority.
+- `run-alp-workflow` — coordinates a complete session across four phases, with a root orchestrator and delegation when worthwhile. It requires `delegate-work` and pauses for your approval before each phase transition. See [Running an ALP Workflow](running-alp-workflow.md).
+- `author-alp-book` — supports bounded Book work without requiring the complete workflow. See [Authoring an ALP Book](authoring-alp-books.md).
+- `maintain-repository-wiki` — preserves non-governing repository memory and can be used with or without ALP. See [Maintaining Repository Memory](maintaining-repository-memory.md).
 
 See [Choosing and Combining the Skills](choosing-and-combining-skills.md) for more details.
 
@@ -25,7 +21,7 @@ My best advice, if you're starting a new project and want to use ALP, is to star
 
 Once you have `GOALS.md`, I suggest asking the AI to help you craft an `AGENTS.md` file for the project and brainstorming an initial table of contents (`README.md`). This order is deliberate: `GOALS.md` records human intent, `AGENTS.md` turns the project's collaboration constraints into instructions that agents will encounter, and `README.md` establishes the Book's reading path.
 
-From then on, how you proceed depends on your project. You can write one chapter at a time with `$author-alp-book`. If you are starting from a vaguer goal, use `$run-alp-workflow` to refine it in Brainstorm and, when you choose to continue, guide the work through the remaining phases. The details depend greatly on the project's goals, its programming language or languages, and its other constraints.
+From then on, how you proceed depends on your project. You can write one chapter at a time with `author-alp-book`. If you are starting from a vaguer goal, use `run-alp-workflow` to refine it in Brainstorm and, when you choose to continue, guide the work through the remaining phases. The details depend greatly on the project's goals, its programming language or languages, and its other constraints.
 
 ## How to start using ALP in an existing project
 

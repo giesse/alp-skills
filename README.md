@@ -13,12 +13,58 @@ them.
 introduces ALP and the role of the human author, the Book, and the AI. Follow the
 chapters in order, or use the table of contents to revisit a topic.
 
-Status: The main chapters are drafted. The Quick start and installation
-guidance are deferred until GitHub publication.
-
 ## Quick start
 
-To be written once we publish on GitHub.
+Both Codex and Antigravity are supported. The complete workflow,
+`run-alp-workflow`, requires its companion, `delegate-work`.
+
+### Codex
+
+Ask Codex to install the four skills from this repository for your user account,
+so they are available across projects:
+
+```text
+Use $skill-installer to install these skills from
+https://github.com/giesse/alp-skills for my user account, so they are
+available across projects:
+
+- codex/skills/delegate-work
+- codex/skills/run-alp-workflow
+- codex/skills/author-alp-book
+- codex/skills/maintain-repository-wiki
+
+Use the installation location supported by this Codex setup. If any are
+already installed, report their locations before replacing anything.
+```
+
+After installation, check that all four skills appear in Codex’s skills list.
+If they do not, restart Codex and check again.
+
+### Antigravity
+
+Ask Antigravity to install the four skills from this repository for your user
+account, so they are available across projects:
+
+```text
+Install these skills from https://github.com/giesse/alp-skills into
+~/.gemini/config/skills for my user account, so they are available
+across projects:
+
+- antigravity/skills/delegate-work
+- antigravity/skills/run-alp-workflow
+- antigravity/skills/author-alp-book
+- antigravity/skills/maintain-repository-wiki
+
+If any are already installed in ~/.gemini/config/skills or the current
+workspace, report their locations before replacing anything.
+```
+
+After installation, check that all four skills appear in Antigravity’s skills
+list or `/` command menu. If they do not, start a new conversation or reload
+Antigravity and check again.
+
+See [Installation, Updating, and Validation](book/installation-updating-and-validation.md)
+for updates and rollback.
 
 ## Table of contents
 
