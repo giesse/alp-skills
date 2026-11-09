@@ -25,6 +25,8 @@ guidance unless a later reconciliation says so.
   — deferred research, not current policy.
 - [Spec-driven development research](sources/spec-driven-development-research-2026-07-19.md)
   — deferred Spec Kit evaluation, not an adopted process.
+- [EGM design review and drift evidence](sources/egm-design-review-and-drift.md)
+  — deferred external evidence for later comparison with ALP.
 - [ALP EC linter](sources/alp-ec-linter.md) — retired EC-v1 design evidence.
 - [Antigravity handoff guardrails](sources/antigravity-handoff-guardrails.md)
   — historical input for a future handoff-design session.

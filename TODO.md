@@ -69,3 +69,6 @@
   - whether custom subagents are worthwhile beyond `research` and `self`; and
   - how "quick, targeted lookups" should be routed between Argon and Flash so a
     worker is not asked to read a single file and report it back verbatim.
+- [ ] Compare EGM with GitHub Spec Kit and identify which, if any, ideas are
+  worth adopting in ALP. Use the [EGM source note](wiki/sources/egm-design-review-and-drift.md)
+  as evidence, not current guidance.
